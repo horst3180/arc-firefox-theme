@@ -18,7 +18,7 @@ Offical [Arc](https://github.com/horst3180/Arc-theme) Firefox theme.
 ### Requirements
 This theme is compatible with Firefox 40+.
 
-**Note**: This theme is meant to be used in conjunction with the Arc GTK theme, don't use it with other GTK themes or it will look broken.
+**Note**: This theme is meant to be used in conjunction with the [Arc GTK theme](https://github.com/horst3180/Arc-theme), don't use it with other GTK themes or it will look broken.
 
 ### Installation
 
