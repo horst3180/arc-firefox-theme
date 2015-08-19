@@ -26,6 +26,6 @@ Donwload the .xpi files from [here](https://github.com/horst3180/arc-firefox-the
 
 Drag-and-drop these files into the Firefox window. Firefox will then prompt you to install the theme.
 
-Alternatively you can generate the x.pi files by running the `make-xpi.sh` script.
+Alternatively you can generate the .xpi files by running the `make-xpi.sh` script.
 
     ./make-xpi.sh
