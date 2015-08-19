@@ -21,9 +21,11 @@ This theme is compatible with Firefox 40+.
 **Note**: This theme is meant to be used in conjunction with the Arc GTK theme, don't use it with other GTK themes or it will look broken.
 
 ### Installation
-Run `make-xpi.sh` script to create the xpi files
+
+Donwload the .xpi files from [here](https://github.com/horst3180/arc-firefox-theme/releases)
+
+Drag-and-drop these files into the Firefox window. Firefox will then prompt you to install the theme.
+
+Alternatively you can generate the x.pi files by running the `make-xpi.sh` script.
 
     ./make-xpi.sh
-
-This will create three .xpi files. One for Arc, Arc-Darker and Arc-Dark.
-Drag-and-drop these files into the Firefox window. Firefox will then prompt you to install the theme.
