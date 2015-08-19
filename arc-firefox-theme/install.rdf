@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>{52c2877e-44e1-11e5-8874-a62d1d5d46B0}</em:id>
+    <em:version>40.20150819</em:version>
+    <em:type>4</em:type>
+    <em:name>Arc Firefox Theme</em:name>
+    <em:description>Arc Theme for Firefox</em:description>
+    <em:creator>horst3180</em:creator>
+    <em:internalName>arc-firefox-theme</em:internalName>
+    <em:skinnable>false</em:skinnable>
+  
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>40.0</em:minVersion>
+        <em:maxVersion>42.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    
+  </Description>
+</RDF>

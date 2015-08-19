@@ -1,0 +1,51 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     width="30px"
+     height="31px"
+     preserveAspectRatio="none">
+  <defs>
+    <style><![CDATA[
+
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+
+      #tab-background-fill {
+        background-color: -moz-dialog;
+        background-image: linear-gradient(transparent 0px, transparent 2px, hsla(0,0%,100%,0.35) 2px, hsla(0,0%,100%,0.35) 3px, hsla(0,0%,100%,0.65) 3px, hsla(0,0%,100%,0.65) 4px, rgba(255,255,255,.3));
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+      }
+
+    ]]></style>
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<svg:clipPath id="tab-curve-clip-path-start" clipPathUnits="objectBoundingBox">
+  <svg:path d="m 1,0.0625 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.0625 z"/>
+</svg:clipPath>
+
+<svg:clipPath id="tab-curve-clip-path-end" clipPathUnits="objectBoundingBox">
+  <svg:path d="m 0,0.0625 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.0625 z"/>
+</svg:clipPath>
+
+<svg:clipPath id="tab-hover-clip-path" clipPathUnits="objectBoundingBox">
+  <svg:path d="M 0,0.2 0,1 1,1, 1,0.2 z"/>
+</svg:clipPath>
+
+  </defs>
+  <foreignObject width="30" height="31" clip-path="url(#tab-curve-clip-path-end)">
+    <div id="tab-background-fill" xmlns="http://www.w3.org/1999/xhtml"></div>
+  </foreignObject>
+</svg>

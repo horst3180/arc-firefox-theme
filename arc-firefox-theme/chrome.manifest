@@ -1,0 +1,4 @@
+skin    browser         arc-firefox-theme   chrome/browser/
+skin    communicator    arc-firefox-theme   chrome/communicator/
+skin    global          arc-firefox-theme   chrome/global/
+skin    mozapps         arc-firefox-theme   chrome/mozapps/
