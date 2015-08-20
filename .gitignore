@@ -1,2 +1,12 @@
 *.xpi
 .sass-cache/
+
+Makefile
+Makefile.in
+config.log
+config.status
+configure
+install-sh
+*.m4
+missing
+autom4te.cache/
