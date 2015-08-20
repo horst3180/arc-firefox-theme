@@ -7,6 +7,6 @@ config.log
 config.status
 configure
 install-sh
-*.m4
+aclocal.m4
 missing
 autom4te.cache/
