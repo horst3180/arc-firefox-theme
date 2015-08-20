@@ -26,6 +26,28 @@ Donwload the .xpi files from [here](https://github.com/horst3180/arc-firefox-the
 
 Drag-and-drop these files into the Firefox window. Firefox will then prompt you to install the theme.
 
-Alternatively you can generate the .xpi files by running the `make-xpi.sh` script.
+#### Manual building and installation
 
-    ./make-xpi.sh
+These instructions are for testers and package maintainers. They also allow to install the theme globally for all users.
+
+You will need `autoconf` and `automake` for the following.
+
+Generate the .xpi files
+
+    ./autogen.sh --prefix=/usr
+    make mkxpi
+
+The theme can be installed globally with
+
+    ./autogen.sh --prefix=/usr
+    sudo make install
+
+Other build options to append to `autogen.sh` are
+
+    --disable-light         disable Arc Light Firefox support
+    --disable-darker        disable Arc Darker Firefox support
+    --disable-dark          disable Arc Dark Firefox support
+
+Uninstall the theme with
+
+    sudo make uninstall
