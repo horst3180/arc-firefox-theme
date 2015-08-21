@@ -16,15 +16,15 @@
 }
 
 .ruleview-rule-source {
-  -moz-padding-start: 5px;
   text-align: end;
   float: right;
   -moz-user-select: none;
+  margin-bottom: 2px;
 }
 
-.ruleview-rule-source,
 .ruleview-rule-source > label {
   cursor: pointer;
+  margin: 0;
 }
 
 .ruleview-rule-source[unselectable],
@@ -57,7 +57,11 @@
   padding: 2px 4px;
 }
 
-/* User agent styles are not editable, display them differently */
+/**
+ * Display rules that don't match the current selected element and uneditable
+ * user agent styles differently
+ */
+.ruleview-rule[unmatched=true],
 .ruleview-rule[uneditable=true] {
   background: var(--theme-tab-toolbar-background);
 }
@@ -158,9 +162,9 @@
 .ruleview-swatch {
   cursor: pointer;
   border-radius: 50%;
-  width: 1em;
-  height: 1em;
-  vertical-align: text-top;
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: middle;
   -moz-margin-end: 5px;
   display: inline-block;
   position: relative;
@@ -261,4 +265,40 @@
 .ruleview-selectorhighlighter:active,
 .ruleview-selectorhighlighter.highlighted {
   background-position: -16px 0;
+}
+
+#ruleview-add-rule-button::before {
+  background-image: url("chrome://browser/skin/devtools/add.svg");
+  background-size: cover;
+}
+
+#pseudo-class-panel-toggle::before {
+  background-image: url("chrome://browser/skin/devtools/pseudo-class.svg#pseudo-class");
+  background-size: cover;
+}
+#pseudo-class-panel-toggle[checked]::before {
+  background-image: url("chrome://browser/skin/devtools/pseudo-class.svg#pseudo-class-checked");
+  filter: none !important;
+}
+
+/**
+ * These buttons are using opacity instead of background color to indicate
+ * the state
+ */
+#ruleview-add-rule-button,
+#pseudo-class-panel-toggle {
+  opacity: 0.8;
+}
+
+#ruleview-add-rule-button:not([disabled]):hover,
+#pseudo-class-panel-toggle:hover,
+#pseudo-class-panel-toggle[checked] {
+  opacity: 1;
+}
+
+#ruleview-add-rule-button,
+#pseudo-class-panel-toggle,
+#pseudo-class-panel-toggle:hover,
+#pseudo-class-panel-toggle[checked]::before {
+  background-color: transparent !important;
 }

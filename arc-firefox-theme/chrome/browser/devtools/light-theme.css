@@ -667,6 +667,7 @@ div.CodeMirror span.eval-text {
 .devtools-button {
   border: 0 solid var(--theme-splitter-color);
   background: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
   margin: 0;
   padding: 0;
   min-width: 32px;
@@ -717,6 +718,11 @@ div.CodeMirror span.eval-text {
   background-repeat: no-repeat;
 }
 
+.devtools-button[disabled]::before,
+.devtools-button:disabled::before {
+  opacity: 0.5;
+}
+
 @media (min-resolution: 1.25dppx) {
   .devtools-button::before {
     background-size: 32px;
@@ -765,8 +771,8 @@ div.CodeMirror span.eval-text {
 
 /* Searchbox is a div container element for a search input element */
 .devtools-searchbox {
-  display: -moz-box;
-  -moz-box-flex: 1;
+  display: flex;
+  flex: 1;
   position: relative;
 }
 
@@ -1052,6 +1058,20 @@ div.CodeMirror span.eval-text {
 
 #toolbox-dock-window > image {
   background-image: url("chrome://browser/skin/devtools/undock@2x.png");
+}
+
+#toolbox-dock-bottom-minimize {
+  /* Bug 1177463 - The minimize button is currently hidden until we agree on
+     the UI for it, and until bug 1173849 is fixed too. */
+  display: none;
+}
+
+#toolbox-dock-bottom-minimize > image {
+  background-image: url("chrome://browser/skin/devtools/dock-bottom-minimize@2x.png");
+}
+
+#toolbox-dock-bottom-minimize.minimized > image {
+  background-image: url("chrome://browser/skin/devtools/dock-bottom-maximize@2x.png");
 }
 
 #toolbox-dock-window,

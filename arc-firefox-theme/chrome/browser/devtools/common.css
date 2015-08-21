@@ -9,6 +9,11 @@
   font-size: 80%;
 }
 
+/* Bottom-docked toolbox minimize transition */
+.devtools-toolbox-bottom-iframe {
+  transition: margin-bottom .1s;
+}
+
 /* Splitters */
 .devtools-horizontal-splitter {
   -moz-appearance: none;
@@ -33,6 +38,11 @@
   -moz-margin-start: -3px;
   position: relative;
   cursor: e-resize;
+}
+
+.devtools-horizontal-splitter.disabled,
+.devtools-side-splitter.disabled {
+  pointer-events: none;
 }
 
 .devtools-toolbox-side-iframe {

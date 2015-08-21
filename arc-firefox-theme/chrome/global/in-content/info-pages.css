@@ -1,9 +1,10 @@
+
 @import url("chrome://global/skin/in-content/common.css");
 /* Body and container */
 body {
   display: flex;
   flex-direction: column;
-  box-sizing: padding-box;
+  box-sizing: border-box;
   min-height: 100vh;
   padding-top: 0;
   padding-bottom: 0;

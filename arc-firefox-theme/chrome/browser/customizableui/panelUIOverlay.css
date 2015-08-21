@@ -12,6 +12,10 @@
 
 
 
+:root {
+  --panel-ui-exit-subview-gutter-width: 38px;
+}
+
 #PanelUI-popup #PanelUI-contents:empty {
   height: 128px;
 }
@@ -101,7 +105,7 @@
   border-left: 1px solid hsla(210,4%,10%,.3);
   box-shadow: 0 3px 5px hsla(210,4%,10%,.1),
               0 0 7px hsla(210,4%,10%,.1);
-  -moz-margin-start: 38px;
+  -moz-margin-start: var(--panel-ui-exit-subview-gutter-width);
 }
 
 .panel-viewstack[viewtype="main"] > .panel-subviews {
@@ -386,8 +390,10 @@ toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"] > iframe {
 
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-contents-scroller > #PanelUI-contents > .panel-wide-item,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-contents-scroller > #PanelUI-contents > .toolbarbutton-1:not([panel-multiview-anchor="true"]),
-#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-status,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-update-status,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-label,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-icon,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > toolbarseparator,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > #PanelUI-customize,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > #PanelUI-help:not([panel-multiview-anchor="true"]) {
@@ -485,29 +491,50 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   margin: 0;
 }
 
-#PanelUI-footer-inner {
+#main-window[customizing] #PanelUI-footer-fxa > toolbarseparator {
+  display: none;
+}
+
+#PanelUI-footer-fxa:not([fxastatus="signedin"]) > toolbarseparator,
+#PanelUI-footer-fxa:not([fxastatus="signedin"]) > #PanelUI-fxa-icon,
+#PanelUI-footer-fxa:not([fxaprofileimage]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
+  display: none;
+}
+
+#PanelUI-fxa-status {
+  display: flex;
+  flex: 1 1 0%;
+  width: 1px;
+}
+
+#PanelUI-footer-inner,
+#PanelUI-footer-fxa:not([hidden]) {
   display: flex;
   border-top: 1px solid hsla(210,4%,10%,.14);
 }
 
-#PanelUI-multiView[viewtype="subview"] #PanelUI-footer-inner {
+#PanelUI-multiView[viewtype="subview"] #PanelUI-footer-inner,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-footer-fxa {
   position: relative;
 }
 
-#PanelUI-footer-inner > toolbarseparator {
+#PanelUI-footer-inner > toolbarseparator,
+#PanelUI-footer-fxa > toolbarseparator {
   border: 0;
   border-left: 1px solid hsla(210,4%,10%,.14);
   margin: 7px 0 7px;
   -moz-appearance: none;
 }
 
-#PanelUI-footer-inner:hover > toolbarseparator {
+#PanelUI-footer-inner:hover > toolbarseparator,
+#PanelUI-footer-fxa:hover > toolbarseparator {
   margin: 0;
 }
 
 #PanelUI-update-status,
 #PanelUI-help,
-#PanelUI-fxa-status,
+#PanelUI-fxa-label,
+#PanelUI-fxa-icon,
 #PanelUI-customize,
 #PanelUI-quit {
   margin: 0;
@@ -522,15 +549,16 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   -moz-box-orient: horizontal;
 }
 
-#PanelUI-update-status,
-#PanelUI-fxa-status {
+#PanelUI-update-status {
   border-top: 1px solid hsla(210,4%,10%,.14);
+}
+
+#PanelUI-update-status {
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
 }
 
-#PanelUI-update-status > .toolbarbutton-text,
-#PanelUI-fxa-status > .toolbarbutton-text {
+#PanelUI-update-status > .toolbarbutton-text {
   width: 0; /* Fancy cropping solution for flexbox. */
 }
 
@@ -540,7 +568,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-update-status > .toolbarbutton-text,
-#PanelUI-fxa-status > .toolbarbutton-text,
+#PanelUI-fxa-label > .toolbarbutton-text,
 #PanelUI-customize > .toolbarbutton-text {
   margin: 0;
   padding: 0 6px;
@@ -548,23 +576,35 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-help > .toolbarbutton-text,
-#PanelUI-quit > .toolbarbutton-text {
+#PanelUI-quit > .toolbarbutton-text,
+#PanelUI-fxa-avatar > .toolbarbutton-text {
   display: none;
 }
 
 #PanelUI-update-status > .toolbarbutton-icon,
-#PanelUI-fxa-status > .toolbarbutton-icon,
+#PanelUI-fxa-label > .toolbarbutton-icon,
+#PanelUI-fxa-icon > .toolbarbutton-icon,
 #PanelUI-customize > .toolbarbutton-icon,
 #PanelUI-help > .toolbarbutton-icon,
 #PanelUI-quit > .toolbarbutton-icon {
   -moz-margin-end: 0;
 }
 
-#PanelUI-fxa-status,
+#PanelUI-fxa-icon {
+  -moz-padding-start: 15px;
+  -moz-padding-end: 15px;
+}
+
+#PanelUI-fxa-label,
 #PanelUI-customize {
   flex: 1;
   -moz-padding-start: 15px;
   -moz-border-start-style: none;
+}
+
+#PanelUI-footer-fxa[fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
+#PanelUI-footer-fxa[fxaprofileimage="enabled"]:not([fxastatus="error"]) > #PanelUI-fxa-status > #PanelUI-fxa-label {
+  -moz-padding-start: 0px;
 }
 
 #PanelUI-update-status {
@@ -577,16 +617,17 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   list-style-image: url(chrome://branding/content/icon16.png);
 }
 
-#PanelUI-fxa-status {
+#PanelUI-fxa-label,
+#PanelUI-fxa-icon {
   list-style-image: url(chrome://browser/skin/sync-horizontalbar.png);
 }
 
-#PanelUI-fxa-status[syncstatus="active"] {
+#PanelUI-footer-fxa[syncstatus="active"] > #PanelUI-fxa-icon {
   list-style-image: url(chrome://browser/skin/syncProgress-horizontalbar.png);
 }
 
-#PanelUI-fxa-status[fxastatus="migrate-signup"],
-#PanelUI-fxa-status[fxastatus="migrate-verify"] {
+#PanelUI-footer-fxa[fxastatus="migrate-signup"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
+#PanelUI-footer-fxa[fxastatus="migrate-verify"] > #PanelUI-fxa-status > #PanelUI-fxa-label {
   list-style-image: url(chrome://browser/skin/warning16.png);
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
@@ -608,11 +649,48 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   list-style-image: url(chrome://browser/skin/menuPanel-exit.png);
 }
 
-#PanelUI-fxa-status,
+#PanelUI-fxa-label,
+#PanelUI-fxa-icon,
 #PanelUI-customize,
 #PanelUI-help,
 #PanelUI-quit {
   -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#PanelUI-footer-fxa[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon,
+#PanelUI-footer-fxa[fxastatus="error"][fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon {
+  display: none;
+}
+
+#PanelUI-footer-fxa[fxastatus="error"]:not([fxaprofileimage="set"]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
+  display: none;
+}
+
+#PanelUI-fxa-avatar[disabled],
+#PanelUI-fxa-icon[disabled] {
+  display: none;
+}
+
+#PanelUI-fxa-status[disabled] {
+  pointer-events: none;
+}
+
+#PanelUI-fxa-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+  align-self: center;
+  margin: 0px 7px;
+  padding: 0px;
+  border: 0px none;
+  -moz-margin-end: 0;
+}
+
+#PanelUI-footer-fxa[fxaprofileimage="enabled"] > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
+  list-style-image: url(chrome://browser/skin/fxa/default-profile-image.svg);
 }
 
 #PanelUI-customize:hover,
@@ -637,6 +715,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-status:not([disabled]):hover,
+#PanelUI-fxa-icon:not([disabled]):hover,
 #PanelUI-help:not([disabled]):hover,
 #PanelUI-customize:hover,
 #PanelUI-quit:not([disabled]):hover {
@@ -645,6 +724,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-status:not([disabled]):hover:active,
+#PanelUI-fxa-icon:not([disabled]):hover:active,
 #PanelUI-help:not([disabled]):hover:active,
 #PanelUI-customize:hover:active,
 #PanelUI-quit:not([disabled]):hover:active {
@@ -654,8 +734,24 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-status:not([disabled]):hover,
-#PanelUI-fxa-status:not([disabled]):hover:active {
+#PanelUI-fxa-status:not([disabled]):hover:active,
+#PanelUI-fxa-icon:not([disabled]):hover,
+#PanelUI-fxa-icon:not([disabled]):hover:active {
   outline: none;
+}
+
+#PanelUI-footer-fxa[fxastatus="error"] {
+  background-color: rgb(255, 236, 158);
+  border-top: 1px solid rgb(254, 212, 21);
+}
+
+#PanelUI-footer-fxa[fxastatus="error"] > #PanelUI-fxa-status:hover {
+  background-color: #F9E79A;
+}
+
+#PanelUI-footer-fxa[fxastatus="error"] > #PanelUI-fxa-status:hover:active {
+  background-color: #ECDB92;
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
 }
 
 #PanelUI-update-status {
@@ -955,7 +1051,7 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
   position: absolute;
   top: 0;
   height: 100%;
-  width: 38px;
+  width: var(--panel-ui-exit-subview-gutter-width);
   background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted.png),
                     linear-gradient(rgba(255,255,255,0.3), transparent);
   background-repeat: no-repeat;
@@ -972,14 +1068,14 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
 toolbarbutton[panel-multiview-anchor="true"] {
   background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted.png),
                     linear-gradient(rgba(255,255,255,0.3), transparent);
-  background-position: right calc((22.35em / 3 - 0.1px) / 2 - 38px + 2px) center;
+  background-position: right calc((22.35em / 3 - 0.1px) / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
   background-repeat: no-repeat, repeat;
 }
 
 toolbarbutton[panel-multiview-anchor="true"]:-moz-locale-dir(rtl) {
   background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png),
                     linear-gradient(rgba(255,255,255,0.3), transparent);
-  background-position: left calc((22.35em / 3 - 0.1px) / 2 - 38px + 2px) center;
+  background-position: left calc((22.35em / 3 - 0.1px) / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
 }
 
 toolbarpaletteitem[place="palette"] > .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
@@ -1386,16 +1482,17 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
     list-style-image: url(chrome://branding/content/icon32.png);
   }
 
-  #PanelUI-fxa-status {
+  #PanelUI-fxa-label,
+  #PanelUI-fxa-icon {
     list-style-image: url(chrome://browser/skin/sync-horizontalbar@2x.png);
   }
 
-  #PanelUI-fxa-status[syncstatus="active"] {
+  #PanelUI-footer-fxa[syncstatus="active"] > #PanelUI-fxa-icon {
     list-style-image: url(chrome://browser/skin/syncProgress-horizontalbar@2x.png);
   }
 
-  #PanelUI-fxa-status[fxastatus="migrate-signup"],
-  #PanelUI-fxa-status[fxastatus="migrate-verify"] {
+  #PanelUI-footer-fxa[fxastatus="migrate-signup"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
+  #PanelUI-footer-fxa[fxastatus="migrate-verify"] > #PanelUI-fxa-status > #PanelUI-fxa-label {
     list-style-image: url(chrome://browser/skin/warning16@2x.png);
     -moz-image-region: rect(0, 64px, 32px, 32px);
   }
@@ -1416,7 +1513,8 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
     list-style-image: url(chrome://browser/skin/menuPanel-exit@2x.png);
   }
 
-  #PanelUI-fxa-status,
+  #PanelUI-fxa-label,
+  #PanelUI-fxa-icon,
   #PanelUI-customize,
   #PanelUI-help,
   #PanelUI-quit {
@@ -1424,7 +1522,8 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
   }
 
   #PanelUI-update-status > .toolbarbutton-icon,
-  #PanelUI-fxa-status > .toolbarbutton-icon,
+  #PanelUI-fxa-label > .toolbarbutton-icon,
+  #PanelUI-fxa-icon > .toolbarbutton-icon,
   #PanelUI-customize > .toolbarbutton-icon,
   #PanelUI-help > .toolbarbutton-icon,
   #PanelUI-quit > .toolbarbutton-icon {
@@ -1566,7 +1665,8 @@ menu.subviewbutton > .menu-right:-moz-locale-dir(rtl) {
 .PanelUI-subView toolbarseparator,
 .PanelUI-subView menuseparator,
 .cui-widget-panelview menuseparator,
-#PanelUI-footer-inner > toolbarseparator {
+#PanelUI-footer-inner > toolbarseparator,
+#PanelUI-footer-fxa > toolbarseparator {
   -moz-appearance: none !important;
 }
 

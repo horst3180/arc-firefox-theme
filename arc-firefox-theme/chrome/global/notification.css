@@ -84,6 +84,11 @@ notification[type="critical"] {
   margin-top: 17px;
 }
 
+.popup-notification-closebutton {
+  -moz-margin-end: -10px;
+  margin-top: -6px;
+}
+
 .popup-notification-menubutton > .button-menubutton-button[disabled] {
   opacity: 0.5;
 }

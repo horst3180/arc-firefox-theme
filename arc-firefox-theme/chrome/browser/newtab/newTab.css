@@ -152,7 +152,6 @@
 }
 
 /* TITLES */
-#newtab-intro-what,
 .newtab-sponsored,
 .newtab-title,
 .newtab-suggested  {
@@ -236,7 +235,6 @@
   width: 16px;
 }
 
-#newtab-intro-panel,
 .newtab-title {
   font-family: sans-serif;
 }
