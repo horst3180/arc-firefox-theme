@@ -2476,6 +2476,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .tabbrowser-tab:not([selected="true"]) {
   color: rgba(207, 218, 231, 0.6); }
+  .tabbrowser-tab:not([selected="true"]):hover {
+    color: rgba(207, 218, 231, 0.8); }
 
 /* Selected tab */
 /*

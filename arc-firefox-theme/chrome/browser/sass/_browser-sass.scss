@@ -3271,6 +3271,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .tabbrowser-tab:not([selected="true"]) {
   color: transparentize($header_fg, 0.2);
+
+  &:hover { color: $header_fg; }
 }
 
 /* Selected tab */
