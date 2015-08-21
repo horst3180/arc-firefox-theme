@@ -41,7 +41,7 @@
 #navigator-toolbox > toolbar:not(:-moz-lwtheme):not(#toolbar-menubar):not(#TabsToolbar) {
   -moz-appearance: none;
   border-style: none;
-  background-color: -moz-Dialog; }
+  background-color: #F5F6F7; }
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar) {
   padding-top: 1px;
@@ -2271,21 +2271,31 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 /* Findbar */
 .browserContainer > findbar {
-  background-color: -moz-dialog;
-  color: -moz-DialogText;
+  background-color: #F5F6F7;
+  color: #5c616c;
   border-top: 1px solid;
   -moz-border-top-colors: #dcdfe3;
   text-shadow: none; }
 
 .browserContainer > findbar .findbar-textbox {
   -moz-appearance: none;
+  color: #5c616c;
   border: 1px solid #cfd6e6;
+  background-color: #ffffff;
   box-shadow: none;
   margin: 0;
   padding: 5px;
   width: 14em; }
   .browserContainer > findbar .findbar-textbox[focused="true"] {
     border-color: #5294E2; }
+  .browserContainer > findbar .findbar-textbox[status="notfound"] {
+    background-color: #FC4138;
+    border-color: #fb1b10;
+    color: #ffffff; }
+  .browserContainer > findbar .findbar-textbox[flash="true"] {
+    background-color: #F27835;
+    border-color: #ef5f0f;
+    color: #ffffff; }
   .browserContainer > findbar .findbar-textbox:-moz-locale-dir(ltr) {
     border-radius: 20px 0 0 20px;
     border-right-width: 0; }
@@ -2344,6 +2354,11 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .tabbrowser-tab {
   -moz-box-align: stretch; }
+
+.tabbrowser-tab[selected="true"],
+.tabbrowser-tab[selected="true"]:hover,
+.tabbrowser-tab:not([selected="true"]):hover {
+  color: #5c616c; }
 
 /* The selected tab should appear above adjacent tabs, .tabs-newtab-button and the highlight of #nav-bar */
 .tabbrowser-tab[visuallyselected=true] {
@@ -2578,8 +2593,9 @@ lwtHeader;*/
   margin-bottom: calc(-1 * var(--tab-toolbar-navbar-overlap)); }
 
 #TabsToolbar:not(:-moz-lwtheme) {
-  -moz-appearance: menubar;
-  color: -moz-menubartext; }
+  -moz-appearance: none;
+  color: rgba(207, 218, 231, 0.8);
+  background: #2f343b; }
 
 #toolbar-menubar:not([autohide="true"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag),
 #TabsToolbar:not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
