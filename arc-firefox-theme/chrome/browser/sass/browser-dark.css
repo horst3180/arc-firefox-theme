@@ -2226,6 +2226,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   .browserContainer > findbar .findbar-textbox:-moz-locale-dir(rtl) {
     border-radius: 0 20px 20px 0;
     border-left-width: 0; }
+  .browserContainer > findbar .findbar-textbox.minimal {
+    border-width: 1px;
+    border-radius: 20px; }
 
 .browserContainer > findbar .findbar-find-previous,
 .browserContainer > findbar .findbar-find-next {
@@ -2400,6 +2403,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .tabbrowser-tab:not([selected="true"]) {
   color: rgba(207, 218, 231, 0.6); }
+  .tabbrowser-tab:not([selected="true"]):hover {
+    color: rgba(207, 218, 231, 0.8); }
 
 /* Selected tab */
 /*
