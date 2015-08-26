@@ -1676,8 +1676,8 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
 #urlbar,
 .searchbar-textbox {
   -moz-appearance: none;
-  padding: 3px 5px;
-  border-radius: 20px;
+  padding: 3px;
+  border-radius: 3px;
   margin: 0 3px;
   @include entry(normal);
 }
@@ -1686,6 +1686,8 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
 .searchbar-textbox[focused] {
   @include entry(focus);
 }
+
+.searchbar-textbox { border-radius: 20px; }
 
 //#urlbar {
 //  background-color: $entry_bg;
@@ -3047,18 +3049,18 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   }
 
   &:-moz-locale-dir(ltr) {
-    border-radius: 20px 0 0 20px;
+    border-radius: 3px 0 0 3px;
     border-right-width: 0;
   }
 
   &:-moz-locale-dir(rtl) {
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 3px 3px 0;
     border-left-width: 0;
   }
 
   &.minimal {
     border-width: 1px;
-    border-radius: 20px;
+    border-radius: 3px;
   }
 }
 
