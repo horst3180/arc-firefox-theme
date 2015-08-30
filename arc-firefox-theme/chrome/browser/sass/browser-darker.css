@@ -1625,9 +1625,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   background-color: transparent;
   background-clip: padding-box;
   padding-left: 1px;
-  border-width: 0 8px 0 0;
+  padding-right: 4px;
+  border-width: 0 1px 0 0;
   border-style: solid;
-  border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 fill; }
+  border-color: #dcdfe3; }
 
 #notification-popup-box:-moz-locale-dir(rtl),
 .notification-anchor-icon:-moz-locale-dir(rtl) {
@@ -1775,9 +1776,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
     transform: translateX(0); } }
 /* HiDPI notification icons */
 @media (min-resolution: 1.1dppx) {
-  #notification-popup-box {
-    border-image: url("chrome://browser/skin/urlbar-arrow@2x.png") 0 16 0 0 fill; }
-
   .notification-anchor-icon {
     list-style-image: url(moz-icon://stock/gtk-dialog-info?size=dialog); }
 
