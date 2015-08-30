@@ -38,8 +38,8 @@ if ENABLE_DARKER
 	cp $(darkertempdir)/chrome/browser/sass/browser-darker.css $(darkertempdir)/chrome/browser/browser.css
 	rm -rf $(darkertempdir)/chrome/browser/sass
 
-	sed -i 's/arc-firefox-theme/arc-darker-firefox-theme/' $(darkertempdir)/chrome.manifest
-	sed -i 's/arc-firefox-theme/arc-darker-firefox-theme/' $(darkertempdir)/install.rdf
+	sed -i 's/arc-theme/arc-darker-theme/' $(darkertempdir)/chrome.manifest
+	sed -i 's/arc-theme/arc-darker-theme/' $(darkertempdir)/install.rdf
 	sed -i 's/Arc /Arc Darker /' $(darkertempdir)/install.rdf
 
 	sed -i "s/$(light_guid)/$(darker_guid)/" $(darkertempdir)/install.rdf
@@ -56,8 +56,8 @@ if ENABLE_DARK
 	cp $(darktempdir)/chrome/browser/sass/browser-dark.css $(darktempdir)/chrome/browser/browser.css
 	rm -rf $(darktempdir)/chrome/browser/sass
 
-	sed -i 's/arc-firefox-theme/arc-dark-firefox-theme/' $(darktempdir)/chrome.manifest
-	sed -i 's/arc-firefox-theme/arc-dark-firefox-theme/' $(darktempdir)/install.rdf
+	sed -i 's/arc-theme/arc-dark-theme/' $(darktempdir)/chrome.manifest
+	sed -i 's/arc-theme/arc-dark-theme/' $(darktempdir)/install.rdf
 	sed -i 's/Arc /Arc Dark /' $(darktempdir)/install.rdf
 
 	sed -i "s/$(light_guid)/$(dark_guid)/" $(darktempdir)/install.rdf

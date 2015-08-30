@@ -7,10 +7,10 @@
     <em:id>{52c2877e-44e1-11e5-8874-a62d1d5d46B0}</em:id>
     <em:version>40.20150826</em:version>
     <em:type>4</em:type>
-    <em:name>Arc Firefox Theme</em:name>
+    <em:name>Arc Theme</em:name>
     <em:description>Arc Theme for Firefox</em:description>
     <em:creator>horst3180</em:creator>
-    <em:internalName>arc-firefox-theme</em:internalName>
+    <em:internalName>arc-theme</em:internalName>
     <em:skinnable>false</em:skinnable>
     <em:targetPlatform>Linux</em:targetPlatform>
     <em:targetPlatform>OpenBSD</em:targetPlatform>
