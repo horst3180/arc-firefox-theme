@@ -2,26 +2,35 @@
 
 // Entries
 
-@mixin entry($t, $dark:false) {
+@mixin entry($t) {
 //
 // Entries drawing function
 //
-  //@extend %reset_style;
-    box-shadow: inset 0 0 transparentize($base_color, 1);
+// $t: entry type
+//
 
   @if $t==normal {
+  //
+  // normal entry
+  //
     color: $text_color;
     background-color: $entry_bg;
     border: 1px solid $entry_border;
   }
 
   @if $t==focus {
+  //
+  // focused entry
+  //
     color: $fg_color;
     background-color: $entry_bg;
     border: 1px solid $selected_bg_color;
   }
 
   @if $t==insensitive {
+  //
+  // insensitive entry
+  //
     color: $insensitive_fg_color;
     background-color: mix($entry_bg, $bg_color, 55%);
     border-color: 1px solid mix($entry_border, $bg_color, 55%);
@@ -44,31 +53,13 @@
     border: 1px solid $button_border;
   }
 
-  @else if $t==focus {
-  //
-  // focused button
-  //
-    color: $fg_color;
-    background-color: $button_bg;
-    border: 1px solid $selected_bg_color;
-  }
-
-  @else if $t==focus-hover {
-  //
-  // focused button
-  //
-    color: $selected_bg_color;
-    background-color: $button_bg;
-    border: 1px solid $selected_bg_color;
-  }
-
   @else if $t==hover {
   //
   // hovered button
   //
     color: $fg_color;
-    background-color: $button_bg;
-    border: 1px solid $selected_bg_color;
+    background-color: lighten($button_bg, 5%);
+    border: 1px solid $button_border;
   }
 
   @else if $t==active {
@@ -89,9 +80,6 @@
     background-color: transparentize($button_bg, 0.45);
   }
 
-  $_header_button_bg: if($darker == 'true' or $variant == 'dark', transparentize(darken($header_bg, 3%), 0.1), transparentize($button_bg, 0.1));
-  $_header_button_border: if($darker == 'true' or $variant == 'dark', darken($header_bg, 8%), transparentize($header_fg, 0.7));
-
   @if $t==header-normal {
   //
   // normal header-bar button
@@ -106,8 +94,8 @@
   // hovered header-bar button
   //
     color: $header_fg;
-    border-color: $_header_button_border;
-    background-color: $_header_button_bg;
+    border-color: $header_button_border;
+    background-color: $header_button_bg;
   }
 
   @else if $t==header-active {

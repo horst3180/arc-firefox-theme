@@ -23,7 +23,7 @@ $darker_asset_path_2: if($darker=='true', 'dark', $asset_path);
 :root {
   --toolbarbutton-hover-background: $button_bg;
   --toolbarbutton-hover-boxshadow: none;
-  --toolbarbutton-hover-bordercolor: $selected_bg_color;
+  --toolbarbutton-hover-bordercolor: $button_border;
 
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: $selected_bg_color;
@@ -84,7 +84,7 @@ $darker_asset_path_2: if($darker=='true', 'dark', $asset_path);
 }
 
 #TabsToolbar:not([collapsed="true"]) + #nav-bar {
-  border-top: 1px solid darken($header_border, 3%) !important;
+  border-top: 1px solid $header_border !important;
   background-clip: padding-box;
   margin-top: -1px; /* Move up into the TabsToolbar for the inner highlight at the top of the nav-bar */
   /* Position the toolbar above the bottom of background tabs */

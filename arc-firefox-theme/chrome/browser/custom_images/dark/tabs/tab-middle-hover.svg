@@ -38,9 +38,9 @@
      inkscape:window-height="1052"
      id="namedview16"
      showgrid="true"
-     inkscape:zoom="5.3831355"
-     inkscape:cx="-26.527046"
-     inkscape:cy="9.9647005"
+     inkscape:zoom="30.451613"
+     inkscape:cx="22.422533"
+     inkscape:cy="31.436498"
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="1"
@@ -57,7 +57,7 @@
      id="defs4" />
   <g
      id="g4135"
-     style="opacity:0.5">
+     style="opacity:0.6">
     <rect
        rx="0.5"
        ry="0.5"
@@ -66,7 +66,7 @@
        height="34"
        width="44"
        id="rect3837"
-       style="fill:#444852;fill-opacity:1;stroke:#4080fb;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.84555981" />
+       style="fill:#383c4a;fill-opacity:1;stroke:#4080fb;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.84555984" />
     <rect
        ry="1"
        y="1.5"
@@ -74,7 +74,7 @@
        height="35"
        width="45"
        id="rect3837-9"
-       style="fill:none;fill-opacity:1;stroke:#1d2125;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#20242b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        rx="1" />
   </g>
 </svg>

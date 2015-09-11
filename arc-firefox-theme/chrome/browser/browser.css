@@ -8,7 +8,7 @@
 :root {
   --toolbarbutton-hover-background: #fbfbfc;
   --toolbarbutton-hover-boxshadow: none;
-  --toolbarbutton-hover-bordercolor: #5294E2;
+  --toolbarbutton-hover-bordercolor: #cfd6e6;
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: #5294E2;
   --toolbarbutton-active-background: #5294E2;
@@ -58,7 +58,7 @@
   transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear; }
 
 #TabsToolbar:not([collapsed="true"]) + #nav-bar {
-  border-top: 1px solid rgba(203, 205, 212, 0.95) !important;
+  border-top: 1px solid rgba(212, 213, 219, 0.95) !important;
   background-clip: padding-box;
   margin-top: -1px;
   /* Move up into the TabsToolbar for the inner highlight at the top of the nav-bar */
@@ -137,8 +137,8 @@ toolbarbutton.bookmark-item {
 toolbarbutton.bookmark-item:not([disabled=true]):hover {
   -moz-appearance: none;
   color: #5c616c;
-  background-color: #fbfbfc;
-  border: 1px solid #5294E2; }
+  background-color: white;
+  border: 1px solid #cfd6e6; }
 
 toolbarbutton.bookmark-item:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
   -moz-appearance: none;
@@ -1278,14 +1278,12 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
   padding: 3px;
   border-radius: 3px;
   margin: 0 3px;
-  box-shadow: inset 0 0 rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: #ffffff;
   border: 1px solid #cfd6e6; }
 
 #urlbar[focused],
 .searchbar-textbox[focused] {
-  box-shadow: inset 0 0 rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: #ffffff;
   border: 1px solid #5294E2; }

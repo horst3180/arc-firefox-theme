@@ -8,7 +8,7 @@
 :root {
   --toolbarbutton-hover-background: #fbfbfc;
   --toolbarbutton-hover-boxshadow: none;
-  --toolbarbutton-hover-bordercolor: #5294E2;
+  --toolbarbutton-hover-bordercolor: #cfd6e6;
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: #5294E2;
   --toolbarbutton-active-background: #5294E2;
@@ -58,7 +58,7 @@
   transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear; }
 
 #TabsToolbar:not([collapsed="true"]) + #nav-bar {
-  border-top: 1px solid rgba(24, 27, 31, 0.97) !important;
+  border-top: 1px solid rgba(38, 42, 51, 0.97) !important;
   background-clip: padding-box;
   margin-top: -1px;
   /* Move up into the TabsToolbar for the inner highlight at the top of the nav-bar */
@@ -67,7 +67,7 @@
   z-index: 1; }
 
 #main-window[htitlemode=always] #TabsToolbar {
-  box-shadow: inset 0 1px rgba(54, 60, 68, 0.97) !important; }
+  box-shadow: inset 0 1px rgba(54, 59, 72, 0.97) !important; }
 
 #nav-bar {
   background-image: none !important;
@@ -137,8 +137,8 @@ toolbarbutton.bookmark-item {
 toolbarbutton.bookmark-item:not([disabled=true]):hover {
   -moz-appearance: none;
   color: #5c616c;
-  background-color: #fbfbfc;
-  border: 1px solid #5294E2; }
+  background-color: white;
+  border: 1px solid #cfd6e6; }
 
 toolbarbutton.bookmark-item:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
   -moz-appearance: none;
@@ -544,8 +544,8 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-icon {
   background-color: none;
   color: rgba(207, 218, 231, 0.8);
-  border-color: rgba(29, 32, 36, 0.97);
-  background-color: rgba(40, 44, 50, 0.87); }
+  border-color: rgba(21, 23, 28, 0.37);
+  background-color: rgba(95, 105, 127, 0.37); }
 
 .findbar-button:not([disabled=true]):-moz-any([checked="true"], :hover:active) > .toolbarbutton-text,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]) > .toolbarbutton-menubutton-button:not([disabled=true]):-moz-any(:hover:active, [open="true"]) > .toolbarbutton-icon,
@@ -1278,14 +1278,12 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
   padding: 3px;
   border-radius: 3px;
   margin: 0 3px;
-  box-shadow: inset 0 0 rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: #ffffff;
   border: 1px solid #cfd6e6; }
 
 #urlbar[focused],
 .searchbar-textbox[focused] {
-  box-shadow: inset 0 0 rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: #ffffff;
   border: 1px solid #5294E2; }
@@ -2601,7 +2599,7 @@ lwtHeader;*/
 #TabsToolbar:not(:-moz-lwtheme) {
   -moz-appearance: none;
   color: rgba(207, 218, 231, 0.8);
-  background: #2f343b; }
+  background: #2f343f; }
 
 #toolbar-menubar:not([autohide="true"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag),
 #TabsToolbar:not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {

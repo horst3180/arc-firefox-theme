@@ -6,9 +6,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 :root {
-  --toolbarbutton-hover-background: #3d414b;
+  --toolbarbutton-hover-background: #444a58;
   --toolbarbutton-hover-boxshadow: none;
-  --toolbarbutton-hover-bordercolor: #5294E2;
+  --toolbarbutton-hover-bordercolor: #2b2e39;
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: #5294E2;
   --toolbarbutton-active-background: #5294E2;
@@ -36,12 +36,12 @@
   -moz-box-ordinal-group: 101;
   /* tabs toolbar is 100 */
   height: 1px;
-  background-color: #2d3036; }
+  background-color: #2b2e39; }
 
 #navigator-toolbox > toolbar:not(:-moz-lwtheme):not(#toolbar-menubar):not(#TabsToolbar) {
   -moz-appearance: none;
   border-style: none;
-  background-color: #444852; }
+  background-color: #383C4A; }
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar) {
   padding-top: 1px;
@@ -58,7 +58,7 @@
   transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear; }
 
 #TabsToolbar:not([collapsed="true"]) + #nav-bar {
-  border-top: 1px solid rgba(29, 32, 36, 0.97) !important;
+  border-top: 1px solid rgba(38, 42, 51, 0.97) !important;
   background-clip: padding-box;
   margin-top: -1px;
   /* Move up into the TabsToolbar for the inner highlight at the top of the nav-bar */
@@ -67,11 +67,11 @@
   z-index: 1; }
 
 #main-window[htitlemode=always] #TabsToolbar {
-  box-shadow: inset 0 1px rgba(54, 60, 68, 0.97) !important; }
+  box-shadow: inset 0 1px rgba(54, 59, 72, 0.97) !important; }
 
 #nav-bar {
   background-image: none !important;
-  background-color: #444852 !important;
+  background-color: #383C4A !important;
   box-shadow: none;
   padding-top: 3px;
   padding-bottom: 3px; }
@@ -137,8 +137,8 @@ toolbarbutton.bookmark-item {
 toolbarbutton.bookmark-item:not([disabled=true]):hover {
   -moz-appearance: none;
   color: #D3DAE3;
-  background-color: #3d414b;
-  border: 1px solid #5294E2; }
+  background-color: #505666;
+  border: 1px solid #2b2e39; }
 
 toolbarbutton.bookmark-item:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
   -moz-appearance: none;
@@ -544,8 +544,8 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-icon {
   background-color: none;
   color: rgba(207, 218, 231, 0.8);
-  border-color: rgba(29, 32, 36, 0.97);
-  background-color: rgba(40, 44, 50, 0.87); }
+  border-color: rgba(21, 23, 28, 0.37);
+  background-color: rgba(95, 105, 127, 0.37); }
 
 .findbar-button:not([disabled=true]):-moz-any([checked="true"], :hover:active) > .toolbarbutton-text,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]) > .toolbarbutton-menubutton-button:not([disabled=true]):-moz-any(:hover:active, [open="true"]) > .toolbarbutton-icon,
@@ -1278,16 +1278,14 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
   padding: 3px;
   border-radius: 3px;
   margin: 0 3px;
-  box-shadow: inset 0 0 rgba(56, 60, 69, 0);
   color: #D3DAE3;
-  background-color: #383c45;
-  border: 1px solid #2d3036; }
+  background-color: #404552;
+  border: 1px solid #2b2e39; }
 
 #urlbar[focused],
 .searchbar-textbox[focused] {
-  box-shadow: inset 0 0 rgba(56, 60, 69, 0);
   color: #D3DAE3;
-  background-color: #383c45;
+  background-color: #404552;
   border: 1px solid #5294E2; }
 
 .searchbar-textbox {
@@ -1628,7 +1626,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   padding-right: 4px;
   border-width: 0 1px 0 0;
   border-style: solid;
-  border-color: #2d3036; }
+  border-color: #2b2e39; }
 
 #notification-popup-box:-moz-locale-dir(rtl),
 .notification-anchor-icon:-moz-locale-dir(rtl) {
@@ -2272,17 +2270,17 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 /* Findbar */
 .browserContainer > findbar {
-  background-color: #444852;
+  background-color: #383C4A;
   color: #D3DAE3;
   border-top: 1px solid;
-  -moz-border-top-colors: #2d3036;
+  -moz-border-top-colors: #2b2e39;
   text-shadow: none; }
 
 .browserContainer > findbar .findbar-textbox {
   -moz-appearance: none;
   color: #D3DAE3;
-  border: 1px solid #2d3036;
-  background-color: #383c45;
+  border: 1px solid #2b2e39;
+  background-color: #404552;
   box-shadow: none;
   margin: 0;
   padding: 5px;
@@ -2309,8 +2307,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .browserContainer > findbar .findbar-find-previous,
 .browserContainer > findbar .findbar-find-next {
-  background: #3d414b;
-  border: 1px solid #2d3036;
+  background: #444a58;
+  border: 1px solid #2b2e39;
   box-shadow: none; }
 
 .browserContainer > findbar .findbar-find-previous {
@@ -2601,7 +2599,7 @@ lwtHeader;*/
 #TabsToolbar:not(:-moz-lwtheme) {
   -moz-appearance: none;
   color: rgba(207, 218, 231, 0.8);
-  background: #2f343b; }
+  background: #2f343f; }
 
 #toolbar-menubar:not([autohide="true"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag),
 #TabsToolbar:not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
