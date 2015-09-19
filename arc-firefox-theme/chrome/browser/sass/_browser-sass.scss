@@ -23,7 +23,7 @@ $darker_asset_path_2: if($darker=='true', 'dark', $asset_path);
 :root {
   --toolbarbutton-hover-background: $button_bg;
   --toolbarbutton-hover-boxshadow: none;
-  --toolbarbutton-hover-bordercolor: $selected_bg_color;
+  --toolbarbutton-hover-bordercolor: $button_border;
 
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: $selected_bg_color;
@@ -83,7 +83,7 @@ $darker_asset_path_2: if($darker=='true', 'dark', $asset_path);
 }
 
 #TabsToolbar:not([collapsed="true"]) + #nav-bar {
-  border-top: 1px solid darken($header_border, 3%) !important;
+  border-top: 1px solid $header_border !important;
   background-clip: padding-box;
   margin-top: -1px; /* Move up into the TabsToolbar for the inner highlight at the top of the nav-bar */
   /* Position the toolbar above the bottom of background tabs */
@@ -2092,9 +2092,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   background-color: transparent;
   background-clip: padding-box;
   padding-left: 1px;
-  border-width: 0 8px 0 0;
+  padding-right: 4px;
+  border-width: 0 1px 0 0;
   border-style: solid;
-  border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 fill;
+  border-color: $borders_color;
+  //border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 fill;
   //-moz-margin-end: -8px;
 }
 
@@ -2299,7 +2301,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 /* HiDPI notification icons */
 @media (min-resolution: 1.1dppx) {
   #notification-popup-box {
-    border-image: url("chrome://browser/skin/urlbar-arrow@2x.png") 0 16 0 0 fill;
+    //border-image: url("chrome://browser/skin/urlbar-arrow@2x.png") 0 16 0 0 fill;
   }
 
   .notification-anchor-icon {

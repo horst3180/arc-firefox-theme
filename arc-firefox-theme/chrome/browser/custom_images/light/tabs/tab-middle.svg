@@ -12,7 +12,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="tabActiveMiddle.svg">
+   sodipodi:docname="tab-middle.svg">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -21,7 +21,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,7 +39,7 @@
      id="namedview16"
      showgrid="true"
      inkscape:zoom="21.532542"
-     inkscape:cx="16.353419"
+     inkscape:cx="8.110082"
      inkscape:cy="30.597364"
      inkscape:window-x="0"
      inkscape:window-y="23"
@@ -66,7 +66,7 @@
      rx="0.5" />
   <rect
      rx="1"
-     style="fill:none;fill-opacity:1;stroke:#cdd0d6;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="fill:none;fill-opacity:1;stroke:#d5d6dc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect3837-9"
      width="45"
      height="35"

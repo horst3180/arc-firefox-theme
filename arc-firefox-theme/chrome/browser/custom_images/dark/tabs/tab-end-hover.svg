@@ -39,8 +39,8 @@
      id="namedview16"
      showgrid="true"
      inkscape:zoom="10.766271"
-     inkscape:cx="-9.9304967"
-     inkscape:cy="10.808825"
+     inkscape:cx="3.3052838"
+     inkscape:cy="3.3782114"
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="1"
@@ -57,7 +57,7 @@
      id="defs4" />
   <g
      id="g4136"
-     style="opacity:0.5">
+     style="opacity:0.6">
     <rect
        rx="0.5"
        ry="0.5"
@@ -66,7 +66,7 @@
        height="34"
        width="44"
        id="rect3837"
-       style="fill:#444852;fill-opacity:1;stroke:#4080fb;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.84555981" />
+       style="fill:#383c4a;fill-opacity:1;stroke:#4080fb;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.84555981" />
     <rect
        ry="1"
        y="1.5"
@@ -74,16 +74,7 @@
        height="35"
        width="45"
        id="rect3837-9"
-       style="fill:none;fill-opacity:1;stroke:#1d2125;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#20242b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        rx="1" />
-    <rect
-       ry="1.3877788e-16"
-       rx="1.3877788e-16"
-       y="30"
-       x="16"
-       height="1"
-       width="1"
-       id="rect4135"
-       style="opacity:1;fill:#444852;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
 </svg>
