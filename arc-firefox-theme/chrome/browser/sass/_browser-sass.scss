@@ -26,7 +26,7 @@ $darker_asset_path_2: if($darker=='true', 'dark', $asset_path);
   --toolbarbutton-hover-bordercolor: $button_border;
 
   --toolbarbutton-active-boxshadow: none;
-  --toolbarbutton-active-bordercolor: $selected_bg_color;
+  --toolbarbutton-active-bordercolor: if($variant=='light', $selected_bg_color, $button_border);
   --toolbarbutton-active-background: $selected_bg_color;
 
   --toolbarbutton-checkedhover-backgroundcolor: $selected_bg_color;
@@ -672,6 +672,7 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-icon {
   background-color: none;
   @include button(header-hover);
+  background-clip: padding-box;
 }
 
 //:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
@@ -699,6 +700,7 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon {
   background: none;
   @include button(header-active);
+  background-clip: padding-box;
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[checked]:not(:active):hover > .toolbarbutton-icon {
@@ -2964,18 +2966,30 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   padding: 5px;
   width: 14em;
 
-  &[focused="true"] { border-color: $selected_bg_color; }
+  &[focused="true"] {
+    border-color: if($variant=='light', $selected_bg_color, $entry_border);
+
+    @if $variant=='dark' {
+      box-shadow: inset 0 1px $selected_bg_color,
+                  inset 0 -1px $selected_bg_color,
+                  inset 1px 0 $selected_bg_color,
+                  inset -1px 0 $selected_bg_color;
+    }
+    @if $variant=='light' { & + .findbar-find-previous { border-left-color: $selected_bg_color }}
+  }
 
   &[status="notfound"] {
     background-color: $error_color;
-    border-color: darken($error_color, 8%);
+    border-color: if($variant=='light', darken($error_color, 8%), $entry_border);
     color: $selected_fg_color;
+    box-shadow: none;
   }
 
   &[flash="true"] {
     background-color: $warning_color;
-    border-color: darken($warning_color, 8%);
+    border-color: if($variant=='light', darken($warning_color, 8%), $entry_border);
     color: $selected_fg_color;
+    box-shadow: none;
   }
 
   &:-moz-locale-dir(ltr) {
@@ -3007,14 +3021,16 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .browserContainer > findbar .findbar-find-previous:focus,
 .browserContainer > findbar .findbar-find-next:focus {
-  border-color: $selected_bg_color;
+  outline: 1px dashed transparentize($fg_color, 0.7);
+  outline-offset: -3px;
   box-shadow: none;
 }
 
 .browserContainer > findbar .findbar-find-previous:not([disabled]):active,
 .browserContainer > findbar .findbar-find-next:not([disabled]):active {
+  outline-color: transparentize($selected_fg_color, 0.7);
   background: $selected_bg_color;
-  border-color: $selected_bg_color;
+  border-color: if($variant=='light', $selected_bg_color, $button_border);
   box-shadow: none;
 }
 

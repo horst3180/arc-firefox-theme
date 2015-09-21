@@ -547,7 +547,8 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
   background-color: none;
   color: rgba(207, 218, 231, 0.8);
   border-color: rgba(21, 23, 28, 0.37);
-  background-color: rgba(95, 105, 127, 0.37); }
+  background-color: rgba(95, 105, 127, 0.37);
+  background-clip: padding-box; }
 
 .findbar-button:not([disabled=true]):-moz-any([checked="true"], :hover:active) > .toolbarbutton-text,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]) > .toolbarbutton-menubutton-button:not([disabled=true]):-moz-any(:hover:active, [open="true"]) > .toolbarbutton-icon,
@@ -567,8 +568,9 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open], [checked], :hover:active) > .toolbarbutton-icon {
   background: none;
   color: #ffffff;
-  border-color: #5294E2;
-  background-color: #5294E2; }
+  border-color: rgba(21, 23, 28, 0.37);
+  background-color: #5294E2;
+  background-clip: padding-box; }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[checked]:not(:active):hover > .toolbarbutton-icon {
   background-color: var(--toolbarbutton-checkedhover-backgroundcolor);
@@ -2224,14 +2226,18 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   width: 14em; }
   .browserContainer > findbar .findbar-textbox[focused="true"] {
     border-color: #5294E2; }
+    .browserContainer > findbar .findbar-textbox[focused="true"] + .findbar-find-previous {
+      border-left-color: #5294E2; }
   .browserContainer > findbar .findbar-textbox[status="notfound"] {
     background-color: #FC4138;
     border-color: #fb1b10;
-    color: #ffffff; }
+    color: #ffffff;
+    box-shadow: none; }
   .browserContainer > findbar .findbar-textbox[flash="true"] {
     background-color: #F27835;
     border-color: #ef5f0f;
-    color: #ffffff; }
+    color: #ffffff;
+    box-shadow: none; }
   .browserContainer > findbar .findbar-textbox:-moz-locale-dir(ltr) {
     border-radius: 3px 0 0 3px;
     border-right-width: 0; }
@@ -2253,11 +2259,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .browserContainer > findbar .findbar-find-previous:focus,
 .browserContainer > findbar .findbar-find-next:focus {
-  border-color: #5294E2;
+  outline: 1px dashed rgba(92, 97, 108, 0.3);
+  outline-offset: -3px;
   box-shadow: none; }
 
 .browserContainer > findbar .findbar-find-previous:not([disabled]):active,
 .browserContainer > findbar .findbar-find-next:not([disabled]):active {
+  outline-color: rgba(255, 255, 255, 0.3);
   background: #5294E2;
   border-color: #5294E2;
   box-shadow: none; }
