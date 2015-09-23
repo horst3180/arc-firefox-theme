@@ -2576,17 +2576,17 @@ lwtHeader;*/
 
 /* Tab close button */
 .close-icon {
-  background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close.svg"); }
+  background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close.svg") !important; }
   .close-icon:hover {
-    background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-hover.svg"); }
+    background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-hover.svg") !important; }
   .close-icon:active:hover {
-    background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-active.svg"); }
+    background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-active.svg") !important; }
   .tabbrowser-tab:not([selected="true"]) .close-icon {
-    background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-inactive.svg"); }
+    background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-inactive.svg") !important; }
     .tabbrowser-tab:not([selected="true"]) .close-icon:hover {
-      background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-hover.svg"); }
+      background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-hover.svg") !important; }
     .tabbrowser-tab:not([selected="true"]) .close-icon:active {
-      background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-active.svg"); }
+      background-image: url("chrome://browser/skin/custom_images/light/tabs/tab-close-active.svg") !important; }
 
 /* Tabstrip new tab button */
 .tabs-newtab-button,
