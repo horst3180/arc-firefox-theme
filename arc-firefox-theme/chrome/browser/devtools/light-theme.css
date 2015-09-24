@@ -28,7 +28,7 @@
 
   --theme-highlight-green: #2cbb0f;
   --theme-highlight-blue: #0088cc;
-  --theme-highlight-bluegrey: #5f88b0;
+  --theme-highlight-bluegrey: #0072ab;
   --theme-highlight-purple: #5b5fff;
   --theme-highlight-lightorange: #d97e00;
   --theme-highlight-orange: #f13c00;
@@ -951,73 +951,57 @@ div.CodeMirror span.eval-text {
   text-shadow: none;
 }
 
+.devtools-sidebar-tabs tabs > tab {
+  border-image: linear-gradient(transparent 15%, var(--theme-splitter-color) 15%, var(--theme-splitter-color) 85%, transparent 85%) 1 1;
+}
+
+.devtools-sidebar-tabs tabs > tab[selected],
+.devtools-sidebar-tabs tabs > tab[selected] + tab {
+  border-image: linear-gradient(var(--theme-splitter-color), var(--theme-splitter-color)) 1 1;
+}
+
 .devtools-sidebar-tabs tabs > tab:first-child {
   -moz-border-start-width: 0;
 }
 
-.theme-dark .devtools-sidebar-tabs tabs > tab {
-  border-image: linear-gradient(transparent 15%, #5a6169 15%, #5a6169 85%, transparent 85%) 1 1;
-}
-
 .theme-dark .devtools-sidebar-tabs tabs > tab:hover {
   background: hsla(206,37%,4%,.2);
-  border-image: linear-gradient(transparent 15%, #5a6169 15%, #5a6169 85%, transparent 85%) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab:hover:active {
   background: hsla(206,37%,4%,.4);
-  border-image: linear-gradient(transparent 15%, #5a6169 15%, #5a6169 85%, transparent 85%) 1 1;
-}
-
-.theme-dark .devtools-sidebar-tabs tabs > tab[selected] + tab {
-  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
   background: hsla(206,37%,4%,.2);
-  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected] + tab:hover:active {
   background: hsla(206,37%,4%,.4);
-  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected],
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected]:hover:active {
   color: var(--theme-selection-color);
   background: #1d4f73;
-  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
-}
-
-.theme-light .devtools-sidebar-tabs tabs > tab {
-  border-image: linear-gradient(transparent 15%, #aaa 15%, #aaa 85%, transparent 85%) 1 1;
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab:hover {
   background: #ddd;
-  border-image: linear-gradient(transparent 15%, #aaa 15%, #aaa 85%, transparent 85%) 1 1;
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab:hover:active {
   background: #ddd;
-  border-image: linear-gradient(transparent 15%, #aaa 15%, #aaa 85%, transparent 85%) 1 1;
-}
-
-.theme-light .devtools-sidebar-tabs tabs > tab[selected] + tab {
-  border-image: linear-gradient(#aaa, #aaa);
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
   background: #ddd;
-  border-image: linear-gradient(#aaa, #aaa);
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab[selected],
 .theme-light .devtools-sidebar-tabs tabs > tab[selected]:hover:active {
   color: var(--theme-selection-color);
   background: #4c9ed9;
-  border-image: linear-gradient(#aaa, #aaa);
 }
 
 /* Toolbox - moved from toolbox.css.
