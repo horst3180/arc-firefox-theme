@@ -648,6 +648,7 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
   border-image: url("chrome://browser/skin/custom_images/navbar-separator.png") 0 0 0 2 / 0 0 0 2px;
 }
 
+
 .findbar-button:not(:-moz-any([checked="true"],[disabled="true"])):hover > .toolbarbutton-text,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[open]:not([disabled=true]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
@@ -661,6 +662,12 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
   box-shadow: var(--toolbarbutton-hover-boxshadow);
 }
 
+//:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+//:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[open] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+//  margin-top: 4px;
+//  margin-bottom: 4px;
+//}
+
 #TabsToolbar .toolbarbutton-1[open]:not([disabled=true]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
@@ -670,12 +677,6 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
   @include button(header-hover);
   background-clip: padding-box;
 }
-
-//:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
-//:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[open] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-//  margin-top: 4px;
-//  margin-bottom: 4px;
-//}
 
 .findbar-button:not([disabled=true]):-moz-any([checked="true"],:hover:active) > .toolbarbutton-text,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]) > .toolbarbutton-menubutton-button:not([disabled=true]):-moz-any(:hover:active, [open="true"]) > .toolbarbutton-icon,
@@ -749,30 +750,41 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 }
 
 //#back-button > .toolbarbutton-icon {
-//  border-radius: 2px;
+//  border-radius: 10000px;
 //  background-clip: padding-box;
-//  padding: 3px 7px;
+//  padding: 6px;
 //  border: none;
-//  box-shadow: none;
-//  background: none !important;
+//  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
+//              0 0 0 1px hsla(0,0%,100%,.3) inset,
+//              0 0 0 1px hsla(210,54%,20%,.25),
+//              0 1px 0 hsla(210,54%,20%,.35);
+//  background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
 //  transition-property: background-color, box-shadow;
 //  transition-duration: 250ms;
 //}
 
 //#back-button:not([disabled="true"]):not([open="true"]):not(:active):hover > .toolbarbutton-icon {
-//  background-color: transparent;
-//  box-shadow: none;
+//  background-color: hsla(210,48%,96%,.75);
+//  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
+//              0 0 0 1px hsla(0,0%,100%,.3) inset,
+//              0 0 0 1px hsla(210,54%,20%,.3),
+//              0 1px 0 hsla(210,54%,20%,.4),
+//              0 0 4px hsla(210,54%,20%,.2);
 //}
 
 //#back-button:not([disabled="true"]):hover:active > .toolbarbutton-icon,
 //#back-button[open="true"] > .toolbarbutton-icon {
-//  background-color: red;
-//  box-shadow: none;
+//  background-color: hsla(210,54%,20%,.15);
+//  box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset,
+//              0 0 1px hsla(210,54%,20%,.2) inset,
+//              0 0 0 1px hsla(210,54%,20%,.4),
+//              0 1px 0 hsla(210,54%,20%,.2);
 //  transition: none;
 //}
 
 //#main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon {
-//  box-shadow: none !important;
+//  box-shadow: 0 0 0 1px hsla(210,54%,20%,.55),
+//              0 1px 0 hsla(210,54%,20%,.65) !important;
 //  transition: none;
 //}
 
@@ -781,26 +793,27 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 }
 
 #forward-button {
+//  -moz-box-align: stretch; /* let the button shape grow vertically with the location bar */
+  padding: 0;
   margin-left: 2px;
   margin-right: 2px;
-  //-moz-box-align: stretch;
-  padding: 0;
 }
 
-#forward-button > .toolbarbutton-icon {
+//#forward-button > .toolbarbutton-icon {
 //  background-clip: padding-box;
-//  padding: 3px 7px;
-//  border: 1px solid transparent;
+//  padding-left: 9px;
+//  padding-right: 3px;
+//  border: 1px solid #9a9a9a;
 //  border-left-style: none;
 //  border-radius: 0;
-}
+//}
 
 //window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not([switchingtabs]) > #forward-button {
 //  transition: margin-left 150ms ease-out;
 //}
 
 //window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled] {
-//  margin-left: 5px;
+//  margin-left: -30px;
 //}
 
 //window:not([chromehidden~="toolbar"]) #urlbar-wrapper:hover:not([switchingtabs]) > #forward-button[disabled] {
@@ -810,7 +823,7 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 
 //window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-button[disabled] {
 //  /* when not hovered anymore, trigger a new transition to hide the forward button immediately */
-//  margin-left: 10px;
+//  margin-left: -30.01px;
 //}
 
 /* tabview menu item */
@@ -1737,7 +1750,7 @@ toolbar[brighttext] #loop-button {
 
 //window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
 //  clip-path: url("chrome://browser/content/browser.xul#urlbar-back-button-clip-path");
-//  -moz-margin-start: -5px;
+//  margin-inline-start: calc(-1 * var(--backbutton-urlbar-overlap));
 //}
 
 //window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl),
@@ -1926,7 +1939,7 @@ toolbar[brighttext] #loop-button {
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
-  padding-inline-start: 10px;
+  padding-inline-start: 5px;
   border-radius: 0;
 }
 
@@ -2836,10 +2849,10 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-box-align: center;
 }
 
-#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-  //margin-top: 3px;
-  //margin-bottom: 3px;
-}
+//#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+//  margin-top: 3px;
+//  margin-bottom: 3px;
+//}
 
 #bookmarks-menu-button[disabled][cui-areatype="toolbar"] > .toolbarbutton-icon,
 #bookmarks-menu-button[disabled][cui-areatype="toolbar"] > .toolbarbutton-menu-dropmarker,
@@ -2918,7 +2931,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 #sidebar {
   background-color: Window;
 }
-
 
 /* Findbar */
 .browserContainer > findbar {
@@ -3013,6 +3025,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 :root {
   --tab-toolbar-navbar-overlap: 1px;
+  --navbar-tab-toolbar-highlight-overlap: 1px;
   --tab-min-height: 31px;
 }
 #TabsToolbar {
@@ -3101,9 +3114,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-icon-overlay {
   width: 16px;
   height: 16px;
-  margin-top: 10px;
+  margin-top: -12px;
   -moz-margin-start: -16px;
-  display: none;
+  position: relative;
 }
 
 .tab-icon-overlay[crashed] {
@@ -3121,20 +3134,28 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tab-icon-overlay[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio-small.svg#tab-audio");
 }
 
 .tab-icon-overlay[muted]:not([crashed]) {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio-small.svg#tab-audio-muted");
 }
 
-#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying]:not(:hover) {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white");
+.tabbrowser-tab[visuallyselected=true] .tab-icon-overlay[soundplaying] {
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio-small.svg#tab-audio");
 }
 
-#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not(:hover) {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white-muted");
+.tabbrowser-tab[visuallyselected=true] .tab-icon-overlay[muted]:not([crashed]) {
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio-small.svg#tab-audio-muted");
 }
+
+//#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying]:not(:hover) {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white");
+//}
+
+//#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not(:hover) {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white-muted");
+//}
 
 .tab-throbber[busy] {
   list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
@@ -3163,76 +3184,76 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tab-icon-sound[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio.svg#tab-audio-backgroundTab");
 }
 
 .tab-icon-sound[soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio.svg#tab-audio-backgroundTab-hover");
 }
 
 .tab-icon-sound[soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio.svg#tab-audio-backgroundTab-pressed");
 }
 
 .tab-icon-sound[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio.svg#tab-audio-backgroundTab-muted");
 }
 
 .tab-icon-sound[muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio.svg#tab-audio-backgroundTab-muted-hover");
 }
 
 .tab-icon-sound[muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-audio.svg#tab-audio-backgroundTab-muted-pressed");
 }
 
 .tab-icon-sound[visuallyselected=true][soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio.svg#tab-audio");
 }
 
 .tab-icon-sound[visuallyselected=true][soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-hover");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio.svg#tab-audio-hover");
 }
 
 .tab-icon-sound[visuallyselected=true][soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-pressed");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio.svg#tab-audio-pressed");
 }
 
 .tab-icon-sound[visuallyselected=true][muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio.svg#tab-audio-muted");
 }
 
 .tab-icon-sound[visuallyselected=true][muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-hover");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio.svg#tab-audio-muted-hover");
 }
 
 .tab-icon-sound[visuallyselected=true][muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-pressed");
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/tabs/tab-audio.svg#tab-audio-muted-pressed");
 }
 
-#TabsToolbar[brighttext] .tab-icon-sound[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white");
-}
+//#TabsToolbar[brighttext] .tab-icon-sound[soundplaying] {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white");
+//}
 
-#TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-hover");
-}
+//#TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-hover");
+//}
 
-#TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-pressed");
-}
+//#TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover:active {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-pressed");
+//}
 
-#TabsToolbar[brighttext] .tab-icon-sound[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white");
-}
+//#TabsToolbar[brighttext] .tab-icon-sound[muted] {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white");
+//}
 
-#TabsToolbar[brighttext] .tab-icon-sound[muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-hover");
-}
+//#TabsToolbar[brighttext] .tab-icon-sound[muted]:hover {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-hover");
+//}
 
-#TabsToolbar[brighttext] .tab-icon-sound[muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-pressed");
-}
+//#TabsToolbar[brighttext] .tab-icon-sound[muted]:hover:active {
+//  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-pressed");
+//}
 
 .tab-background,
 .tabs-newtab-button {
@@ -3252,7 +3273,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   background-image: url(chrome://browser/skin/custom_images/#{$darker_asset_path_2}/tabs/tab-overflow-indicator.png);
   background-size: 100% 100%;
   width: 14px;
-  margin-bottom: var(--tab-toolbar-navbar-overlap);
+  margin-bottom: var(--navbar-tab-toolbar-highlight-overlap);
   pointer-events: none;
   position: relative;
   z-index: 3; /* the selected tab's z-index + 1 */
@@ -3404,10 +3425,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* new tab button border and gradient on hover */
 .tabbrowser-tab:hover > .tab-stack > .tab-background:not([visuallyselected=true]),
 .tabs-newtab-button:hover {
-  background-image:
-    url(chrome://browser/skin/custom_images/#{$darker_asset_path}/tabs/tab-start-hover.svg),
-    url(chrome://browser/skin/custom_images/#{$darker_asset_path}/tabs/tab-middle-hover.svg),
-    url(chrome://browser/skin/custom_images/#{$darker_asset_path}/tabs/tab-end-hover.svg);
+  background-image: url(chrome://browser/skin/custom_images/#{$darker_asset_path}/tabs/tab-start-hover.svg),
+                    url(chrome://browser/skin/custom_images/#{$darker_asset_path}/tabs/tab-middle-hover.svg),
+                    url(chrome://browser/skin/custom_images/#{$darker_asset_path}/tabs/tab-end-hover.svg);
   background-position: left bottom, 30px bottom, right bottom;
   background-repeat: no-repeat;
   background-size: 30px 100%, calc(100% - (2 * 30px)) 100%, 30px 100%;
@@ -3442,27 +3462,30 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   background-size: 85% 100%;
 }
 
-///* Background tab separators (3px wide).
-//   Also show separators beside the selected tab when dragging it. */
+/* Tab separators */
+
+//.tabbrowser-tab::after,
+//.tabbrowser-tab::before {
+//  width: 1px;
+//  -moz-margin-start: -1px;
+//  background-image: linear-gradient(transparent 5px,
+//                                    currentColor 5px,
+//                                    currentColor calc(100% - 4px),
+//                                    transparent calc(100% - 4px));
+//  opacity: 0.2;
+//}
+
+//#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::before,
+//#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::after {
+//  opacity: 0.4;
+//}
+
+/* Also show separators beside the selected tab when dragging it. */
 //#tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
 //.tabbrowser-tab:not([visuallyselected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
 //#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not([beforehovered]):not(:hover)::after {
-//  -moz-margin-start: -1.5px;
-//  -moz-margin-end: -1.5px;
-//  background-image: var(--tab-separator-image);
-//  background-position: left bottom var(--tab-toolbar-navbar-overlap);
-//  background-repeat: no-repeat;
-//  background-size: var(--tab-separator-size);
-//  opacity: var(--tab-separator-opacity);
 //  content: "";
 //  display: -moz-box;
-//  width: 3px;
-//}
-
-//#TabsToolbar[brighttext] {
-//  --tab-separator-image: linear-gradient(transparent 0%, transparent 15%, currentColor 15%, currentColor 90%, transparent 90%);
-//  --tab-separator-size: 1px 100%;
-//  --tab-separator-opacity: 0.4;
 //}
 
 /* New tab button */
@@ -3604,7 +3627,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #TabsToolbar .toolbarbutton-1 {
-  margin-bottom: var(--tab-toolbar-navbar-overlap);
+  margin-bottom: var(--navbar-tab-toolbar-highlight-overlap);
 }
 
 #alltabs-button {

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="tab-audio.svg">
+  <metadata
+     id="metadata52">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs50" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview48"
+     showgrid="false"
+     inkscape:zoom="12.46875"
+     inkscape:cx="1.0438795"
+     inkscape:cy="0.63847986"
+     inkscape:current-layer="svg2" />
+  <style
+     id="style4">
+    .icon:not(:target) {
+      display: none;
+    }
+
+    .icon {
+      fill: #333;
+      opacity: .75;
+    }
+    .icon.hover {
+      fill: #1a1a1a;
+      opacity: .85;
+    }
+    .icon.pressed {
+      fill: #0d0d0d;
+      opacity: .95;
+    }
+
+    .icon.white {
+      fill: #fff;
+    }
+    .icon.white.hover {
+      opacity: .9;
+    }
+    .icon.white.pressed {
+      opacity: 1;
+    }
+    .icon.white &gt; .outline {
+      fill: #000;
+      fill-opacity: .5;
+    }
+
+    .icon.backgroundTab,
+    .icon.backgroundTab.hover,
+    .icon.backgroundTab.pressed {
+      fill: -moz-MenuBarText;
+    }
+  </style>
+  <path
+     id="tab-audio"
+     class="icon"
+     d="M4,5C2.9,5,2,5.9,2,7v2c0,1.1,0.9,2,2,2h1.2L9,14V2L5.2,5H4z M11,8c0-0.6-0.4-1-1-1v2C10.6,9,11,8.6,11,8z M13,8 c0-1.4-1-2.6-2.3-2.9L10.4,6C11.3,6.2,12,7,12,8s-0.7,1.8-1.6,2l0.4,0.9C12,10.6,13,9.4,13,8z M11.4,3.2l-0.4,0.9 C12.8,4.6,14,6.2,14,8s-1.2,3.4-2.9,3.8l0.4,0.9C13.5,12.2,15,10.3,15,8S13.5,3.8,11.4,3.2z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-hover"
+     class="icon hover"
+     d="M4,5C2.9,5,2,5.9,2,7v2c0,1.1,0.9,2,2,2h1.2L9,14V2L5.2,5H4z M11,8c0-0.6-0.4-1-1-1v2C10.6,9,11,8.6,11,8z M13,8 c0-1.4-1-2.6-2.3-2.9L10.4,6C11.3,6.2,12,7,12,8s-0.7,1.8-1.6,2l0.4,0.9C12,10.6,13,9.4,13,8z M11.4,3.2l-0.4,0.9 C12.8,4.6,14,6.2,14,8s-1.2,3.4-2.9,3.8l0.4,0.9C13.5,12.2,15,10.3,15,8S13.5,3.8,11.4,3.2z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-pressed"
+     class="icon pressed"
+     d="M4,5C2.9,5,2,5.9,2,7v2c0,1.1,0.9,2,2,2h1.2L9,14V2L5.2,5H4z M11,8c0-0.6-0.4-1-1-1v2C10.6,9,11,8.6,11,8z M13,8 c0-1.4-1-2.6-2.3-2.9L10.4,6C11.3,6.2,12,7,12,8s-0.7,1.8-1.6,2l0.4,0.9C12,10.6,13,9.4,13,8z M11.4,3.2l-0.4,0.9 C12.8,4.6,14,6.2,14,8s-1.2,3.4-2.9,3.8l0.4,0.9C13.5,12.2,15,10.3,15,8S13.5,3.8,11.4,3.2z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-muted"
+     class="icon"
+     d="M12.5,3.4L9,6.3V2L5.2,5H4C2.9,5,2,5.9,2,7v2c0,0.9,0.6,1.6,1.4,1.9l-1.9,1.5l1,1.2l11-9L12.5,3.4z M9,14v-4l-2.5,2L9,14z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-muted-hover"
+     class="icon hover"
+     d="M12.5,3.4L9,6.3V2L5.2,5H4C2.9,5,2,5.9,2,7v2c0,0.9,0.6,1.6,1.4,1.9l-1.9,1.5l1,1.2l11-9L12.5,3.4z M9,14v-4l-2.5,2L9,14z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-muted-pressed"
+     class="icon pressed"
+     d="M12.5,3.4L9,6.3V2L5.2,5H4C2.9,5,2,5.9,2,7v2c0,0.9,0.6,1.6,1.4,1.9l-1.9,1.5l1,1.2l11-9L12.5,3.4z M9,14v-4l-2.5,2L9,14z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-backgroundTab"
+     class="icon backgroundTab"
+     d="M4,5C2.9,5,2,5.9,2,7v2c0,1.1,0.9,2,2,2h1.2L9,14V2L5.2,5H4z M11,8c0-0.6-0.4-1-1-1v2C10.6,9,11,8.6,11,8z M13,8 c0-1.4-1-2.6-2.3-2.9L10.4,6C11.3,6.2,12,7,12,8s-0.7,1.8-1.6,2l0.4,0.9C12,10.6,13,9.4,13,8z M11.4,3.2l-0.4,0.9 C12.8,4.6,14,6.2,14,8s-1.2,3.4-2.9,3.8l0.4,0.9C13.5,12.2,15,10.3,15,8S13.5,3.8,11.4,3.2z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-backgroundTab-hover"
+     class="icon backgroundTab hover"
+     d="M4,5C2.9,5,2,5.9,2,7v2c0,1.1,0.9,2,2,2h1.2L9,14V2L5.2,5H4z M11,8c0-0.6-0.4-1-1-1v2C10.6,9,11,8.6,11,8z M13,8 c0-1.4-1-2.6-2.3-2.9L10.4,6C11.3,6.2,12,7,12,8s-0.7,1.8-1.6,2l0.4,0.9C12,10.6,13,9.4,13,8z M11.4,3.2l-0.4,0.9 C12.8,4.6,14,6.2,14,8s-1.2,3.4-2.9,3.8l0.4,0.9C13.5,12.2,15,10.3,15,8S13.5,3.8,11.4,3.2z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-backgroundTab-pressed"
+     class="icon backgroundTab pressed"
+     d="M4,5C2.9,5,2,5.9,2,7v2c0,1.1,0.9,2,2,2h1.2L9,14V2L5.2,5H4z M11,8c0-0.6-0.4-1-1-1v2C10.6,9,11,8.6,11,8z M13,8 c0-1.4-1-2.6-2.3-2.9L10.4,6C11.3,6.2,12,7,12,8s-0.7,1.8-1.6,2l0.4,0.9C12,10.6,13,9.4,13,8z M11.4,3.2l-0.4,0.9 C12.8,4.6,14,6.2,14,8s-1.2,3.4-2.9,3.8l0.4,0.9C13.5,12.2,15,10.3,15,8S13.5,3.8,11.4,3.2z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-backgroundTab-muted"
+     class="icon backgroundTab"
+     d="M12.5,3.4L9,6.3V2L5.2,5H4C2.9,5,2,5.9,2,7v2c0,0.9,0.6,1.6,1.4,1.9l-1.9,1.5l1,1.2l11-9L12.5,3.4z M9,14v-4l-2.5,2L9,14z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-backgroundTab-muted-hover"
+     class="icon backgroundTab hover"
+     d="M12.5,3.4L9,6.3V2L5.2,5H4C2.9,5,2,5.9,2,7v2c0,0.9,0.6,1.6,1.4,1.9l-1.9,1.5l1,1.2l11-9L12.5,3.4z M9,14v-4l-2.5,2L9,14z"
+     style="fill:#5c616c;fill-opacity:1" />
+  <path
+     id="tab-audio-backgroundTab-muted-pressed"
+     class="icon backgroundTab pressed"
+     d="M12.5,3.4L9,6.3V2L5.2,5H4C2.9,5,2,5.9,2,7v2c0,0.9,0.6,1.6,1.4,1.9l-1.9,1.5l1,1.2l11-9L12.5,3.4z M9,14v-4l-2.5,2L9,14z"
+     style="fill:#5c616c;fill-opacity:1" />
+</svg>
