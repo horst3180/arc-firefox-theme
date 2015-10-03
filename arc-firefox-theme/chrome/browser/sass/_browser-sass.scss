@@ -1699,7 +1699,7 @@ toolbar[brighttext] #loop-button {
 #urlbar,
 .searchbar-textbox {
   -moz-appearance: none;
-  padding: 3px;
+  padding: 2px 3px;
   border-radius: 3px;
   margin: 0 3px;
   @include entry(normal);
@@ -3627,7 +3627,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #TabsToolbar .toolbarbutton-1 {
-  margin-bottom: var(--navbar-tab-toolbar-highlight-overlap);
+  margin-bottom: var(--tab-toolbar-navbar-overlap);
 }
 
 #alltabs-button {

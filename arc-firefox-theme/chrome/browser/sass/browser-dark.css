@@ -1282,7 +1282,7 @@ toolbar[brighttext] #loop-button {
 #urlbar,
 .searchbar-textbox {
   -moz-appearance: none;
-  padding: 3px;
+  padding: 2px 3px;
   border-radius: 3px;
   margin: 0 3px;
   color: #D3DAE3;
@@ -2684,7 +2684,7 @@ lwtHeader;*/
   transition: none; }
 
 #TabsToolbar .toolbarbutton-1 {
-  margin-bottom: var(--navbar-tab-toolbar-highlight-overlap); }
+  margin-bottom: var(--tab-toolbar-navbar-overlap); }
 
 #alltabs-button {
   list-style-image: url("chrome://browser/skin/custom_images/dark/tabs/alltabs.svg"); }
