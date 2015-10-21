@@ -1,4 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
@@ -7,6 +11,7 @@
 
 .notice-container {
   margin-top: -50vh;
+  font-size: 120%;
   background-color: var(--theme-toolbar-background);
   color: var(--theme-body-color-alt);
 }
@@ -22,8 +27,14 @@
   display: none;
 }
 
-#waiting-notice {
-  font-size: 110%;
+.theme-dark #import-notice {
+  font-size: 250%;
+  color: rgba(255,255,255,0.2);
+}
+
+.theme-light #import-notice {
+  font-size: 250%;
+  color: rgba(0,0,0,0.2);
 }
 
 /* Snapshots pane */
@@ -138,7 +149,7 @@
   list-style-image: url(debugger-step-out.png);
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   #resume {
     list-style-image: url(debugger-play@2x.png);
     -moz-image-region: rect(0px,64px,32px,32px);
@@ -243,7 +254,7 @@
   background-size: 12px;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .selected .call-item-gutter {
     background-image: url("editor-debug-location@2x.png");
   }

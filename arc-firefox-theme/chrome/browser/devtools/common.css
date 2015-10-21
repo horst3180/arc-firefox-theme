@@ -1,17 +1,11 @@
 
 :root {
   font: message-box;
-  --monospace-font-family: monospace;
 }
 
 .devtools-monospace {
-  font-family: var(--monospace-font-family);
+  font-family: monospace;
   font-size: 80%;
-}
-
-/* Bottom-docked toolbox minimize transition */
-.devtools-toolbox-bottom-iframe {
-  transition: margin-bottom .1s;
 }
 
 /* Splitters */
@@ -38,11 +32,6 @@
   -moz-margin-start: -3px;
   position: relative;
   cursor: e-resize;
-}
-
-.devtools-horizontal-splitter.disabled,
-.devtools-side-splitter.disabled {
-  pointer-events: none;
 }
 
 .devtools-toolbox-side-iframe {
@@ -240,35 +229,4 @@
   height: 120px;
   background-color: transparent;
   border: none;
-}
-
-/* links to source code, like displaying `myfile.js:45` */
-
-.devtools-source-link {
-  font-family: var(--monospace-font-family);
-  color: var(--theme-highlight-blue);
-  cursor: pointer;
-  white-space: nowrap;
-  display: flex;
-  text-decoration: none;
-  font-size: 11px;
-  width: 12em; /* probably should be changed for each tool */
-}
-
-.devtools-source-link:hover {
-  text-decoration: underline;
-}
-
-.devtools-source-link > .filename {
-  text-overflow: ellipsis;
-  text-align: end;
-  overflow: hidden;
-  margin: 2px 0px;
-  cursor: pointer;
-}
-
-.devtools-source-link > .line-number {
-  flex: none;
-  margin: 2px 0px;
-  cursor: pointer;
 }

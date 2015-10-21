@@ -27,11 +27,10 @@ a {
   box-sizing: border-box;
 }
 
-.message > .prefix,
 .message > .timestamp {
   flex: none;
   color: GrayText;
-  margin: 3px 6px 0 0;
+  margin: 4px 6px 0 0;
 }
 
 .message > .indent {
@@ -48,17 +47,19 @@ a {
 
 .message > .icon::before {
   content: "";
-  background-image: url(chrome://browser/skin/devtools/webconsole.svg);
-  background-position: 12px 12px;
+  background-image: url(chrome://browser/skin/devtools/webconsole.png);
+  background-position: 8px 8px;
   background-repeat: no-repeat;
-  background-size: 72px 60px;
-  width: 12px;
-  height: 12px;
+  background-size: 48px 40px;
+  width: 8px;
+  height: 8px;
   display: inline-block;
 }
 
-.theme-light .message > .icon::before {
-  background-image: url(chrome://browser/skin/devtools/webconsole.svg#light-icons);
+@media (min-resolution: 2dppx) {
+  .message > .icon::before {
+    background-image: url(chrome://browser/skin/devtools/webconsole@2x.png);
+  }
 }
 
 .message > .message-body-wrapper {
@@ -230,7 +231,7 @@ a {
 }
 
 .message[category=network][severity=error] > .icon::before {
-  background-position: -12px 0;
+  background-position: -8px 0;
 }
 
 .message[category=network] > .message-body {
@@ -287,11 +288,11 @@ a {
 }
 
 .message[category=cssparser][severity=error] > .icon::before {
-  background-position: -12px -12px;
+  background-position: -8px -8px;
 }
 
 .message[category=cssparser][severity=warn] > .icon::before {
-  background-position: -24px -12px;
+  background-position: -16px -8px;
 }
 
 /* JS styles */
@@ -305,11 +306,11 @@ a {
 }
 
 .message[category=exception][severity=error] > .icon::before {
-  background-position: -12px -24px;
+  background-position: -8px -16px;
 }
 
 .message[category=exception][severity=warn] > .icon::before {
-  background-position: -24px -24px;
+  background-position: -16px -16px;
 }
 
 /* Web Developer styles */
@@ -324,15 +325,15 @@ a {
 
 .message[category=console][severity=error] > .icon::before,
 .message[category=output][severity=error] > .icon::before {
-  background-position: -12px -36px;
+  background-position: -8px -24px;
 }
 
 .message[category=console][severity=warn] > .icon::before {
-  background-position: -24px -36px;
+  background-position: -16px -24px;
 }
 
 .message[category=console][severity=info] > .icon::before {
-  background-position: -36px -36px;
+  background-position: -24px -24px;
 }
 
 /* Input and output styles */
@@ -342,11 +343,11 @@ a {
 }
 
 .message[category=input] > .icon::before {
-  background-position: -48px -36px;
+  background-position: -32px -24px;
 }
 
 .message[category=output] > .icon::before {
-  background-position: -60px -36px;
+  background-position: -40px -24px;
 }
 
 /* JSTerm Styles */
@@ -364,7 +365,7 @@ a {
   background-size: 16px 16px;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .jsterm-input-node {
     background-image: -moz-image-rect(url('chrome://browser/skin/devtools/commandline-icon@2x.png'), 0, 64, 32, 32);
   }
@@ -378,9 +379,6 @@ a {
 .inlined-variables-view .message-body {
   display: flex;
   flex-direction: column;
-  resize: vertical;
-  overflow: auto;
-  min-height: 200px;
 }
 .inlined-variables-view iframe {
   display: block;
@@ -413,11 +411,11 @@ a {
 }
 
 .message[category=security][severity=error] > .icon::before {
-  background-position: -12px -48px;
+  background-position: -8px -32px;
 }
 
 .message[category=security][severity=warn] > .icon::before {
-  background-position: -24px -48px;
+  background-position: -16px -32px;
 }
 
 .navigation-marker {

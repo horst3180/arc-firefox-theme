@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0"
+     y="0"
+     width="21"
+     height="21"
+     viewBox="0 0 21 21">
   <style>
     use:not(:target) {
       display: none;
@@ -19,7 +22,7 @@
       fill: -moz-dialogText;
     }
   </style>
-  <defs>
+  <defs style="display: none;">
     <rect id="check-shape" x="3" y="9" width="15" height="3"/>
   </defs>
   <use id="check-partial" xlink:href="#check-shape"/>

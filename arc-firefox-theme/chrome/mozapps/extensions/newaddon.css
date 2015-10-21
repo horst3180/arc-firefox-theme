@@ -2,10 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://global/skin/in-content/common.css");
+@import url("chrome://global/skin/inContentUI.css");
 
 #addon-page {
-  font-size: 1.1em;
+  padding: 0;
 }
 
 #addon-scrollbox {
@@ -24,7 +24,7 @@
 
 #addon-container {
   overflow: visible;
-  max-width: 800px;
+  max-width: 600px;
   margin: 20px;
   padding: 30px 90px;
 }
@@ -35,7 +35,6 @@
 }
 
 #icon {
-  margin-top: 8px;
   -moz-margin-end: 10px;
   max-width: 64px;
   max-height: 64px;
@@ -79,7 +78,6 @@
   list-style-image: url("chrome://mozapps/skin/extensions/alerticon-warning.png");
   width: 16px;
   height: 15px;
-  margin-top: 5px;
   -moz-margin-end: 5px;
 }
 
@@ -92,7 +90,7 @@
 #restartPanel {
   margin-top: 25px;
   -moz-box-pack: end;
-  -moz-box-align: center;
+  -moz-box-align: end;
 }
 
 #continuePanel {

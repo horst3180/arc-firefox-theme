@@ -3,9 +3,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* Colors are taken from:
- * https://developer.mozilla.org/en-US/docs/Tools/DevToolsColors.
- * Changes should be kept in sync with commandline.css and commandline.inc.css.
+/* According to:
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=715472#c17
  */
 :root {
   --theme-body-background: #14171a;
@@ -15,33 +14,25 @@
   --theme-tab-toolbar-background: #252c33;
   --theme-toolbar-background: #343c45;
   --theme-selection-background: #1d4f73;
-  --theme-selection-background-semitransparent: rgba(29, 79, 115, .5);
   --theme-selection-color: #f5f7fa;
+  --theme-selection-background-semitransparent: rgba(29, 79, 115, .5);
   --theme-splitter-color: black;
-  --theme-comment: #757873;
+  --theme-comment: #5c6773;
 
-  --theme-body-color: #8fa1b2;
+  --theme-body-color: #a9bacb;
   --theme-body-color-alt: #b6babf;
   --theme-content-color1: #a9bacb;
   --theme-content-color2: #8fa1b2;
-  --theme-content-color3: #5f7387;
+  --theme-content-color3: #667380;
 
-  --theme-highlight-green: #70bf53;
-  --theme-highlight-blue: #46afe3;
+  --theme-highlight-green: #5c9966;
+  --theme-highlight-blue: #3689b2;
   --theme-highlight-bluegrey: #5e88b0;
-  --theme-highlight-purple: #6b7abb;
-  --theme-highlight-lightorange: #d99b28;
-  --theme-highlight-orange: #d96629;
-  --theme-highlight-red: #eb5368;
-  --theme-highlight-pink: #df80ff;
-
-  /* Colors used in Graphs, like performance tools. Mostly similar to some "highlight-*" colors. */
-  --theme-graphs-green: #70bf53;
-  --theme-graphs-blue: #46afe3;
-  --theme-graphs-purple: #df80ff;
-  --theme-graphs-yellow: #d99b28;
-  --theme-graphs-red: #eb5368;
-  --theme-graphs-grey: #757873;
+  --theme-highlight-purple: #6270b2;
+  --theme-highlight-lightorange: #a18650;
+  --theme-highlight-orange: #b26b47;
+  --theme-highlight-red: #bf5656;
+  --theme-highlight-pink: #a673bf;
 }
 
 .theme-body {
@@ -138,7 +129,7 @@
 
 .cm-s-mozilla .cm-unused-line {
   text-decoration: line-through;
-  text-decoration-color: #0072ab;
+  text-decoration-color: #5f88b0;
 }
 
 .cm-s-mozilla .cm-executed-line {
@@ -212,8 +203,9 @@
   color: black;
 }
 
-.ruleview-swatch,
-.computedview-colorswatch {
+.ruleview-colorswatch,
+.computedview-colorswatch,
+.ruleview-bezierswatch {
   box-shadow: 0 0 0 1px #818181;
 }
 
@@ -334,7 +326,7 @@ div.CodeMirror span.eval-text {
   background-position: -42px 0;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .theme-twisty, .theme-checkbox {
     background-image: url("chrome://browser/skin/devtools/controls@2x.png");
   }
@@ -372,7 +364,7 @@ div.CodeMirror span.eval-text {
   margin-left: -4px;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .theme-tooltip-panel .panel-arrow[side="top"],
   .theme-tooltip-panel .panel-arrow[side="bottom"] {
     list-style-image: url("chrome://browser/skin/devtools/tooltip/arrow-vertical-dark@2x.png");
@@ -412,24 +404,10 @@ div.CodeMirror span.eval-text {
 
 
 
-/* CSS Variables specific to the devtools toolbar that aren't defined by the themes */
-.theme-light {
-  --searchbox-background-color: #ffee99;
-  --searchbox-border-color: #ffbf00;
-  --searcbox-no-match-background-color: #ffe5e5;
-  --searcbox-no-match-border-color: #e52e2e;
-}
-
-.theme-dark {
-  --searchbox-background-color: #4d4222;
-  --searchbox-border-color: #d99f2b;
-  --searcbox-no-match-background-color: #402325;
-  --searcbox-no-match-border-color: #cc3d3d;
-}
-
 /* Toolbars */
 .devtools-toolbar,
-.devtools-sidebar-tabs tabs {
+.devtools-sidebar-tabs tabs,
+.devtools-sidebar-alltabs {
   -moz-appearance: none;
   padding: 0;
   border-width: 0;
@@ -447,12 +425,10 @@ div.CodeMirror span.eval-text {
 .devtools-toolbar checkbox {
   margin: 0 2px;
   padding: 0;
-  line-height: -moz-block-height;
 }
 .devtools-toolbar checkbox .checkbox-check {
   margin: 0;
   padding: 0;
-  vertical-align: bottom;
 }
 .devtools-toolbar checkbox .checkbox-label-box {
   border: none !important; /* overrides .checkbox-label-box from checkbox.css */
@@ -669,7 +645,6 @@ div.CodeMirror span.eval-text {
 .devtools-button {
   border: 0 solid var(--theme-splitter-color);
   background: var(--theme-toolbar-background);
-  color: var(--theme-body-color);
   margin: 0;
   padding: 0;
   min-width: 32px;
@@ -720,12 +695,7 @@ div.CodeMirror span.eval-text {
   background-repeat: no-repeat;
 }
 
-.devtools-button[disabled]::before,
-.devtools-button:disabled::before {
-  opacity: 0.5;
-}
-
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .devtools-button::before {
     background-size: 32px;
   }
@@ -748,7 +718,7 @@ div.CodeMirror span.eval-text {
   margin-bottom: 1px;
   padding: 0;
   -moz-padding-start: 22px;
-  -moz-padding-end: 4px;
+  -moz-padding-end: 12px;
   background-position: 8px center;
   background-size: 11px 11px;
   background-repeat: no-repeat;
@@ -763,86 +733,7 @@ div.CodeMirror span.eval-text {
   background-image: url(magnifying-glass-light.png);
 }
 
-.devtools-searchinput:-moz-locale-dir(rtl) {
-  background-position: calc(100% - 8px) center;
-}
-
-.devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-icon {
-  visibility: hidden;
-}
-
-/* Searchbox is a div container element for a search input element */
-.devtools-searchbox {
-  display: flex;
-  flex: 1;
-  position: relative;
-}
-
-.devtools-rule-searchbox {
-  -moz-box-flex: 1;
-  padding-right: 23px;
-  width: 100%;
-  font: inherit;
-}
-
-.devtools-rule-searchbox[filled] {
-  background-color: var(--searchbox-background-color);
-  border-color: var(--searchbox-border-color);
-}
-
-.devtools-style-searchbox-no-match {
-  background-color: var(--searcbox-no-match-background-color) !important;
-  border-color: var(--searcbox-no-match-border-color) !important;
-}
-
-.devtools-no-search-result {
-  border-color: var(--theme-highlight-red) !important;
-}
-
-.devtools-searchinput-clear {
-  position: absolute;
-  top: 3.5px;
-  right: 7px;
-  padding: 0;
-  border: 0;
-  width: 16px;
-  height: 16px;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-color: transparent;
-}
-
-.theme-dark .devtools-searchinput-clear {
-  background-image: url("chrome://browser/skin/devtools/search-clear-dark.svg");
-}
-
-.theme-light .devtools-searchinput-clear {
-  background-image: url("chrome://browser/skin/devtools/search-clear-light.svg");
-}
-
-.devtools-style-searchbox-no-match + .devtools-searchinput-clear {
-  background-image: url("chrome://browser/skin/devtools/search-clear-failed.svg") !important;
-}
-
-.devtools-searchinput-clear:hover {
-  background-position: -16px 0;
-}
-
-.theme-dark .devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear {
-  list-style-image: url("chrome://browser/skin/devtools/search-clear-dark.svg");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-.theme-light .devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear {
-  list-style-image: url("chrome://browser/skin/devtools/search-clear-light.svg");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-.devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .theme-dark .devtools-searchinput {
     background-image: url(magnifying-glass@2x.png);
   }
@@ -850,6 +741,18 @@ div.CodeMirror span.eval-text {
   .theme-light .devtools-searchinput {
     background-image: url(magnifying-glass-light@2x.png);
   }
+}
+
+.devtools-searchinput:-moz-locale-dir(rtl) {
+  background-position: calc(100% - 8px) center;
+}
+
+.devtools-searchinput > .textbox-input-box > .textbox-search-icons {
+  display: none;
+}
+
+.devtools-no-search-result {
+  border-color: var(--theme-highlight-red) !important;
 }
 
 /* Close button */
@@ -913,17 +816,13 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-sidebar-alltabs {
-  -moz-appearance: none;
-  height: 24px;
-  line-height: 24px;
-  padding: 0 4px;
   margin: 0;
   border-width: 0 0 1px 0;
   -moz-border-start-width: 1px;
   border-style: solid;
 }
 
-.devtools-sidebar-alltabs .toolbarbutton-icon {
+.devtools-sidebar-alltabs dropmarker {
   display: none;
 }
 
@@ -953,57 +852,73 @@ div.CodeMirror span.eval-text {
   text-shadow: none;
 }
 
-.devtools-sidebar-tabs tabs > tab {
-  border-image: linear-gradient(transparent 15%, var(--theme-splitter-color) 15%, var(--theme-splitter-color) 85%, transparent 85%) 1 1;
-}
-
-.devtools-sidebar-tabs tabs > tab[selected],
-.devtools-sidebar-tabs tabs > tab[selected] + tab {
-  border-image: linear-gradient(var(--theme-splitter-color), var(--theme-splitter-color)) 1 1;
-}
-
 .devtools-sidebar-tabs tabs > tab:first-child {
   -moz-border-start-width: 0;
 }
 
+.theme-dark .devtools-sidebar-tabs tabs > tab {
+  border-image: linear-gradient(transparent 15%, #5a6169 15%, #5a6169 85%, transparent 85%) 1 1;
+}
+
 .theme-dark .devtools-sidebar-tabs tabs > tab:hover {
   background: hsla(206,37%,4%,.2);
+  border-image: linear-gradient(transparent 15%, #5a6169 15%, #5a6169 85%, transparent 85%) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab:hover:active {
   background: hsla(206,37%,4%,.4);
+  border-image: linear-gradient(transparent 15%, #5a6169 15%, #5a6169 85%, transparent 85%) 1 1;
+}
+
+.theme-dark .devtools-sidebar-tabs tabs > tab[selected] + tab {
+  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
   background: hsla(206,37%,4%,.2);
+  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected] + tab:hover:active {
   background: hsla(206,37%,4%,.4);
+  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
 }
 
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected],
 .theme-dark .devtools-sidebar-tabs tabs > tab[selected]:hover:active {
   color: var(--theme-selection-color);
   background: #1d4f73;
+  border-image: linear-gradient(#2d5b7d, #2d5b7d) 1 1;
+}
+
+.theme-light .devtools-sidebar-tabs tabs > tab {
+  border-image: linear-gradient(transparent 15%, #aaa 15%, #aaa 85%, transparent 85%) 1 1;
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab:hover {
   background: #ddd;
+  border-image: linear-gradient(transparent 15%, #aaa 15%, #aaa 85%, transparent 85%) 1 1;
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab:hover:active {
   background: #ddd;
+  border-image: linear-gradient(transparent 15%, #aaa 15%, #aaa 85%, transparent 85%) 1 1;
+}
+
+.theme-light .devtools-sidebar-tabs tabs > tab[selected] + tab {
+  border-image: linear-gradient(#aaa, #aaa);
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
   background: #ddd;
+  border-image: linear-gradient(#aaa, #aaa);
 }
 
 .theme-light .devtools-sidebar-tabs tabs > tab[selected],
 .theme-light .devtools-sidebar-tabs tabs > tab[selected]:hover:active {
   color: var(--theme-selection-color);
   background: #4c9ed9;
+  border-image: linear-gradient(#aaa, #aaa);
 }
 
 /* Toolbox - moved from toolbox.css.
@@ -1044,20 +959,6 @@ div.CodeMirror span.eval-text {
 
 #toolbox-dock-window > image {
   background-image: url("chrome://browser/skin/devtools/undock@2x.png");
-}
-
-#toolbox-dock-bottom-minimize {
-  /* Bug 1177463 - The minimize button is currently hidden until we agree on
-     the UI for it, and until bug 1173849 is fixed too. */
-  display: none;
-}
-
-#toolbox-dock-bottom-minimize > image {
-  background-image: url("chrome://browser/skin/devtools/dock-bottom-minimize@2x.png");
-}
-
-#toolbox-dock-bottom-minimize.minimized > image {
-  background-image: url("chrome://browser/skin/devtools/dock-bottom-maximize@2x.png");
 }
 
 #toolbox-dock-window,
@@ -1168,11 +1069,7 @@ div.CodeMirror span.eval-text {
   background-image: url("chrome://browser/skin/devtools/command-eyedropper.png");
 }
 
-#command-button-rulers > image {
-  background-image: url("chrome://browser/skin/devtools/command-rulers.png");
-}
-
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   #command-button-paintflashing > image {
     background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
   }
@@ -1207,10 +1104,6 @@ div.CodeMirror span.eval-text {
 
   #command-button-eyedropper > image {
     background-image: url("chrome://browser/skin/devtools/command-eyedropper@2x.png");
-  }
-
-  #command-button-rulers > image {
-    background-image: url("chrome://browser/skin/devtools/command-rulers@2x.png");
   }
 }
 
@@ -1281,12 +1174,9 @@ div.CodeMirror span.eval-text {
   background-color: rgba(170,170,170,.4);
 }
 
-.devtools-tab:not([selected])[highlighted] {
-  box-shadow: 0 2px 0 var(--theme-highlight-green) inset;
-}
-
 .theme-dark .devtools-tab:not([selected])[highlighted] {
   background-color: hsla(99,100%,14%,.2);
+  box-shadow: 0 2px 0 #7bc107 inset;
 }
 
 .theme-light .devtools-tab:not([selected])[highlighted] {

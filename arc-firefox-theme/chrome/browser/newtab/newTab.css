@@ -12,6 +12,16 @@
   background-color: transparent;
 }
 
+/* SCROLLBOX */
+#newtab-scrollbox:not([page-disabled]) {
+  color: rgb(0,0,0);
+  background-color: #f9f9f9;
+}
+
+#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
+  background: inherit;
+}
+
 /* UNDO */
 #newtab-undo-container {
   padding: 4px 3px;
@@ -51,49 +61,23 @@
   border: none;
 }
 
-#newtab-undo-close-button {
-  -moz-appearance: none;
-  padding: 0;
-  border: none;
-  height: 16px;
-  width: 16px;
-  float: right;
-  right: 0;
-  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 16, 16, 0);
-  background-color: transparent;
-}
-
-#newtab-undo-close-button:hover {
-  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 32, 16, 16);
-}
-
-#newtab-undo-close-button:hover:active {
-  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 48, 16, 32);
+#newtab-undo-close-button:-moz-focusring {
+  outline: 1px dotted;
 }
 
 /* CUSTOMIZE */
 #newtab-customize-button,
 .newtab-customize {
+  background-color: transparent;
   background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);
   background-size: 28px;
-  height: 38px;
-  width: 38px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
   border: none;
-}
-
-.newtab-customize {
   height: 28px;
   width: 28px;
 }
 
 #newtab-customize-button:-moz-any(:hover, :active, [active]) {
   background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 64, 32, 32);
-  background-color: #FFFFFF;
-  border: solid 1px #CCCCCC;
-  border-radius: 2px;
 }
 
 /* CELLS */
@@ -115,8 +99,7 @@
   transition-property: top, left, opacity, box-shadow, background-color;
 }
 
-.newtab-cell:not([ignorehover]) .newtab-control:hover ~ .newtab-link,
-.newtab-cell:not([ignorehover]) .newtab-link:hover,
+.newtab-cell:not([ignorehover]) > .newtab-site:hover,
 .newtab-site[dragged] {
   border: 2px solid white;
   box-shadow: 0 0 6px 2px #4cb1ff;
@@ -130,8 +113,7 @@
 
 /* LINKS */
 .newtab-link {
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 6px;
 }
 
 /* THUMBNAILS */
@@ -140,12 +122,11 @@
   background-clip: padding-box;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 8px 8px 0px 0px;
-  height: 180px;
+  border-radius: inherit;
   transition: opacity 100ms ease-out;
 }
 
-.newtab-cell:not([ignorehover]) .newtab-site:hover .newtab-thumbnail.enhanced-content {
+.newtab-site:hover .newtab-thumbnail.enhanced-content {
   opacity: 0;
 }
 
@@ -158,16 +139,10 @@
 }
 
 /* TITLES */
+#newtab-intro-what,
 .newtab-sponsored,
-.newtab-title,
-.newtab-suggested  {
+.newtab-title {
   color: #5c5c5c;
-}
-
-.newtab-suggested[active] {
-  background-color: rgba(51, 51, 51, 0.95);
-  border: 0;
-  color: white;
 }
 
 .newtab-site:hover .newtab-title {
@@ -175,7 +150,7 @@
 }
 
 .newtab-site[pinned] .newtab-title {
-  -moz-padding-start: 24px;
+  padding: 0 15px;
 }
 
 .newtab-site[pinned] .newtab-title::before {
@@ -186,11 +161,9 @@
   left: 0;
   position: absolute;
   width: 10px;
-  margin-left: 8px;
-  margin-top: 6px;
 }
 
-.newtab-site[pinned] .newtab-title:-moz-dir(rtl)::before {
+.newtab-site[pinned] .newtab-title:-moz-locale-dir(rtl)::before {
   left: auto;
   right: 0;
 }
@@ -241,6 +214,7 @@
   width: 16px;
 }
 
+#newtab-intro-panel,
 .newtab-title {
   font-family: sans-serif;
 }

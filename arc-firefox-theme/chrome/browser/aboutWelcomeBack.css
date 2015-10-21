@@ -13,8 +13,12 @@
 /* tablist starts out hidden, but JS may make it visible in response to
    clicks on the radio buttons by setting an "available" attribute.
 */
-.tree-container:not([available]) {
+#tabList {
   display: none;
+}
+
+#tabList[available] {
+  display: -moz-box;
 }
 
 treechildren::-moz-tree-image(icon),

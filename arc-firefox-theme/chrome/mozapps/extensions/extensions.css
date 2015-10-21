@@ -2,21 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://global/skin/in-content/common.css");
-
-.main-content {
-  padding-top: 0;
-  -moz-padding-end: 0;
-}
-
-#nav-header {
-  min-height: 39px;
-  background-color: #424f5a;
-}
-
-.view-pane > .list > scrollbox {
-  -moz-padding-end: 48px;
-}
+@import url("chrome://global/skin/inContentUI.css");
 
 
 /*** global warnings ***/
@@ -28,8 +14,11 @@
 .global-warning {
   -moz-box-align: center;
   padding: 0 8px;
-  color: #916D15;
   font-weight: bold;
+}
+
+.global-warning-text {
+  color: -moz-FieldText;
 }
 
 #addons-page[warning] .global-warning-container {
@@ -40,22 +29,15 @@
 
 #detail-view .global-warning {
   padding: 4px 12px;
-  border-bottom: 1px solid #c1c1c1;
+  border-bottom: 1px solid ThreeDShadow;
+  min-height: 41px;
 }
 
 @media (max-width: 600px) {
   .global-warning-text {
     display: none;
   }
-
-  .global-warning .warning-icon {
-    background-color: #fff;
-    box-shadow: 0 0 2px 5px #fff;
-    border-radius: 10px;
-  }
 }
-
-/*** global informations ***/
 
 /* Plugins aren't yet disabled by safemode (bug 342333),
    so don't show that warning when viewing plugins. */
@@ -68,20 +50,32 @@
 
 /*** notification icons ***/
 
-.warning-icon,
-.error-icon,
-.pending-icon,
-.info-icon {
+.warning-icon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=menu");
   width: 16px;
+  height: 16px;
   margin: 3px 0;
 }
 
+.error-icon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=menu");
+  width: 16px;
+  height: 16px;
+  margin: 3px 0;
+}
+
+.pending-icon,
+.info-icon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=menu");
+  width: 16px;
+  height: 16px;
+  margin: 3px 0;
+}
 
 /*** view alert boxes ***/
 
 .alert-container {
   -moz-box-align: center;
-  -moz-margin-end: 48px;
 }
 
 .alert-spacer-before {
@@ -95,10 +89,12 @@
 .alert {
   -moz-box-align: center;
   padding: 10px;
-  color: #333;
-  border: 1px solid #c1c1c1;
-  border-radius: 2px;
-  background-color: #ebebeb;
+  font-size: 12px;
+  border: 1px solid ThreeDShadow;
+  border-radius: 8px;
+  color: WindowText;
+  background-color: Window;
+  background-clip: padding-box;
 }
 
 .alert .alert-title {
@@ -117,26 +113,63 @@
   padding-right: 20px;
 }
 
-
 /*** category selector ***/
 
 #categories {
-  padding-top: 0;
+  -moz-appearance: none;
+  border: none;
+  -moz-margin-end: -1px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 41px;
+}
+
+.category {
+  -moz-appearance: none;
+  border-width: 1px;
+  -moz-border-end-width: 0;
+  border-style: solid;
+  border-color: transparent;
+  padding: 10px 4px;
+  -moz-box-align: center;
+  overflow: hidden;
+  min-height: 0;
+  color: WindowText;
+}
+
+.category:-moz-locale-dir(ltr) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.category:-moz-locale-dir(rtl) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .category[disabled] {
-  overflow: hidden;
+  border-top: 0;
+  border-bottom: 0;
   height: 0;
-  min-height: 0;
   opacity: 0;
-  transition-property: min-height, opacity;
+  transition-property: height, opacity;
   transition-duration: 1s, 0.8s;
 }
 
 .category:not([disabled]) {
-  min-height: 40px;
-  transition-property: min-height, opacity;
+  height: 52px;
+  transition-property: height, opacity;
   transition-duration: 1s, 0.8s;
+}
+
+.category[selected] {
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  border-color: ThreeDShadow;
+}
+
+.category-name {
+  font-size: 150%;
 }
 
 /* Maximize the size of the viewport when the window is small */
@@ -147,18 +180,23 @@
 }
 
 .category-badge {
-  background-color: #55D4FF;
+  background-color: Highlight;
   padding: 2px 8px;
   margin: 6px 0;
-  -moz-margin-start: 6px;
-  border-radius: 100%;
-  color: #FFF;
+  border-radius: 10000px;
+  color: HighlightText;
   font-weight: bold;
   text-align: center;
 }
 
 .category-badge[value="0"] {
-  display: none;
+  visibility: hidden;
+}
+
+.category-icon {
+  width: 32px;
+  height: 32px;
+  -moz-margin-start: 6px;
 }
 
 #category-search > .category-icon {
@@ -202,9 +240,59 @@
 /*** header ***/
 
 #header {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  -moz-margin-end: 48px;
+  margin-bottom: 18px;
+}
+
+.nav-button {
+  min-width: 0;
+}
+
+#back-btn:-moz-locale-dir(ltr) {
+  list-style-image: url("moz-icon://stock/gtk-go-back-ltr?size=toolbar");
+}
+
+#forward-btn:-moz-locale-dir(ltr) {
+  list-style-image: url("moz-icon://stock/gtk-go-forward-ltr?size=toolbar");
+}
+
+#back-btn:-moz-locale-dir(rtl) {
+  list-style-image: url("moz-icon://stock/gtk-go-back-rtl?size=toolbar");
+}
+
+#forward-btn:-moz-locale-dir(rtl) {
+  list-style-image: url("moz-icon://stock/gtk-go-forward-rtl?size=toolbar");
+}
+
+#back-btn[disabled="true"]:-moz-locale-dir(ltr) {
+  list-style-image: url("moz-icon://stock/gtk-go-back-ltr?size=toolbar&state=disabled");
+}
+
+#forward-btn[disabled="true"]:-moz-locale-dir(ltr) {
+  list-style-image: url("moz-icon://stock/gtk-go-forward-ltr?size=toolbar&state=disabled");
+}
+
+#back-btn[disabled="true"]:-moz-locale-dir(rtl) {
+  list-style-image: url("moz-icon://stock/gtk-go-back-rtl?size=toolbar&state=disabled");
+}
+
+#forward-btn[disabled="true"]:-moz-locale-dir(rtl) {
+  list-style-image: url("moz-icon://stock/gtk-go-forward-rtl?size=toolbar&state=disabled");
+}
+
+#header-utils-btn {
+  min-width: 4.5em;
+}
+
+#header-utils-btn .toolbarbutton-icon {
+  list-style-image: url("moz-icon://stock/gtk-preferences?size=toolbar");
+}
+
+#header-utils-btn:-moz-focusring > .button-box {
+  border: none;
+}
+
+#header-search {
+  margin: 0;
 }
 
 @media (max-width: 600px) {
@@ -214,64 +302,11 @@
 }
 
 .view-header {
+  padding: 4px;
   margin: 0;
-  -moz-margin-end: 48px;
-  border-bottom: 1px solid #c1c1c1;
-}
-
-#header-utils-btn {
-  height: 30px;
-  line-height: 20px;
-  border-color: #c1c1c1;
-  background-color: #fbfbfb;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-#header-utils-btn:not([disabled="true"]):active:hover,
-#header-utils-btn[open="true"] {
-  background-color: #dadada;
-}
-
-.header-button {
-  -moz-appearance: none;
-  border: 1px solid;
-  border-radius: 2px;
-}
-
-.header-button[disabled="true"] > .toolbarbutton-icon {
-  opacity: 0.4;
-}
-
-.header-button:not([disabled="true"]):hover,
-#header-utils-btn:not([disabled="true"]):hover {
-  background-color: #ebebeb;
-  cursor: pointer;
-}
-
-.header-button > .toolbarbutton-text {
-  display: none;
-}
-
-.nav-button {
-  list-style-image: url(chrome://mozapps/skin/extensions/navigation.png);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-color: transparent;
-}
-
-.nav-button:not([disabled="true"]):hover {
-  border-color: #ebebeb;
-}
-
-#back-btn:-moz-locale-dir(ltr),
-#forward-btn:-moz-locale-dir(rtl) {
-  -moz-image-region: rect(0, 18px, 18px, 0);
-}
-
-#back-btn:-moz-locale-dir(rtl),
-#forward-btn:-moz-locale-dir(ltr) {
-  -moz-image-region: rect(0, 36px, 18px, 18px);
+  min-height: 41px;
+  background-color: ThreeDHighlight;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 
@@ -281,30 +316,14 @@
   -moz-appearance: none;
 }
 
-.sorter {
-  height: 35px;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
-  color: #536680;
-  margin: 0;
-  min-width: 12px !important;
-  -moz-box-direction: reverse;
+.sorter[checkState="1"] .button-icon {
+  display: -moz-box;
+  list-style-image: url("moz-icon://stock/gtk-sort-descending?size=16");
 }
 
-.sorter .button-box {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.sorter[checkState="1"],
-.sorter[checkState="2"] {
-  background-color: #ebebeb;
-  box-shadow: 0 -4px 0 0 #ff9500 inset;
-}
-
-.sorter .button-icon {
-  -moz-margin-start: 6px;
+.sorter[checkState="2"] .button-icon {
+  display: -moz-box;
+  list-style-image: url("moz-icon://stock/gtk-sort-ascending?size=16");
 }
 
 
@@ -347,27 +366,18 @@
 .list {
   -moz-appearance: none;
   margin: 0;
-  border-width: 0 !important;
+  border: none;
   background-color: transparent;
 }
 
-.list > scrollbox > .scrollbox-innerbox {
-  border: 1px dotted transparent;
-}
-
-.list:-moz-focusring > scrollbox > .scrollbox-innerbox {
-  border-color: #0095dd;
-}
-
 .addon {
-  color: #444;
-  border-bottom: 1px solid #c1c1c1;
+  border-bottom: 1px solid ThreeDLightShadow;
   padding: 5px;
-  background-origin: border-box;
 }
 
-.addon:not(:only-child):last-child {
-  border-bottom-width: 0;
+.addon[selected] .text-link,
+.addon[selected] .button-link {
+  color: inherit;
 }
 
 .details {
@@ -388,10 +398,6 @@
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
   max-width: 48px;
   max-height: 48px;
-}
-
-.content-inner-container {
-  -moz-margin-end: 5px;
 }
 
 .addon[active="false"] .icon {
@@ -420,6 +426,7 @@
 
 .name-container {
   font-size: 150%;
+  margin-bottom: 0;
   font-weight: bold;
   -moz-box-align: end;
   -moz-box-flex: 1;
@@ -427,6 +434,10 @@
 
 .creator {
   font-weight: bold;
+}
+
+.addon-view[active="false"]:not([selected]) {
+  color: GrayText;
 }
 
 .description-container {
@@ -442,7 +453,6 @@
 .pending,
 .error {
   -moz-margin-start: 48px;
-  font-weight: bold;
   -moz-box-align: center;
 }
 
@@ -455,6 +465,7 @@
   -moz-box-align: stretch;
 }
 
+.advancedinfo-container,
 .update-info-container {
   -moz-box-align: center;
 }
@@ -482,54 +493,21 @@
   -moz-box-pack: end;
 }
 
-.addon-view .warning {
-  color: #916d15;
+.addon-view:not([selected]) .warning {
+  color: #90792E;
 }
 
-.addon-view .error {
-  color: #d74345;
+.addon-view:not([selected]) .error {
+  color: #7C322B;
 }
 
-.addon-view .pending {
-  color: #1b7123;
+.addon-view:not([selected]) .pending {
+  color: #4F7939;
 }
 
-.addon-view[pending="disable"] .pending,
-.addon-view[pending="uninstall"] .pending {
-  color: #62666e;
-}
-
-.addon .relnotes-container {
-  -moz-box-align: start;
-  -moz-margin-start: 6px;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition-property: height, opacity;
-  transition-duration: 0.5s, 0.5s;
-}
-
-.addon[show-relnotes] .relnotes-container {
-  opacity: 1;
-  transition-property: height, opacity;
-  transition-duration: 0.5s, 0.5s;
-}
-
-.addon .relnotes-header {
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.addon .relnotes-toggle {
-  -moz-appearance: none;
-  border: none;
-  background: transparent;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.addon .relnotes-toggle > .button-box > .button-icon {
-  -moz-padding-start: 4px;
+.addon[active="false"] {
+  background-image: linear-gradient(rgba(135, 135, 135, 0.2),
+                                    rgba(135, 135, 135, 0.1));
 }
 
 .addon-view[notification="warning"] {
@@ -563,38 +541,41 @@
   background-repeat: repeat-x;
 }
 
-.addon[selected] {
-  background-color: #fafafa;
-  color: #333;
-  -moz-padding-start: 1px; /* compensate the 4px border */
-  -moz-border-start: solid 4px #ff9500;
+.addon .relnotes-container {
+  -moz-box-align: start;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition-property: height, opacity;
+  transition-duration: 0.5s, 0.5s;
 }
 
-.addon[active="false"] > .content-container > .content-inner-container {
-  color: #999;
+.addon[show-relnotes] .relnotes-container {
+  opacity: 1;
+  transition-property: height, opacity;
+  transition-duration: 0.5s, 0.5s;
 }
 
-.addon[active="false"][selected] > .content-container > .content-inner-container {
-  color: #777;
+.addon .relnotes-header {
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-
-/*** item - uninstalled ***/
-
-.addon[status="uninstalled"] {
+.addon .relnotes-toggle {
+  -moz-appearance: none;
   border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  list-style-image: url("moz-icon://stock/gtk-go-down?size=16");
 }
 
-.addon[status="uninstalled"] > .container {
-  -moz-box-align: center;
-  padding: 4px 20px;
-  background-color: #FDFFA8;
-  border-radius: 8px;
-  font-size: 120%;
+.addon .relnotes-toggle > .button-box > .button-icon {
+  display: -moz-box;
 }
 
-.addon[status="uninstalled"][selected] {
-  background-color: transparent;
+.addon[show-relnotes] .relnotes-toggle {
+  list-style-image: url("moz-icon://stock/gtk-go-up?size=16");
 }
 
 
@@ -602,16 +583,13 @@
 
 #search-filter {
   padding: 5px 20px;
-  -moz-margin-end: 48px;
   font-size: 120%;
-  border-bottom: 1px solid #c1c1c1;
   overflow-x: hidden;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #search-filter-label {
   font-weight: bold;
-  color: grey;
-  -moz-margin-end: 10px;
 }
 
 #search-allresults-link {
@@ -619,11 +597,10 @@
   margin-bottom: 2em;
 }
 
-
 /*** detail view ***/
 
-#detail-view {
-  -moz-margin-end: 48px;
+#detail-view[active="false"] .fade {
+  opacity: 0.6;
 }
 
 #detail-view .loading {
@@ -631,16 +608,16 @@
 }
 
 #detail-view[loading-extended] .loading {
+  -moz-box-align: center;
+  -moz-box-pack: center;
   opacity: 1;
   transition-property: opacity;
   transition-duration: 1s;
 }
 
 .detail-view-container {
-  -moz-padding-end: 2em;
-  padding-bottom: 2em;
+  padding: 0 2em 2em 2em;
   font-size: 110%;
-  color: #333;
 }
 
 #detail-notifications {
@@ -657,7 +634,6 @@
 #detail-icon-container {
   width: 64px;
   -moz-margin-end: 10px;
-  margin-top: 6px;
 }
 
 #detail-icon {
@@ -673,28 +649,23 @@
   font-size: 200%;
 }
 
-#detail-screenshot-box {
-  -moz-margin-end: 2em;
-}
-
 #detail-screenshot {
+  -moz-margin-end: 2em;
   max-width: 300px;
   max-height: 300px;
-  background-color: white;
-  box-shadow: 0 1px 2px #666;
 }
 
 #detail-screenshot[loading] {
-  background-image: url("chrome://global/skin/icons/loading_16.png"),
-                    linear-gradient(rgba(255, 255, 255, 0.5), transparent);
+  background-image: url("chrome://global/skin/icons/loading_16.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  border-radius: 2px;
+  border: 1px threedshadow solid;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 #detail-screenshot[loading="error"] {
-  background-image: url("chrome://global/skin/media/error.png"),
-                    linear-gradient(rgba(255, 255, 255, 0.5), transparent);
+  background-image: url("chrome://global/skin/media/error.png");
 }
 
 #detail-desc-container {
@@ -715,44 +686,20 @@
 }
 
 #detail-contributions {
-  border-radius: 2px;
-  border: 1px solid #D2DBE8;
+  border-radius: 5px;
+  border: 1px solid ThreeDShadow;
   margin-bottom: 2em;
   padding: 1em;
-  background-color: #F3F7FB;
+  background: ThreeDHighlight;
 }
 
 #detail-contrib-description {
   font-style: italic;
   margin-bottom: 1em;
-  color: #373D48;
 }
 
 #detail-contrib-suggested {
-  color: grey;
-  font-weight: bold;
-}
-
-#detail-contrib-btn {
-  color: #FFF;
-  text-shadow: none;
-  border: 1px solid #0095dd;
-  list-style-image: url("chrome://mozapps/skin/extensions/heart.png");
-  background-color: #0095dd;
-}
-
-#detail-contrib-btn .button-icon {
-  -moz-margin-end: 5px;
-}
-
-#detail-contrib-btn:not(:active):hover {
-  border-color: #008acb;
-  background-color: #008acb;
-}
-
-#detail-contrib-btn:active:hover {
-  background-color: #006b9d;
-  border-color: #006b9d;
+  color: GrayText;
 }
 
 #detail-grid {
@@ -773,16 +720,18 @@ setting[first-row="true"] {
 .detail-row,
 .detail-row-complex,
 setting {
-  border-top: 1px solid #c1c1c1;
+  border-top: 1px solid ThreeDShadow;
   -moz-box-align: center;
-  min-height: 35px;
-  font-size: 1.25rem;
-  line-height: 20px;
-  text-shadow: 0 1px 1px #fefffe;
+  min-height: 32px;
 }
 
 #detail-controls {
   margin-bottom: 1em;
+}
+
+#detail-view[active="false"]:not([pending]):not([notification]) {
+  background-image: linear-gradient(rgba(135, 135, 135, 0.1),
+                                    rgba(135, 135, 135, 0));
 }
 
 setting[first-row="true"] {
@@ -794,7 +743,7 @@ setting {
 }
 
 .preferences-alignment {
-  min-height: 30px;
+  min-height: 32px;
   -moz-box-align: center;
 }
 
@@ -810,10 +759,19 @@ setting {
   display: none;
 }
 
+menulist { /* Fixes some styling inconsistencies */
+  font-size: 100%;
+  margin: 1px 5px 2px 5px;
+}
+
+colorpicker[type="button"] { /* Fixes some styling inconsistencies */
+  height: 29px;
+  margin: 1px 5px 2px 5px;
+}
+
 setting[type="radio"] > radiogroup {
   -moz-box-orient: horizontal;
 }
-
 
 /*** creator ***/
 
@@ -832,81 +790,60 @@ setting[type="radio"] > radiogroup {
 
 .meta-rating {
   -moz-margin-end: 0;
-  padding-top: 2px;
+  vertical-align: text-top;
+}
+
+.meta-rating[showrating="average"] > .star {
+  list-style-image: url("chrome://mozapps/skin/extensions/rating-not-won.png");
+  padding: 0 1px;
+}
+
+.meta-rating[showrating="user"] > .star {
+  list-style-image: url("chrome://mozapps/skin/extensions/rating-unrated.png");
+  padding: 2px 3px;
+}
+
+.meta-rating > .star[on="true"],
+.meta-rating[showrating="user"] > .star[hover] {
+  list-style-image: url("chrome://mozapps/skin/extensions/rating-won.png");
+  padding: 0 1px;
 }
 
 
 /*** download progress ***/
 
 .download-progress {
-  border: 1px solid #c1c1c1;
-  border-radius: 2px;
-  background-color: #fbfbfb;
   width: 200px;
-  height: 30px;
-  margin: 2px 4px;
-}
-
-.download-progress[mode="undetermined"] {
-  border-color: #0095dd;
 }
 
 .download-progress .start-cap,
-.download-progress[complete] .end-cap,
-.download-progress[mode="undetermined"] .end-cap,
-.download-progress .progress .progress-bar {
-  -moz-appearance: none;
-  background-color: #0095dd;
-}
-
-.download-progress .progress .progress-bar  {
-  min-height: 28px;
+.download-progress .end-cap {
+  display: none;
 }
 
 .download-progress .progress {
-  -moz-appearance: none;
-  background-color: transparent;
   padding: 0;
   margin: 0;
   border: none;
 }
 
-.download-progress .start-cap,
-.download-progress .end-cap {
-  width: 4px;
-}
-
-.download-progress .start-cap:-moz-locale-dir(ltr),
-.download-progress .end-cap:-moz-locale-dir(rtl) {
-  border-radius: 1px 0 0 1px;
-}
-
-.download-progress .end-cap:-moz-locale-dir(ltr),
-.download-progress .start-cap:-moz-locale-dir(rtl) {
-  border-radius: 0 1px 1px 0;
-}
-
 .download-progress .cancel {
   -moz-appearance: none;
-  padding: 3px;
-  min-width: 0;
-  width: 20px;
-  height: 20px;
+  background-color: ButtonFace;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+  border-radius: 10000px;
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
   margin: 3px;
 }
 
-.download-progress .cancel .button-box {
-  /* override in-content/common.css !important rule */
-  padding: 0 !important;
-  border: none;
-}
-
-.download-progress .cancel .button-text {
-  display: none;
-}
-
-.download-progress .cancel .button-icon {
-  margin: 0;
+.download-progress .cancel:hover {
+  background-color: -moz-ButtonHoverFace;
 }
 
 .download-progress .cancel {
@@ -915,11 +852,6 @@ setting[type="radio"] > radiogroup {
 
 .download-progress .status-container {
   -moz-box-align: center;
-}
-
-.download-progress .status {
-  color: #333;
-  text-shadow: #fff 0 0 2px;
 }
 
 
@@ -936,13 +868,8 @@ setting[type="radio"] > radiogroup {
   -moz-box-align: center;
 }
 
-#updates-container .button-link {
-  font-weight: bold;
-}
-
 #updates-installed,
 #updates-downloaded {
-  color: #00BB00;
   font-weight: bold;
 }
 
@@ -961,36 +888,45 @@ setting[type="radio"] > radiogroup {
   display: block !important;
 }
 
-button.button-link {
+.addon-control.enable {
+  list-style-image: url("moz-icon://stock/gtk-yes?size=button");
+}
+
+.addon-control.disable {
+  list-style-image: url("moz-icon://stock/gtk-no?size=button");
+}
+
+.addon-control.remove {
+  list-style-image: url("moz-icon://stock/gtk-remove?size=button");
+}
+
+.addon-control.preferences {
+  list-style-image: url("moz-icon://stock/gtk-preferences?size=button");
+}
+
+.addon-control.install,
+.addon-control.update {
+  list-style-image: url("moz-icon://stock/gtk-save?size=button");
+}
+
+.button-link {
   -moz-appearance: none;
   background: transparent;
   border: none;
-  box-shadow: none;
-  color: #0095dd;
+  text-decoration: underline;
+  color: -moz-nativehyperlinktext;
   cursor: pointer;
   min-width: 0;
-  height: 20px;
   margin: 0 6px;
 }
 
-button.button-link:not(:-moz-focusring) > .button-box {
-  border-width: 0;
-  margin: 1px;
+.button-link:active {
+  color: -moz-activehyperlinktext;
 }
 
-button.button-link:hover {
-  background-color: transparent;
-  color: #178ce5;
-  text-decoration: underline;
+.header-button .toolbarbutton-text {
+  display: none;
 }
-
-/* Needed to override normal button style from inContent.css */
-button.button-link:not([disabled="true"]):active:hover {
-  background-color: transparent;
-  color: #ff9500;
-  text-decoration: none;
-}
-
 
 /*** telemetry experiments ***/
 
@@ -1017,88 +953,4 @@ button.button-link:not([disabled="true"]):active:hover {
 .addon[active="true"] .experiment-bullet,
 #detail-view[active="true"] #detail-experiment-bullet {
   fill: rgb(106, 201, 20);
-}
-
-/*** info UI for add-ons that have been disabled for being unsigned ***/
-
-#show-disabled-unsigned-extensions:not(:hover) {
-  background-color: #fcf8ed;
-}
-
-#disabled-unsigned-addons-info {
-  margin-bottom: 2em;
-  -moz-margin-end: 48px;
-}
-
-#disabled-unsigned-addons-heading {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-bottom: .5em;
-}
-
-#signing-dev-info {
-  font-style: italic;
-}
-
-#detail-findUpdates-btn[hidden] {
-  display: -moz-box;
-  visibility: hidden;
-}
-
-#header-utils-btn .toolbarbutton-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities-native");
-}
-
-.warning-icon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=menu");
-  height: 16px;
-}
-
-.error-icon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=menu");
-  height: 16px;
-}
-
-.pending-icon,
-.info-icon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=menu");
-  height: 16px;
-}
-
-.sorter[checkState="1"] .button-icon {
-  display: -moz-box;
-  list-style-image: url("moz-icon://stock/gtk-sort-descending?size=16");
-}
-
-.sorter[checkState="2"] .button-icon {
-  display: -moz-box;
-  list-style-image: url("moz-icon://stock/gtk-sort-ascending?size=16");
-}
-
-.addon .relnotes-toggle {
-  list-style-image: url("moz-icon://stock/gtk-go-down?size=16");
-}
-
-.addon .relnotes-toggle > .button-box > .button-icon {
-  display: -moz-box;
-}
-
-.addon[show-relnotes] .relnotes-toggle {
-  list-style-image: url("moz-icon://stock/gtk-go-up?size=16");
-}
-
-.meta-rating[showrating="average"] > .star {
-  list-style-image: url("chrome://mozapps/skin/extensions/rating-not-won.png");
-  padding: 0 1px;
-}
-
-.meta-rating[showrating="user"] > .star {
-  list-style-image: url("chrome://mozapps/skin/extensions/rating-unrated.png");
-  padding: 2px 3px;
-}
-
-.meta-rating > .star[on="true"],
-.meta-rating[showrating="user"] > .star[hover] {
-  list-style-image: url("chrome://mozapps/skin/extensions/rating-won.png");
-  padding: 0 1px;
 }

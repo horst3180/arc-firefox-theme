@@ -3,12 +3,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 html {
-  --aboutSupport-table-background: #ebebeb;
-  background-color: var(--in-content-page-background);
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  font: message-box;
 }
 
 body {
-  margin: 40px 48px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .page-subtitle {
@@ -23,24 +26,19 @@ body {
   font-weight: bold;
 }
 
-button {
-  -moz-margin-start: 0;
-  -moz-margin-end: 8px;
-}
-
 table {
-  background-color: var(--aboutSupport-table-background);
-  color: var(--in-content-text-color);
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
   font: message-box;
   text-align: start;
   width: 100%;
-  border: 1px solid var(--in-content-border-color);
+  border: 1px solid ThreeDShadow;
   border-spacing: 0px;
 }
 
 th, td {
-  border: 1px solid var(--in-content-border-color);
-  padding: 4px;
+  border: 1px dotted ThreeDShadow;
+  padding: 3px;
 }
 
 thead th {
@@ -49,8 +47,8 @@ thead th {
 
 th {
   text-align: start;
-  background-color: var(--in-content-table-header-background);
-  color: var(--in-content-selected-text);
+  background-color: Highlight;
+  color: HighlightText;
 }
 
 th.column {
@@ -60,7 +58,7 @@ th.column {
 
 td {
   text-align: start;
-  border-color: var(--in-content-table-border-dark-color);
+  border-top: 1px dotted ThreeDShadow;
 }
 
 .prefs-table {
@@ -81,9 +79,9 @@ td {
 }
 
 #action-box {
-  background-color: var(--aboutSupport-table-background);
-  border: 1px solid var(--in-content-border-color);
-  color: var(--in-content-text-color);
+  background-color: -moz-Dialog;
+  border: 1px solid ThreeDShadow;
+  color: -moz-DialogText;
   float: right;
   margin-top: 2em;
   margin-bottom: 20px;

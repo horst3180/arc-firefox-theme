@@ -1,10 +1,8 @@
-
 @import url("chrome://global/skin/in-content/common.css");
 /* Body and container */
 body {
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  box-sizing: padding-box;
   min-height: 100vh;
   padding-top: 0;
   padding-bottom: 0;
@@ -17,13 +15,6 @@ body {
 .container {
   min-width: 13em;
   max-width: 52em;
-}
-
-.container.restore-chosen {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 10vh 0;
 }
 
 /* Typography */
@@ -91,16 +82,8 @@ ul {
 }
 
 /* Trees */
-.tree-container {
-  margin-top: 1.2em;
-  flex-grow: 1;
-  min-height: 12em;
-}
-
-.tree-container > tree {
-  height: 100%;
-}
-
 tree {
+  min-height: 12em;
+  margin-top: 1.2em;
   width: 100%;
 }

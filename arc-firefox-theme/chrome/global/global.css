@@ -264,24 +264,21 @@ label[disabled="true"] {
 
 .text-link {
   color: -moz-nativehyperlinktext;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
 .text-link:hover {
   text-decoration: underline;
 }
-
-.text-link:-moz-focusring {
-  outline: 1px dotted;
+  
+.text-link:focus {
+  border: 1px dotted -moz-DialogText;
 }
 
 notification > button {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-popupnotificationcontent {
-  margin-top: .5em;
 }
 
 /* :::::: autoscroll popup ::::: */

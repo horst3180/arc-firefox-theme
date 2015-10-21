@@ -61,7 +61,7 @@ body {
   background-size: 5px 8px;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   .property-value, .other-property-value {
     background-image: url(arrow-e@2x.png);
   }
@@ -124,6 +124,11 @@ body {
   border-bottom-width: 1px;
 }
 
+/* This rule is necessary because Templater.jsm breaks LTR TDs in RTL docs */
+.rule-text {
+  direction: ltr;
+}
+
 .matched {
   text-decoration: line-through;
 }
@@ -148,7 +153,7 @@ body {
 
 #root .devtools-toolbar {
   width: 100%;
-  display: flex;
+  border-bottom-width: 0;
 }
 
 .link {
@@ -178,9 +183,9 @@ body {
 
 .computedview-colorswatch {
   border-radius: 50%;
-  width: 0.9em;
-  height: 0.9em;
-  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-top;
   -moz-margin-end: 5px;
   display: inline-block;
   position: relative;

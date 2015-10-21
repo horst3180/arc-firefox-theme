@@ -7,6 +7,11 @@
   padding: 1px;
 }
 
+.searchbar-textbox {
+  min-height: 22px;
+  background-color: -moz-field;
+}
+
 .autocomplete-textbox-container {
   -moz-box-align: stretch;
 }
@@ -76,8 +81,6 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 .searchbar-search-button {
   list-style-image: url("chrome://browser/skin/search-indicator.png");
   -moz-image-region: rect(0, 20px, 20px, 0);
-  margin-top: 1px;
-  margin-bottom: 1px;
   -moz-margin-start: 2px;
 }
 
@@ -116,7 +119,7 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
   -moz-box-align: center;
 }
 
-.search-panel-current-engine {
+.search-panel-current-engine:not([showonlysettings]) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -128,17 +131,8 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
   color: #666;
 }
 
-.search-panel-tree[collapsed=true] + .search-panel-header {
-  border-top: none;
-}
-
-.search-panel-header > label {
-  margin-top: 2px !important;
-  margin-bottom: 1px !important;
-}
-
 .search-panel-current-input > label {
-  margin: 2px 0 1px !important;
+  margin: 0 0 !important;
 }
 
 .search-panel-input-value {
@@ -165,7 +159,7 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
 }
 
 .searchbar-engine-one-off-item:not(.last-row) {
-  box-sizing: content-box;
+  box-sizing: padding-box;
   border-bottom: 1px solid #ccc;
 }
 

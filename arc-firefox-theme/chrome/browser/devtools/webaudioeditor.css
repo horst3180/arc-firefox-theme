@@ -1,4 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
@@ -187,7 +191,7 @@ text {
   -moz-box-flex: 1;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 2dppx) {
   #inspector-pane-toggle {
     list-style-image: url(debugger-collapse@2x.png);
     -moz-image-region: rect(0px,32px,32px,0px);
