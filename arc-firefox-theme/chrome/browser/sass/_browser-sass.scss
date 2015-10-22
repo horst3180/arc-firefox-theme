@@ -1078,13 +1078,20 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
 }
 
 #loop-button {
-  list-style-image: url(chrome://browser/skin/loop/toolbar.png);
+  list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/loop-toolbar-icons.svg");
   -moz-image-region: rect(0, 18px, 18px, 0);
+
+  #TabsToolbar & { list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/loop-tabbar-icons.svg"); }
 }
 
-toolbar[brighttext] #loop-button {
-  list-style-image: url(chrome://browser/skin/loop/toolbar-inverted.png);
+#loop-button:not([disabled=true]):-moz-any([open],[checked],:hover:active),
+#TabsToolbar #loop-button:not([disabled=true]):-moz-any([open],[checked],:hover:active) {
+  list-style-image: url("chrome://browser/skin/custom_images/loop-toolbar-icons-active.svg") !important;
 }
+
+//toolbar[brighttext] #loop-button {
+//  list-style-image: url(chrome://browser/skin/loop/toolbar-inverted.png);
+//}
 
 #loop-button[state="disabled"],
 #loop-button[disabled="true"] {
