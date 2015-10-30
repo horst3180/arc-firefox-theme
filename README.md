@@ -16,7 +16,7 @@ Offical [Arc](https://github.com/horst3180/Arc-theme) Firefox theme.
 
 
 ### Requirements
-This theme is compatible with Firefox 40+.
+This theme is compatible with Firefox 40+ and Firefox 38 ESR
 
 **Note**: This theme is meant to be used in conjunction with the [Arc GTK theme](https://github.com/horst3180/Arc-theme), don't use it with other GTK themes or it will look broken.
 
@@ -32,12 +32,16 @@ These instructions are for testers and package maintainers. They also allow to i
 
 You will need `autoconf` and `automake` for the following.
 
-Generate the .xpi files
+Clone the repository
+
+    git clone https://github.com/horst3180/arc-firefox-theme && cd arc-firefox-theme
+
+Generate the .xpi files (drag and drop these into your Firefox window)
 
     ./autogen.sh --prefix=/usr
     make mkxpi
 
-The theme can be installed globally with
+Alternatively the theme can be installed globally without using the .xpi files
 
     ./autogen.sh --prefix=/usr
     sudo make install
@@ -51,3 +55,11 @@ Other build options to append to `autogen.sh` are
 Uninstall the theme with
 
     sudo make uninstall
+
+#### Firefox 38 ESR (Debian Stable users see here)
+There is a separate Firefox 38 ESR compatible branch. The installation process is mostly identical to the manual installation above
+
+    git clone https://github.com/horst3180/arc-firefox-theme && cd arc-firefox-theme
+    git checkout firefox-38-esr
+    ./autogen.sh --prefix=/usr
+    make mkxpi

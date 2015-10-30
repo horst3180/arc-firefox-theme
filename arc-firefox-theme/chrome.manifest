@@ -2,3 +2,19 @@ skin    browser         arc-theme   chrome/browser/
 skin    communicator    arc-theme   chrome/communicator/
 skin    global          arc-theme   chrome/global/
 skin    mozapps         arc-theme   chrome/mozapps/
+
+override chrome://browser/skin/feeds/audioFeedIcon.png chrome://browser/skin/feeds/feedIcon.png
+override chrome://browser/skin/feeds/audioFeedIcon16.png chrome://browser/skin/feeds/feedIcon16.png
+override chrome://browser/skin/feeds/videoFeedIcon.png chrome://browser/skin/feeds/feedIcon.png
+override chrome://browser/skin/feeds/videoFeedIcon16.png chrome://browser/skin/feeds/feedIcon16.png
+override chrome://global/skin/arrow/arrow-lft-hov.gif chrome://global/skin/arrow/arrow-lft.gif
+override chrome://global/skin/arrow/arrow-rit-hov.gif chrome://global/skin/arrow/arrow-rit.gif
+override chrome://mozapps/skin/extensions/category-dictionaries.png chrome://mozapps/skin/extensions/dictionaryGeneric.png
+override chrome://mozapps/skin/extensions/category-experiments.png chrome://mozapps/skin/extensions/experimentGeneric.png
+override chrome://mozapps/skin/extensions/category-extensions.png chrome://mozapps/skin/extensions/extensionGeneric.png
+override chrome://mozapps/skin/extensions/category-languages.png chrome://mozapps/skin/extensions/localeGeneric.png
+override chrome://mozapps/skin/extensions/category-themes.png chrome://mozapps/skin/extensions/themeGeneric.png
+override chrome://mozapps/skin/passwordmgr/key.png chrome://mozapps/skin/passwordmgr/key-16.png
+override chrome://mozapps/skin/plugins/notifyPluginCrashed.png chrome://mozapps/skin/plugins/pluginGeneric-16.png
+override chrome://mozapps/skin/plugins/notifyPluginGeneric.png chrome://mozapps/skin/plugins/pluginGeneric-16.png
+override chrome://mozapps/skin/xpinstall/xpinstallItemGeneric.png chrome://mozapps/skin/extensions/extensionGeneric.png
