@@ -2058,10 +2058,10 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://browser/skin/tabbrowser/crashed.svg"); }
 
 .tab-throbber[busy] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png"); }
+  list-style-image: url("chrome://browser/skin/custom_images/connecting.png"); }
 
 .tab-throbber[progress] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/loading.png"); }
+  list-style-image: url("chrome://browser/skin/custom_images/loading.png"); }
 
 .tab-label {
   -moz-margin-end: 0;
