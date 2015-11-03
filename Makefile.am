@@ -25,6 +25,7 @@ if ENABLE_LIGHT
 
 	cp $(lighttempdir)/chrome/browser/sass/browser-light.css $(lighttempdir)/chrome/browser/browser.css
 	rm -rf $(lighttempdir)/chrome/browser/sass
+	rm $(lighttempdir)/chrome/overrides.sh
 
 	cd $(lighttempdir) && \
 		zip -FS -r ../arc-firefox-theme-$(VERSION).xpi *
@@ -37,6 +38,7 @@ if ENABLE_DARKER
 
 	cp $(darkertempdir)/chrome/browser/sass/browser-darker.css $(darkertempdir)/chrome/browser/browser.css
 	rm -rf $(darkertempdir)/chrome/browser/sass
+	rm $(darkertempdir)/chrome/overrides.sh
 
 	sed -i 's/arc-theme/arc-darker-theme/' $(darkertempdir)/chrome.manifest
 	sed -i 's/arc-theme/arc-darker-theme/' $(darkertempdir)/install.rdf
@@ -55,6 +57,7 @@ if ENABLE_DARK
 
 	cp $(darktempdir)/chrome/browser/sass/browser-dark.css $(darktempdir)/chrome/browser/browser.css
 	rm -rf $(darktempdir)/chrome/browser/sass
+	rm $(darktempdir)/chrome/overrides.sh
 
 	sed -i 's/arc-theme/arc-dark-theme/' $(darktempdir)/chrome.manifest
 	sed -i 's/arc-theme/arc-dark-theme/' $(darktempdir)/install.rdf

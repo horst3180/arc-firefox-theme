@@ -6,8 +6,10 @@
 
 :root {
   --tab-toolbar-navbar-overlap: 0px;
+  --navbar-tab-toolbar-highlight-overlap: 0px;
   --space-above-tabbar: 0px;
   --toolbarbutton-text-shadow: none;
+  --backbutton-urlbar-overlap: 0px;
 }
 
 :root[devtoolstheme="dark"] {
@@ -45,15 +47,10 @@
   --toolbarbutton-combined-boxshadow: none;
   --toolbarbutton-combined-backgroundimage: linear-gradient(#5F6670 0, #5F6670 18px);
 
-  /* Identity box */
-  --identity-box-chrome-color: #46afe3;
-  --identity-box-chrome-background-image: linear-gradient(#5F6670 0, #5F6670 100%);
-  --identity-box-verified-background-image: linear-gradient(#5F6670 0, #5F6670 100%);
-  --verified-identity-box-backgroundcolor: transparent;
-
   /* Url and search bars */
   --url-and-searchbar-background-color: #171B1F;
   --url-and-searchbar-color: #fff;
+  --urlbar-separator-color: #5F6670;
   --urlbar-dropmarker-url: url("chrome://browser/skin/devedition/urlbar-history-dropmarker.svg");
   --urlbar-dropmarker-region: rect(0px, 11px, 14px, 0px);
   --urlbar-dropmarker-hover-region: rect(0, 22px, 14px, 11px);
@@ -63,6 +60,12 @@
   --urlbar-dropmarker-hover-2x-region: rect(0, 22px, 14px, 11px);
   --urlbar-dropmarker-active-2x-region: rect(0px, 33px, 14px, 22px);
   --search-button-image: url("chrome://browser/skin/devedition/search.svg#search-icon-inverted");
+}
+
+:root[devtoolstheme="dark"] #identity-box {
+  --identity-box-chrome-color: #46afe3;
+  --identity-box-verified-background-color: transparent;
+  --identity-box-selected-background-color: rgba(231,230,230,.2);
 }
 
 :root[devtoolstheme="dark"] .searchbar-dropmarker-image {
@@ -229,11 +232,21 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   -moz-margin-start: 0;
 }
 
-/* Make the white notication box stick out less. */
+/* Swap out the white arrow with a dark one for the dark theme */
+:root[devtoolstheme="dark"] #notification-popup-box {
+  border-image: url("chrome://browser/skin/devedition/urlbar-arrow.png") 0 8 0 0 fill;
+}
+
+@media (min-resolution: 1.1dppx) {
+  :root[devtoolstheme="dark"] #notification-popup-box {
+    border-image: url("chrome://browser/skin/devedition/urlbar-arrow@2x.png") 0 16 0 0 fill;
+  }
+}
+
+/* The (white) notification box background color should match the theme */
 #notification-popup-box {
   border-radius: 0;
-  border: none;
-  background: transparent;
+  background-color: var(--url-and-searchbar-background-color);
 }
 
 /* Nav bar specific stuff */
@@ -279,11 +292,6 @@ searchbar:not([oneoffui]) .search-go-button {
 .tabbrowser-arrowscrollbox > .scrollbutton-up {
   background-color: var(--tab-background-color);
   border-color: transparent;
-}
-
-.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
-.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
-  margin-bottom: 0;
 }
 
 .tabbrowser-tab {

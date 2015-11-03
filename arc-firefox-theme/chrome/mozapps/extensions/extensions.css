@@ -675,14 +675,13 @@
 
 #detail-screenshot-box {
   -moz-margin-end: 2em;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 0 1px 2px #666;
 }
 
 #detail-screenshot {
   max-width: 300px;
   max-height: 300px;
+  background-color: white;
+  box-shadow: 0 1px 2px #666;
 }
 
 #detail-screenshot[loading] {
@@ -1039,6 +1038,11 @@ button.button-link:not([disabled="true"]):active:hover {
 
 #signing-dev-info {
   font-style: italic;
+}
+
+#detail-findUpdates-btn[hidden] {
+  display: -moz-box;
+  visibility: hidden;
 }
 
 #header-utils-btn .toolbarbutton-icon {
