@@ -21,10 +21,9 @@ This theme is compatible with Firefox 40+ and Firefox 38 ESR
 **Note**: This theme is meant to be used in conjunction with the [Arc GTK theme](https://github.com/horst3180/Arc-theme), don't use it with other GTK themes or it will look broken.
 
 ### Installation
+The theme is available on addons.mozilla.org.
 
-Donwload the .xpi files from [here](https://github.com/horst3180/arc-firefox-theme/releases)
-
-Drag-and-drop these files into the Firefox window. Firefox will then prompt you to install the theme.
+[Arc Firefox collection on AMO](https://addons.mozilla.org/de/firefox/collections/horst3180/a/)
 
 #### Manual building and installation
 
