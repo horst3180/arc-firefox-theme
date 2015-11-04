@@ -12,6 +12,10 @@
     <em:creator>horst3180</em:creator>
     <em:internalName>arc-theme</em:internalName>
     <em:skinnable>false</em:skinnable>
+    <em:targetPlatform>Linux</em:targetPlatform>
+    <em:targetPlatform>OpenBSD</em:targetPlatform>
+    <em:targetPlatform>FreeBSD</em:targetPlatform>
+    <em:targetPlatform>NetBSD</em:targetPlatform>
 
     <em:targetApplication>
       <Description>
