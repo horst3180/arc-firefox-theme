@@ -1309,7 +1309,11 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
   -moz-margin-start: 0; }
 
 .urlbar-history-dropmarker {
-  -moz-appearance: toolbarbutton-dropdown; }
+  -moz-appearance: toolbarbutton-dropdown;
+  transition: opacity 0.15s ease; }
+
+#urlbar:not(:hover) > .urlbar-textbox-container > .urlbar-history-dropmarker {
+  opacity: 0; }
 
 #urlbar-container {
   -moz-box-align: center; }
@@ -1376,7 +1380,6 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
 
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button {
   -moz-appearance: none;
-  -moz-user-focus: ignore;
   min-width: 80px;
   border-radius: 3px;
   padding: 4px 16px;
@@ -1582,9 +1585,15 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   border-style: solid;
   border-color: #dcdfe3; }
 
+/* This changes the direction of the main notification box on the url bar. */
 #notification-popup-box:-moz-locale-dir(rtl),
 .notification-anchor-icon:-moz-locale-dir(rtl) {
   transform: scaleX(-1); }
+
+/* For the anchor icons in the chat window, we don't have the notification popup box,
+   so we need to cancel the RTL transform. */
+.notification-anchor-icon.chat-toolbarbutton:-moz-locale-dir(rtl) {
+  transform: none; }
 
 .notification-anchor-icon {
   list-style-image: url(moz-icon://stock/gtk-dialog-info?size=16);
@@ -1929,8 +1938,7 @@ notification[value="loop-sharing-notification"] .messageImage {
 
 .ac-result-type-bookmark,
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
-  list-style-image: url("chrome://browser/skin/places/star-icons.png");
-  -moz-image-region: rect(0px 32px 16px 16px);
+  list-style-image: url("chrome://browser/skin/places/autocomplete-star.png");
   width: 16px;
   height: 16px; }
 
@@ -2712,6 +2720,12 @@ lwtHeader;*/
   /* box-shadow instead of background-color to work around native styling */
   box-shadow: inset -5px 0 ThreeDShadow; }
 
+.alltabs-endimage[muted] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted); }
+
+.alltabs-endimage[soundplaying] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio); }
+
 /* Sidebar */
 #sidebar-throbber[loading="true"] {
   list-style-image: url("chrome://global/skin/icons/loading_16.png");
@@ -2775,14 +2789,12 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .sync-panel-button-box {
   margin-top: 1em; }
 
-#sync-error-panel-title,
 #sync-start-panel-title {
   font-size: 120%;
   font-weight: bold;
   margin-bottom: 5px; }
 
-#sync-start-panel-subtitle,
-#sync-error-panel-subtitle {
+#sync-start-panel-subtitle {
   margin: 0; }
 
 /* Status panel */
@@ -2807,19 +2819,45 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   border-top-left-radius: .3em;
   margin-left: 1em; }
 
-#full-screen-warning-message {
-  background-image: url("chrome://browser/skin/fullscreen-darknoise.png");
-  color: white;
-  border-radius: 4px;
-  margin-top: 30px;
-  padding: 30px 50px;
-  box-shadow: 0 0 2px white; }
+html|*#fullscreen-warning {
+  align-items: center;
+  background: rgba(45, 62, 72, 0.9);
+  border: 2px solid #fafafa;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 24px 16px;
+  font: message-box; }
 
-.full-screen-description {
-  font-size: 150%; }
+html|*#fullscreen-warning::before {
+  margin: 0;
+  width: 24px;
+  height: 24px; }
 
-#full-screen-domain-text {
-  font-size: 300%; }
+html|*#fullscreen-warning.verifiedIdentity::before,
+html|*#fullscreen-warning.verifiedDomain::before {
+  content: url("chrome://browser/skin/fullscreen/secure.svg"); }
+
+html|*#fullscreen-warning.unknownIdentity::before {
+  content: url("chrome://browser/skin/fullscreen/insecure.svg"); }
+
+html|*#fullscreen-domain-text,
+html|*#fullscreen-generic-text {
+  font-size: 21px;
+  font-weight: lighter;
+  color: #fafafa;
+  margin: 0 16px; }
+
+html|*#fullscreen-domain {
+  font-weight: bold;
+  margin: 0; }
+
+html|*#fullscreen-exit-button {
+  padding: 5px 30px;
+  font: message-box;
+  font-size: 14px;
+  font-weight: lighter;
+  margin: 0;
+  box-sizing: content-box; }
 
 /* Responsive Mode */
 .browserContainer[responsivemode] {
@@ -2946,7 +2984,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .devtools-responsiveui-rotate {
   list-style-image: url("chrome://browser/skin/devtools/responsiveui-rotate.png"); }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-close {
     list-style-image: url("chrome://browser/skin/devtools/close@2x.png"); }
 
@@ -2959,7 +2997,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .devtools-responsiveui-touch[checked] {
   -moz-image-region: rect(0px, 32px, 16px, 16px); }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-touch {
     list-style-image: url("chrome://browser/skin/devtools/responsiveui-touch@2x.png");
     -moz-image-region: rect(0px, 32px, 32px, 0px); }
@@ -2969,7 +3007,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .devtools-responsiveui-screenshot {
   list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot.png"); }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-screenshot {
     list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot@2x.png"); } }
 .devtools-responsiveui-resizebarV {
@@ -3027,11 +3065,13 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   background-image: linear-gradient(to right, #111 11%, #333 56%); }
 
 .devtools-responsiveui-home-button {
+  -moz-user-focus: ignore;
   width: 40px;
   height: 30px;
   list-style-image: url("chrome://browser/skin/devtools/responsiveui-home.png"); }
 
 .devtools-responsiveui-sleep-button {
+  -moz-user-focus: ignore;
   -moz-appearance: none;
   /* compensate browserStack top padding */
   margin-top: -67px;
@@ -3053,6 +3093,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 
 .devtools-responsiveui-volume-up-button,
 .devtools-responsiveui-volume-down-button {
+  -moz-user-focus: ignore;
   -moz-appearance: none;
   border: 1px solid red;
   min-width: 8px;
@@ -3071,7 +3112,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .devtools-responsiveui-volume-down-button {
   border-bottom-left-radius: 12px; }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-resizebarV {
     background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer@2x.png"); }
 
@@ -3159,7 +3200,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 #developer-toolbar-toolbox-button[checked=true] {
   -moz-image-region: rect(0px, 64px, 16px, 48px); }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   #developer-toolbar-toolbox-button {
     list-style-image: url("chrome://browser/skin/devtools/toggle-tools@2x.png");
     -moz-image-region: rect(0px, 32px, 32px, 0px); }
@@ -3181,7 +3222,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   width: 16px;
   opacity: 0.6; }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   #developer-toolbar-closebutton {
     list-style-image: url("chrome://browser/skin/devtools/close@2x.png"); } }
 #developer-toolbar-closebutton > .toolbarbutton-icon {
@@ -3252,7 +3293,7 @@ html|*#gcli-output-frame {
 .gclitoolbar-input-node[focused="true"]::before {
   background-position: -16px center; }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .gclitoolbar-input-node::before {
     background-image: url("chrome://browser/skin/devtools/commandline-icon@2x.png"); } }
 .gclitoolbar-input-node > .textbox-input-box > html|*.textbox-input::-moz-selection {
@@ -3652,12 +3693,6 @@ toolbar[brighttext] #downloads-indicator-counter {
   margin: 0;
   background: none; }
 
-.chat-toolbarbutton:hover {
-  background-color: rgba(255, 255, 255, 0.35); }
-
-.chat-toolbarbutton:hover:active {
-  background-color: rgba(255, 255, 255, 0.5); }
-
 .chat-toolbarbutton > .toolbarbutton-text {
   display: none; }
 
@@ -3668,40 +3703,70 @@ toolbar[brighttext] #downloads-indicator-counter {
 .chat-close-button {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close"); }
 
-.chat-close-button:-moz-any(:hover, :hover:active) {
+.chat-close-button:hover {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-hover"); }
+
+.chat-close-button:hover:active {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-active"); }
 
 .chat-minimize-button {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize"); }
 
-.chat-minimize-button:-moz-any(:hover, :hover:active) {
+.chat-minimize-button:hover {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-hover"); }
+
+.chat-minimize-button:hover:active {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-active"); }
 
 .chat-swap-button {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand");
   transform: rotate(180deg); }
 
-.chat-swap-button:-moz-any(:hover, :hover:active) {
+.chat-swap-button:hover {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-hover"); }
+
+.chat-swap-button:hover:active {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-active"); }
 
 chatbar > chatbox > .chat-titlebar > .chat-swap-button {
   transform: none; }
 
+.chat-loop-hangup {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#exit-white");
+  background-color: #d13f1a;
+  border: 1px solid #d13f1a;
+  border-top-right-radius: 4px;
+  width: 32px;
+  height: 26px;
+  margin-top: -6px;
+  margin-bottom: -5px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: -5px; }
+
+.chat-toolbarbutton.chat-loop-hangup:-moz-any(:hover, :hover:active) {
+  background-color: #ef6745;
+  border-color: #ef6745; }
+
 .chat-title {
-  font-weight: bold;
-  color: black;
+  color: #666;
   text-shadow: none;
   cursor: inherit; }
 
 .chat-titlebar {
-  height: 30px;
-  min-height: 30px;
+  height: 26px;
+  min-height: 26px;
   width: 100%;
   margin: 0;
-  padding: 7px 6px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer; }
+  padding: 5px 4px;
+  border: 1px solid #ebebeb;
+  border-bottom: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  cursor: pointer;
+  background-color: #ebebeb; }
+
+.chat-titlebar[selected] {
+  background-color: #f0f0f0; }
 
 .chat-titlebar > .notification-anchor-icon {
   margin-left: 2px;
@@ -3716,16 +3781,6 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
   background-size: 100% 20px;
   background-position: 0 -10px; }
 
-chatbox[dark=true] > .chat-titlebar,
-chatbox[dark=true] > .chat-titlebar[selected] {
-  border-bottom: none;
-  background-color: #000;
-  background-image: none; }
-
-chatbox[dark=true] > .chat-titlebar > hbox > .chat-title {
-  font-weight: normal;
-  color: #c1c1c1; }
-
 .chat-frame {
   padding: 0;
   margin: 0;
@@ -3738,11 +3793,22 @@ chatbox[dark=true] > .chat-titlebar > hbox > .chat-title {
   height: 21px;
   width: 21px;
   border: 1px solid #ccc;
-  border-bottom: none; }
+  border-bottom: none;
+  background-color: #d9d9d9;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.43), transparent);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; }
 
 @media (min-resolution: 2dppx) {
   .chatbar-button {
     list-style-image: url("chrome://browser/skin/social/services-16@2x.png"); } }
+.chatbar-button:hover,
+.chatbar-button[open="true"] {
+  background-color: #f0f0f0; }
+
+.chatbar-button[activity]:not([open]) {
+  background-image: radial-gradient(circle farthest-corner at center 2px, #fefeff 3%, rgba(210, 235, 255, 0.9) 12%, rgba(148, 205, 253, 0.6) 30%, rgba(148, 205, 253, 0.2) 70%); }
+
 .chatbar-button > .toolbarbutton-icon {
   width: 16px; }
 
@@ -3771,41 +3837,24 @@ chatbar {
 
 chatbox {
   -moz-margin-start: 4px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-bottom: none; }
+  background-color: transparent; }
+
+chatbar > chatbox {
+  /* Apply the same border-radius as the .chat-titlebar to make the box-shadow
+     go round nicely. */
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  /* Offset the chatbox the same amount as the box-shadows' spread, to make it
+     visible. */
+  -moz-margin-end: 5px; }
 
 window > chatbox {
   -moz-margin-start: 0px;
   margin: 0px;
   border: none;
-  padding: 0px; }
-
-.chat-titlebar {
-  background-color: #d9d9d9;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3), transparent); }
-
-.chat-titlebar[selected] {
-  background-color: #f0f0f0; }
-
-.chatbar-button {
-  -moz-appearance: none;
-  background-color: #d9d9d9;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3), transparent); }
-
-.chatbar-button > .toolbarbutton-icon {
-  -moz-margin-end: 0; }
-
-.chatbar-button:hover,
-.chatbar-button[open="true"] {
-  background-color: #f0f0f0; }
-
-.chatbar-button[activity] {
-  background-image: radial-gradient(circle farthest-corner at center 3px, #e9f2fc 3%, rgba(172, 206, 255, 0.75) 40%, rgba(87, 151, 201, 0.5) 80%, transparent); }
-
-chatbox {
-  border-top-left-radius: 2.5px;
-  border-top-right-radius: 2.5px; }
+  padding: 0px;
+  border-radius: 4px; }
 
 /* Customization mode */
 /* This Source Code Form is subject to the terms of the Mozilla Public

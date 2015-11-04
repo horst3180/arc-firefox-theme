@@ -29,7 +29,6 @@ scrollbar thumb {
   background-color: rgba(170,170,170,0.2) !important;
   border-radius: 3px !important;
 }
-
 scrollbar scrollbarbutton, scrollbar gripper {
   display: none;
 }
