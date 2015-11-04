@@ -5,13 +5,17 @@
   
   <Description about="urn:mozilla:install-manifest">
     <em:id>{52c2877e-44e1-11e5-8874-a62d1d5d46B0}</em:id>
-    <em:version>42.20151103</em:version>
+    <em:version>42.20151104</em:version>
     <em:type>4</em:type>
     <em:name>Arc Theme</em:name>
     <em:description>Arc Theme for Firefox</em:description>
     <em:creator>horst3180</em:creator>
     <em:internalName>arc-theme</em:internalName>
     <em:skinnable>false</em:skinnable>
+    <em:targetPlatform>Linux</em:targetPlatform>
+    <em:targetPlatform>OpenBSD</em:targetPlatform>
+    <em:targetPlatform>FreeBSD</em:targetPlatform>
+    <em:targetPlatform>NetBSD</em:targetPlatform>
 
     <em:targetApplication>
       <Description>
