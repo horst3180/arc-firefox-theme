@@ -23,7 +23,7 @@ This theme is compatible with Firefox 40+ and Firefox 38 ESR
 ### Installation
 The theme is available on addons.mozilla.org.
 
-[Arc Firefox collection on AMO](https://addons.mozilla.org/de/firefox/collections/horst3180/a/)
+[Arc Firefox collection on AMO](https://addons.mozilla.org/en/firefox/collections/horst3180/a/)
 
 #### Manual building and installation
 
