@@ -105,7 +105,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton),
 toolbarbutton.bookmark-item:not(.subviewbutton):not(:hover):not(:active):not([open]) {
   color: inherit; }
 
-.bookmark-item:not(#home-button) > .toolbarbutton-icon,
+.bookmark-item > .toolbarbutton-icon,
 #personal-bookmarks[cui-areatype="toolbar"] > #bookmarks-toolbar-placeholder > .toolbarbutton-icon {
   width: 16px;
   height: 16px; }
@@ -283,7 +283,7 @@ menuitem.bookmark-item {
   opacity: 0.7; }
 
 /* Stock icons for the menu bar items */
-menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip):not([endimage]) {
+menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic"); }
 
 #placesContext_open\:newwindow,
