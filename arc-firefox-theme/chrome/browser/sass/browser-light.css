@@ -40,6 +40,9 @@
   height: 1px;
   background-color: #dcdfe3; }
 
+#navigator-toolbox:-moz-lwtheme::after {
+  background-color: rgba(0, 0, 0, 0.3); }
+
 #navigator-toolbox > toolbar:not(:-moz-lwtheme):not(#toolbar-menubar):not(#TabsToolbar) {
   -moz-appearance: none;
   border-style: none;
@@ -794,7 +797,7 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
   #TabsToolbar #loop-button {
     list-style-image: url("chrome://browser/skin/custom_images/light/loop-tabbar-icons.svg"); }
 
-#loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active),
+#nav-bar #loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active),
 #TabsToolbar #loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
   list-style-image: url("chrome://browser/skin/custom_images/loop-toolbar-icons-active.svg") !important; }
 
