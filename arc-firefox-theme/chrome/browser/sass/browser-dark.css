@@ -482,6 +482,15 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   list-style-image: url("chrome://global/skin/console/console.png"); }
 
 /* Primary toolbar buttons */
+:-moz-any(toolbar, .widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-icon,
+:-moz-any(toolbar, .widget-overflow-list) .toolbarbutton-1 > :-moz-any(.toolbarbutton-menubutton-button, .toolbarbutton-badge-stack) > .toolbarbutton-icon {
+  max-width: 16px; }
+
+:-moz-any(toolbar, .widget-overflow-list) .toolbarbutton-1:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button, #loop-button, #pocket-button) > .toolbarbutton-icon,
+:-moz-any(toolbar, .widget-overflow-list) .toolbarbutton-1:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button, #loop-button, #pocket-button) > :-moz-any(.toolbarbutton-menubutton-button, .toolbarbutton-badge-stack) > .toolbarbutton-icon,
+#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  max-width: 18px; }
+
 .findbar-button,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 {
@@ -508,14 +517,11 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not(:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button, #loop-button, #pocket-button)) > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
   padding: 3px 7px; }
 
-/* Help SDK icons fit: */
-toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-icon,
-toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-badge-stack > .toolbarbutton-icon {
-  width: 16px; }
-
-:-moz-any(#TabsToolbar, #nav-bar) toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
-  /* XXXgijs box models strike again: this is 16px + 2 * 7px padding + 2 * 1px border (from the rules above) */
-  width: 32px; }
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-icon,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+:-moz-any(#TabsToolbar, #nav-bar) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  /* horizontal padding + border + actual icon width */
+  max-width: 32px !important; }
 
 #nav-bar #PanelUI-menu-button {
   -moz-padding-start: 5px;
@@ -580,18 +586,30 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:hover:active {
   padding: 3px; }
 
+:-moz-any(#TabsToolbar, #nav-bar) .toolbaritem-combined-buttons {
+  margin-left: 2px;
+  margin-right: 2px; }
+
+:-moz-any(#TabsToolbar, #nav-bar) .toolbaritem-combined-buttons > .toolbarbutton-1 {
+  padding-left: 0;
+  padding-right: 0; }
+
+:-moz-any(#TabsToolbar, #nav-bar) .toolbaritem-combined-buttons:not(:hover) > separator,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
   content: "";
   display: -moz-box;
   width: 1px;
   height: 18px;
   -moz-margin-end: -1px;
-  background-image: var(--toolbarbutton-combined-backgroundimage);
-  background-clip: padding-box;
+  background-image: linear-gradient(currentColor 0, currentColor 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1px 18px;
-  box-shadow: var(--toolbarbutton-combined-boxshadow); }
+  opacity: .2; }
+
+:-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbaritem-combined-buttons > separator,
+:-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
+  opacity: .3; }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   -moz-margin-start: -4px; }
@@ -1284,7 +1302,6 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
   #minimize-button:active {
     list-style-image: url("chrome://browser/skin/custom_images/dark/window-controls/minimize_pressed.svg"); }
 
-/* Location bar */
 #urlbar,
 .searchbar-textbox {
   -moz-appearance: none;
@@ -1305,6 +1322,15 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
 .searchbar-textbox {
   border-radius: 20px; }
 
+#urlbar:-moz-lwtheme,
+.searchbar-textbox:-moz-lwtheme {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black; }
+
+#urlbar:-moz-lwtheme[focused=true],
+.searchbar-textbox:-moz-lwtheme[focused=true] {
+  background-color: white; }
+
 .urlbar-textbox-container {
   -moz-appearance: none;
   -moz-box-align: center; }
@@ -1316,7 +1342,7 @@ toolbar[brighttext] #PanelUI-menu-button.thumburger {
   -moz-appearance: toolbarbutton-dropdown;
   transition: opacity 0.15s ease; }
 
-#urlbar:not(:hover) > .urlbar-textbox-container > .urlbar-history-dropmarker {
+#navigator-toolbox:not(:hover) .urlbar-history-dropmarker {
   opacity: 0; }
 
 #urlbar-container {
@@ -1490,6 +1516,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 .verifiedIdentity > #identity-icons > #page-proxy-favicon[pageproxystate="valid"] {
   list-style-image: url(chrome://browser/skin/identity-secure.svg); }
 
+.insecureLoginForms > #identity-icons > #page-proxy-favicon[pageproxystate="valid"],
 .mixedActiveContent > #identity-icons > #page-proxy-favicon[pageproxystate="valid"] {
   list-style-image: url(chrome://browser/skin/identity-mixed-active-loaded.svg); }
 
@@ -1519,9 +1546,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 .popup-notification-icon[popupid="geolocation"] {
   list-style-image: url(chrome://browser/skin/Geolocation-64.png); }
 
-.popup-notification-icon[popupid="push"] {
-  list-style-image: url(chrome://browser/skin/Push-64.png); }
-
 .popup-notification-icon[popupid="xpinstall-disabled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-origin-blocked"] {
@@ -1549,7 +1573,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   list-style-image: url(chrome://mozapps/skin/plugins/pluginBlocked-64.png); }
 
 .popup-notification-icon[popupid="web-notifications"] {
-  list-style-image: url(chrome://browser/skin/notification-64.png); }
+  list-style-image: url(chrome://browser/skin/web-notifications-icon.svg); }
 
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
 .popup-notification-icon[popupid*="offline-app-requested"],
@@ -1613,9 +1637,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 .geo-notification-icon,
 #geo-notification-icon {
   list-style-image: url(chrome://browser/skin/Geolocation-16.png); }
-
-#push-notification-icon {
-  list-style-image: url(chrome://browser/skin/Push-16.png); }
 
 #addons-notification-icon {
   list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#default); }
@@ -1700,7 +1721,16 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 
 .web-notifications-notification-icon,
 #web-notifications-notification-icon {
-  list-style-image: url(chrome://browser/skin/notification-16.png); }
+  list-style-image: url(chrome://browser/skin/web-notifications-tray.svg);
+  -moz-image-region: rect(0, 16px, 16px, 0); }
+
+.web-notifications-notification-icon:hover,
+#web-notifications-notification-icon:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px); }
+
+.web-notifications-notification-icon:hover:active,
+#web-notifications-notification-icon:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px); }
 
 .pointerLock-notification-icon,
 #pointerLock-notification-icon {
@@ -2571,6 +2601,29 @@ lwtHeader;*/
   background-repeat: no-repeat;
   background-size: 30px 100%, calc(100% - (2 * 30px)) 100%, 30px 100%; }
 
+/* User Context UI - change tab decoration depending on userContextId.
+   Defaults to gray for unknown usercontextids. */
+.tabbrowser-tab[usercontextid] {
+  background-image: linear-gradient(to right, transparent 20%, #909090 30%, #909090 70%, transparent 80%);
+  background-size: auto 2px;
+  background-repeat: no-repeat; }
+
+/* Personal User Context */
+.tabbrowser-tab[usercontextid="1"] {
+  background-image: linear-gradient(to right, transparent 20%, #00a7e0 30%, #00a7e0 70%, transparent 80%); }
+
+/* Work User Context */
+.tabbrowser-tab[usercontextid="2"] {
+  background-image: linear-gradient(to right, transparent 20%, #f89c24 30%, #f89c24 70%, transparent 80%); }
+
+/* Banking User Context */
+.tabbrowser-tab[usercontextid="3"] {
+  background-image: linear-gradient(to right, transparent 20%, #7dc14c 30%, #7dc14c 70%, transparent 80%); }
+
+/* Shopping User Context */
+.tabbrowser-tab[usercontextid="4"] {
+  background-image: linear-gradient(to right, transparent 20%, #ee5195 30%, #ee5195 70%, transparent 80%); }
+
 /* Tab pointer-events */
 .tabbrowser-tab {
   pointer-events: none; }
@@ -2589,11 +2642,19 @@ lwtHeader;*/
   height: 100%;
   position: absolute; }
 
-.tabbrowser-tab[pinned][titlechanged]:not([visuallyselected="true"]) > .tab-stack > .tab-content {
+.tabbrowser-tab[image] > .tab-stack > .tab-content[attention]:not([visuallyselected="true"]),
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([visuallyselected="true"]) {
   background-image: radial-gradient(farthest-corner at center bottom, white 3%, rgba(186, 221, 251, 0.75) 20%, rgba(127, 179, 255, 0.25) 40%, transparent 70%);
   background-position: center bottom var(--tab-toolbar-navbar-overlap);
   background-repeat: no-repeat;
   background-size: 85% 100%; }
+
+.tabbrowser-tab[image] > .tab-stack > .tab-content[attention]:not([pinned]):not([visuallyselected="true"]) {
+  background-position: left bottom var(--tab-toolbar-navbar-overlap);
+  background-size: 34px 100%; }
+
+.tab-label[attention]:not([visuallyselected="true"]) {
+  font-weight: bold; }
 
 /* Tab separators */
 /* Also show separators beside the selected tab when dragging it. */
@@ -2729,6 +2790,12 @@ lwtHeader;*/
 .alltabs-endimage[soundplaying] {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio); }
 
+menuitem:hover > hbox > .alltabs-endimage[muted] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-menu-muted-hover); }
+
+menuitem:hover > hbox > .alltabs-endimage[soundplaying] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-menu-hover); }
+
 /* Sidebar */
 #sidebar-throbber[loading="true"] {
   list-style-image: url("chrome://global/skin/icons/loading_16.png");
@@ -2798,7 +2865,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   margin-bottom: 5px; }
 
 #sync-start-panel-subtitle {
-  margin: 0; }
+  margin-bottom: 0; }
 
 /* Status panel */
 .statuspanel-label {
@@ -2951,7 +3018,7 @@ html|*#fullscreen-exit-button {
   -moz-appearance: none;
   display: -moz-box;
   background-color: transparent;
-  list-style-image: url("chrome://browser/skin/devtools/dropmarker.svg");
+  list-style-image: url("chrome://devtools/skin/images/dropmarker.svg");
   -moz-box-align: center;
   border-width: 0;
   min-width: 16px; }
@@ -2973,7 +3040,7 @@ html|*#fullscreen-exit-button {
 .devtools-responsiveui-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker,
 .devtools-responsiveui-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-dropmarker {
   -moz-appearance: none !important;
-  list-style-image: url("chrome://browser/skin/devtools/dropmarker.svg");
+  list-style-image: url("chrome://devtools/skin/images/dropmarker.svg");
   -moz-box-align: center;
   padding: 0 3px; }
 
@@ -2982,19 +3049,19 @@ html|*#fullscreen-exit-button {
   margin-left: 0; }
 
 .devtools-responsiveui-close {
-  list-style-image: url("chrome://browser/skin/devtools/close.png"); }
+  list-style-image: url("chrome://devtools/skin/images/close.png"); }
 
 .devtools-responsiveui-rotate {
-  list-style-image: url("chrome://browser/skin/devtools/responsiveui-rotate.png"); }
+  list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-rotate.png"); }
 
 @media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-close {
-    list-style-image: url("chrome://browser/skin/devtools/close@2x.png"); }
+    list-style-image: url("chrome://devtools/skin/images/close@2x.png"); }
 
   .devtools-responsiveui-rotate {
-    list-style-image: url("chrome://browser/skin/devtools/responsiveui-rotate@2x.png"); } }
+    list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-rotate@2x.png"); } }
 .devtools-responsiveui-touch {
-  list-style-image: url("chrome://browser/skin/devtools/responsiveui-touch.png");
+  list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-touch.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px); }
 
 .devtools-responsiveui-touch[checked] {
@@ -3002,24 +3069,24 @@ html|*#fullscreen-exit-button {
 
 @media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-touch {
-    list-style-image: url("chrome://browser/skin/devtools/responsiveui-touch@2x.png");
+    list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-touch@2x.png");
     -moz-image-region: rect(0px, 32px, 32px, 0px); }
 
   .devtools-responsiveui-touch[checked] {
     -moz-image-region: rect(0px, 64px, 32px, 32px); } }
 .devtools-responsiveui-screenshot {
-  list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot.png"); }
+  list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-screenshot.png"); }
 
 @media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-screenshot {
-    list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot@2x.png"); } }
+    list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-screenshot@2x.png"); } }
 .devtools-responsiveui-resizebarV {
   width: 7px;
   height: 24px;
   cursor: ew-resize;
   transform: translate(12px, -12px);
   background-size: cover;
-  background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer.png"); }
+  background-image: url("chrome://devtools/skin/images/responsivemode/responsive-vertical-resizer.png"); }
 
 .devtools-responsiveui-resizebarH {
   width: 24px;
@@ -3027,7 +3094,7 @@ html|*#fullscreen-exit-button {
   cursor: ns-resize;
   transform: translate(-12px, 12px);
   background-size: cover;
-  background-image: url("chrome://browser/skin/devtools/responsive-horizontal-resizer.png"); }
+  background-image: url("chrome://devtools/skin/images/responsivemode/responsive-horizontal-resizer.png"); }
 
 .devtools-responsiveui-resizehandle {
   width: 16px;
@@ -3035,7 +3102,7 @@ html|*#fullscreen-exit-button {
   cursor: se-resize;
   transform: translate(12px, 12px);
   background-size: cover;
-  background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png"); }
+  background-image: url("chrome://devtools/skin/images/responsivemode/responsive-se-resizer.png"); }
 
 /* FxOS custom mode with additional buttons and phone look'n feel */
 /* Hide devtools manual resizer */
@@ -3071,7 +3138,7 @@ html|*#fullscreen-exit-button {
   -moz-user-focus: ignore;
   width: 40px;
   height: 30px;
-  list-style-image: url("chrome://browser/skin/devtools/responsiveui-home.png"); }
+  list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-home.png"); }
 
 .devtools-responsiveui-sleep-button {
   -moz-user-focus: ignore;
@@ -3117,13 +3184,13 @@ html|*#fullscreen-exit-button {
 
 @media (min-resolution: 1.1dppx) {
   .devtools-responsiveui-resizebarV {
-    background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer@2x.png"); }
+    background-image: url("chrome://devtools/skin/images/responsivemode/responsive-vertical-resizer@2x.png"); }
 
   .devtools-responsiveui-resizebarH {
-    background-image: url("chrome://browser/skin/devtools/responsive-horizontal-resizer@2x.png"); }
+    background-image: url("chrome://devtools/skin/images/responsivemode/responsive-horizontal-resizer@2x.png"); }
 
   .devtools-responsiveui-resizehandle {
-    background-image: url("chrome://browser/skin/devtools/responsive-se-resizer@2x.png"); } }
+    background-image: url("chrome://devtools/skin/images/responsivemode/responsive-se-resizer@2x.png"); } }
 /* Developer toolbar */
 /* NOTE: THESE NEED TO STAY IN SYNC WITH LIGHT-THEME.CSS AND DARK-THEME.CSS.
    We are copy/pasting variables from light-theme and dark-theme,
@@ -3180,7 +3247,7 @@ html|*#fullscreen-exit-button {
 
 :root[devtoolstheme="light"] #developer-toolbar > toolbarbutton:not([checked=true]) > image,
 :root[devtoolstheme="light"] .gclitoolbar-input-node:not([focused=true])::before {
-  filter: url("chrome://browser/skin/devtools/filters.svg#invert"); }
+  filter: url("chrome://devtools/skin/images/filters.svg#invert"); }
 
 .developer-toolbar-button > .toolbarbutton-icon,
 #developer-toolbar-closebutton > .toolbarbutton-icon {
@@ -3188,7 +3255,7 @@ html|*#fullscreen-exit-button {
   height: 16px; }
 
 #developer-toolbar-toolbox-button {
-  list-style-image: url("chrome://browser/skin/devtools/toggle-tools.png");
+  list-style-image: url("chrome://devtools/skin/images/toggle-tools.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px); }
 
 #developer-toolbar-toolbox-button > label {
@@ -3205,7 +3272,7 @@ html|*#fullscreen-exit-button {
 
 @media (min-resolution: 1.1dppx) {
   #developer-toolbar-toolbox-button {
-    list-style-image: url("chrome://browser/skin/devtools/toggle-tools@2x.png");
+    list-style-image: url("chrome://devtools/skin/images/toggle-tools@2x.png");
     -moz-image-region: rect(0px, 32px, 32px, 0px); }
 
   #developer-toolbar-toolbox-button:hover {
@@ -3217,7 +3284,7 @@ html|*#fullscreen-exit-button {
   #developer-toolbar-toolbox-button[checked=true] {
     -moz-image-region: rect(0px, 128px, 32px, 96px); } }
 #developer-toolbar-closebutton {
-  list-style-image: url("chrome://browser/skin/devtools/close.png");
+  list-style-image: url("chrome://devtools/skin/images/close.png");
   -moz-appearance: none;
   border: none;
   margin: 0 4px;
@@ -3227,7 +3294,7 @@ html|*#fullscreen-exit-button {
 
 @media (min-resolution: 1.1dppx) {
   #developer-toolbar-closebutton {
-    list-style-image: url("chrome://browser/skin/devtools/close@2x.png"); } }
+    list-style-image: url("chrome://devtools/skin/images/close@2x.png"); } }
 #developer-toolbar-closebutton > .toolbarbutton-icon {
   /* XXX Buttons have padding in widget/ that we don't want here but can't override with good CSS, so we must
      use evil CSS to give the impression of smaller content */
@@ -3289,7 +3356,7 @@ html|*#gcli-output-frame {
   width: 16px;
   height: 16px;
   margin: 0 2px;
-  background-image: url("chrome://browser/skin/devtools/commandline-icon.png");
+  background-image: url("chrome://devtools/skin/images/commandline-icon.png");
   background-position: 0 center;
   background-size: 32px 16px; }
 
@@ -3298,7 +3365,7 @@ html|*#gcli-output-frame {
 
 @media (min-resolution: 1.1dppx) {
   .gclitoolbar-input-node::before {
-    background-image: url("chrome://browser/skin/devtools/commandline-icon@2x.png"); } }
+    background-image: url("chrome://devtools/skin/images/commandline-icon@2x.png"); } }
 .gclitoolbar-input-node > .textbox-input-box > html|*.textbox-input::-moz-selection {
   background-color: var(--selection-background);
   color: var(--selection-color);
@@ -3734,6 +3801,12 @@ toolbar[brighttext] #downloads-indicator-counter {
 chatbar > chatbox > .chat-titlebar > .chat-swap-button {
   transform: none; }
 
+chatbox[src^="about:loopconversation#"] .chat-minimize-button {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-white"); }
+
+chatbox[src^="about:loopconversation#"] .chat-swap-button {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-white"); }
+
 .chat-loop-hangup {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#exit-white");
   background-color: #d13f1a;
@@ -3755,6 +3828,9 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
   text-shadow: none;
   cursor: inherit; }
 
+chatbox[src^="about:loopconversation#"] .chat-title {
+  color: white; }
+
 .chat-titlebar {
   height: 26px;
   min-height: 26px;
@@ -3770,6 +3846,10 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
 
 .chat-titlebar[selected] {
   background-color: #f0f0f0; }
+
+chatbox[src^="about:loopconversation#"] > .chat-titlebar {
+  background-color: #00a9dc;
+  border-color: #00a9dc; }
 
 .chat-titlebar > .notification-anchor-icon {
   margin-left: 2px;
@@ -4627,5 +4707,62 @@ notification.heartbeat {
   -moz-padding-end: 0 !important;
   -moz-margin-end: 0 !important; }
 
-.browser-action-panel > .panel-arrowcontainer > .panel-arrowcontent {
-  padding: 0; }
+.browser-extension-panel > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+  overflow: hidden; }
+
+/* User Context UI browser styles */
+#menu_newUserContextTabPersonal {
+  list-style-image: url("chrome://browser/skin/usercontext/personal.svg"); }
+
+#menu_newUserContextTabWork {
+  list-style-image: url("chrome://browser/skin/usercontext/work.svg"); }
+
+#menu_newUserContextTabBanking {
+  list-style-image: url("chrome://browser/skin/usercontext/banking.svg"); }
+
+#menu_newUserContextTabShopping {
+  list-style-image: url("chrome://browser/skin/usercontext/shopping.svg"); }
+
+/* URL Bar Decoration */
+#userContext-indicator {
+  height: 16px;
+  width: 16px; }
+
+#userContext-label {
+  margin-inline-end: 3px;
+  color: #909090; }
+
+#userContext-icons:not([usercontextid]) {
+  display: none; }
+
+#userContext-icons {
+  -moz-box-align: center; }
+
+/* Personal User Context */
+#userContext-icons[usercontextid="1"] > #userContext-label {
+  color: #00a7e0; }
+
+#userContext-icons[usercontextid="1"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/personal.svg"); }
+
+/* Work User Context */
+#userContext-icons[usercontextid="2"] > #userContext-label {
+  color: #f89c24; }
+
+#userContext-icons[usercontextid="2"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/work.svg"); }
+
+/* Banking User Context */
+#userContext-icons[usercontextid="3"] > #userContext-label {
+  color: #7dc14c; }
+
+#userContext-icons[usercontextid="3"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/banking.svg"); }
+
+/* Shopping User Context */
+#userContext-icons[usercontextid="4"] > #userContext-label {
+  color: #ee5195; }
+
+#userContext-icons[usercontextid="4"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/shopping.svg"); }
