@@ -21,7 +21,7 @@ NULL =
 
 mkxpi:
 if ENABLE_LIGHT
-	cp -r --no-preserve=mode,ownership $(top_srcdir)/arc-firefox-theme $(lighttempdir)
+	cp -r $(top_srcdir)/arc-firefox-theme $(lighttempdir)
 
 	cp $(lighttempdir)/chrome/browser/sass/browser-light.css $(lighttempdir)/chrome/browser/browser.css
 	rm -rf $(lighttempdir)/chrome/browser/sass
@@ -34,7 +34,7 @@ if ENABLE_LIGHT
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
-	cp -r --no-preserve=mode,ownership $(top_srcdir)/arc-firefox-theme $(darkertempdir)
+	cp -r $(top_srcdir)/arc-firefox-theme $(darkertempdir)
 
 	cp $(darkertempdir)/chrome/browser/sass/browser-darker.css $(darkertempdir)/chrome/browser/browser.css
 	rm -rf $(darkertempdir)/chrome/browser/sass
@@ -53,7 +53,7 @@ if ENABLE_DARKER
 endif # ENABLE_LIGHT
 
 if ENABLE_DARK
-	cp -r --no-preserve=mode,ownership $(top_srcdir)/arc-firefox-theme $(darktempdir)
+	cp -r $(top_srcdir)/arc-firefox-theme $(darktempdir)
 
 	cp $(darktempdir)/chrome/browser/sass/browser-dark.css $(darktempdir)/chrome/browser/browser.css
 	rm -rf $(darktempdir)/chrome/browser/sass
