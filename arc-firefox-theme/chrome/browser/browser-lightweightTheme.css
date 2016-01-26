@@ -18,7 +18,7 @@
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-end[visuallyselected=true]:-moz-lwtheme::before {
   background-attachment: scroll, fixed;
   background-color: transparent;
-  background-image: linear-gradient(transparent 0px, transparent 2px, hsla(0,0%,100%,0.35) 2px, hsla(0,0%,100%,0.35) 3px, hsla(0,0%,100%,0.65) 3px, hsla(0,0%,100%,0.65) 4px, rgba(255,255,255,.3));/*, lwtHeader;*/
+  background-image: linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4));/*, lwtHeader;*/
   background-position: 0 0, right top;
   background-repeat: repeat-x, no-repeat;
 }
@@ -27,7 +27,7 @@
   background-attachment: scroll, scroll, fixed;
   background-color: transparent;
   background-image: url(chrome://browser/skin/tabbrowser/tab-active-middle.png),
-                    linear-gradient(transparent 0px, transparent 2px, hsla(0,0%,100%,0.35) 2px, hsla(0,0%,100%,0.35) 3px, hsla(0,0%,100%,0.65) 3px, hsla(0,0%,100%,0.65) 4px, rgba(255,255,255,.3));/*,
+                    linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4));/*,
                     lwtHeader;*/
   background-position: 0 0, 0 0, right top;
   background-repeat: repeat-x, repeat-x, no-repeat;
