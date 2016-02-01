@@ -47,7 +47,6 @@
 
   /* Url and search bars */
   --url-and-searchbar-background-color: #171B1F;
-  --url-and-searchbar-color: #fff;
   --urlbar-separator-color: #5F6670;
   --urlbar-dropmarker-url: url("chrome://browser/skin/devedition/urlbar-history-dropmarker.svg");
   --urlbar-dropmarker-region: rect(0px, 11px, 14px, 0px);
@@ -62,7 +61,8 @@
 :root[devtoolstheme="dark"] #identity-box {
   --identity-box-chrome-color: #46afe3;
   --identity-box-verified-background-color: transparent;
-  --identity-box-selected-background-color: rgba(231,230,230,.2);
+  --identity-box-hover-background-color: rgba(231,230,230,.2);
+  --identity-box-selected-background-color: rgba(211,210,210,.2);
 }
 
 :root[devtoolstheme="light"] {
@@ -166,11 +166,6 @@
   color: var(--chrome-color);
 }
 
-.browserContainer > .findbar-textbox {
-  background-color: var(--url-and-searchbar-background-color) !important;
-  color: var(--url-and-searchbar-color);
-}
-
 /* Default findbar text color doesn't look good - Bug 1125677 */
 .browserContainer > findbar .findbar-find-status,
 .browserContainer > findbar .found-matches {
@@ -200,7 +195,7 @@ toolbar[brighttext] #downloads-indicator-counter {
 #navigator-toolbox .searchbar-textbox {
   background-color: var(--url-and-searchbar-background-color) !important;
   background-image: none !important;
-  color: var(--url-and-searchbar-color) !important;
+  color: inherit !important;
   border: 1px solid var(--chrome-nav-bar-controls-border-color) !important;
   box-shadow: none !important;
 }
@@ -310,6 +305,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   /* Important needed because !important is used in browser.css */
   background-color: var(--tab-hover-background-color) !important;
   background-image: none;
+}
+
+:root {
+  --forwardbutton-width: 29px;
 }
 
 .tab-close-button[visuallyselected]:not(:hover) {

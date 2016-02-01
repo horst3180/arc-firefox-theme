@@ -10,10 +10,9 @@ cp global/arrow/arrow-rit.gif global/arrow/arrow-rit-hov.gif
 
 cp mozapps/extensions/dictionaryGeneric.png mozapps/extensions/category-dictionaries.png
 cp mozapps/extensions/experimentGeneric.png mozapps/extensions/category-experiments.png
-cp mozapps/extensions/extensionGeneric.png mozapps/extensions/category-extensions.png
+cp mozapps/extensions/extensionGeneric.svg mozapps/extensions/category-extensions.svg
 cp mozapps/extensions/localeGeneric.png mozapps/extensions/category-languages.png
 cp mozapps/extensions/themeGeneric.png mozapps/extensions/category-themes.png
-cp mozapps/extensions/extensionGeneric.png mozapps/xpinstall/xpinstallItemGeneric.png
 
 cp mozapps/passwordmgr/key-16.png mozapps/passwordmgr/key.png
 
