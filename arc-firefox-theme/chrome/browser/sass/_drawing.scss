@@ -133,4 +133,40 @@
     border-color: transparentize($selected_bg_color, 0.35);
     background-color: transparentize($selected_bg_color, 0.35);
   }
+
+  @else if $t==osd {
+  //
+  // normal osd button
+  //
+    color: $osd_fg_color;
+    border-color: $osd_button_border;
+    background-color: $osd_button_bg;
+  }
+
+  @else if $t==osd-hover {
+  //
+  // active osd button
+  //
+    color: $osd_fg_color;
+    border-color: $osd_button_border;
+    background-color: opacify(lighten($osd_button_bg, 7%), 0.1);
+  }
+
+  @else if $t==osd-active {
+  //
+  // active osd button
+  //
+    color: $selected_fg_color;
+    border-color: $osd_button_border;
+    background-color: $selected_bg_color;
+  }
+
+  @else if $t==osd-insensitive {
+  //
+  // insensitive osd button
+  //
+    color: $osd_insensitive_fg_color;
+    border-color: $osd_button_border;
+    background-color: transparentize($osd_button_bg, 0.15);
+  }
 }
