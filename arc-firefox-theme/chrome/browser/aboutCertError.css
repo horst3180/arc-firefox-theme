@@ -110,3 +110,10 @@ body {
 .hostname {
   font-weight: bold;
 }
+
+#reportCertificateErrorRetry,
+#certificateErrorReporting,
+#reportSendingMessage,
+#reportSentMessage {
+  display: none;
+}

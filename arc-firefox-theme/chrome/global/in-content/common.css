@@ -474,7 +474,9 @@ html|a:hover:active,
 
 /* Hide the actual checkbox */
 html|input[type="checkbox"] {
-  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
   position: absolute;
 }
 
@@ -871,6 +873,13 @@ xul|*.numberbox-input-box {
 xul|*.text-link:-moz-focusring,
 xul|*.inline-link:-moz-focusring {
   border: 1px dotted -moz-DialogText;
+}
+
+xul|menulist:-moz-focusring > xul|*.menulist-label-box,
+xul|radio[focused="true"] > xul|*.radio-label-box,
+html|input[type="checkbox"]:-moz-focusring + html|label:before,
+xul|checkbox:-moz-focusring > xul|*.checkbox-label-box {
+  outline: 1px dotted;
 }
 
 xul|spinbuttons {

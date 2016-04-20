@@ -7,7 +7,6 @@
 notification {
   color: -moz-gtk-info-bar-text;
   -moz-appearance: -moz-gtk-info-bar;
-  background-color: InfoBackground;
   text-shadow: none;
 }
 
