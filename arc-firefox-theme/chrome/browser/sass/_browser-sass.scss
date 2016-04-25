@@ -120,10 +120,6 @@ $darker_asset_path_2: if($darker=='true', 'dark', $asset_path);
   padding-bottom: 3px;
 }
 
-//#nav-bar:-moz-lwtheme {
-//  box-shadow: 0 1px 0 rgba(255,255,255,.4) inset;
-//}
-
 #nav-bar-overflow-button {
   -moz-image-region: rect(-5px, 12px, 11px, -4px);
 }

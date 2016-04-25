@@ -9,6 +9,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 
+/* navbarInsetHighlight is tightly coupled to the toolbarHighlight constant. */
       #tab-background-fill {
         background-color: -moz-dialog;
         background-image: linear-gradient(transparent 2px, hsla(0,0%,100%,.05) 2px, hsla(0,0%,100%,.05));
