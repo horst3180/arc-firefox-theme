@@ -680,7 +680,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 #TabsToolbar .toolbarbutton-1[open]:not([disabled=true]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
-#TabsToolbar .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-badge-container,
+#TabsToolbar .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-badge-stack,
 #TabsToolbar .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-icon {
   background-color: none;
   @include button(header-hover);
