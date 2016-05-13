@@ -4588,3 +4588,25 @@ notification.heartbeat {
 
 #userContext-icons[usercontextid="4"] > #userContext-indicator {
   list-style-image: url("chrome://browser/skin/usercontext/shopping.svg"); }
+
+#nav-bar #loop-button, #nav-bar
+toolbar[brighttext] #loop-button {
+  list-style-image: url("chrome://browser/skin/custom_images/light/loop-toolbar-icons.svg") !important; }
+#TabsToolbar #loop-button, #TabsToolbar
+toolbar[brighttext] #loop-button {
+  list-style-image: url("chrome://browser/skin/custom_images/dark/loop-tabbar-icons.svg") !important; }
+#nav-bar #loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar
+toolbar[brighttext] #loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar
+toolbar[brighttext] #loop-button:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
+  list-style-image: url("chrome://browser/skin/custom_images/loop-toolbar-icons-active.svg") !important; }
+
+#nav-bar #pocket-button, #nav-bar
+toolbar[brighttext] #pocket-button {
+  list-style-image: url("chrome://browser/skin/custom_images/light/pocket-toolbar-icons.svg") !important; }
+#TabsToolbar #pocket-button, #TabsToolbar
+toolbar[brighttext] #pocket-button {
+  list-style-image: url("chrome://browser/skin/custom_images/dark/pocket-tabbar-icons.svg") !important; }
+#nav-bar #pocket-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #pocket-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar
+toolbar[brighttext] #pocket-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar
+toolbar[brighttext] #pocket-button:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
+  list-style-image: url("chrome://browser/skin/custom_images/pocket-toolbar-icons-active.svg") !important; }

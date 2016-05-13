@@ -1,0 +1,11 @@
+#pocket-button,
+toolbar[brighttext] #pocket-button {
+  #nav-bar & { list-style-image: url("chrome://browser/skin/custom_images/#{$asset_path}/pocket-toolbar-icons.svg") !important; }
+
+  #TabsToolbar & { list-style-image: url("chrome://browser/skin/custom_images/#{$darker_asset_path_2}/pocket-tabbar-icons.svg") !important; }
+
+  #nav-bar &:not([disabled=true]):-moz-any([open],[checked],:hover:active),
+  #TabsToolbar &:not([disabled=true]):-moz-any([open],[checked],:hover:active) {
+    list-style-image: url("chrome://browser/skin/custom_images/pocket-toolbar-icons-active.svg") !important;
+  }
+}
