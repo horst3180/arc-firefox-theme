@@ -2299,12 +2299,12 @@ richlistitem[type~="action"][actiontype$="tab"] > .ac-url-box > .ac-action-icon 
 .tab-background,
 .tabs-newtab-button {
   /* overlap the tab curves */
-  -moz-margin-end: -15px;
-  -moz-margin-start: -15px; }
+  -moz-margin-end: -14px;
+  -moz-margin-start: -14px; }
 
 .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
   -moz-padding-end: 15px;
-  -moz-padding-start: 15px; }
+  -moz-padding-start: 5px; }
 
 /* Tab Overflow */
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
