@@ -5,7 +5,7 @@
   
   <Description about="urn:mozilla:install-manifest">
     <em:id>{52c2877e-44e1-11e5-8874-a62d1d5d46B0}</em:id>
-    <em:version>46.20160426</em:version>
+    <em:version>46.20160530</em:version>
     <em:type>4</em:type>
     <em:name>Arc Theme</em:name>
     <em:description>Arc Theme for Firefox</em:description>
