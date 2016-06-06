@@ -12,7 +12,7 @@
 /* navbarInsetHighlight is tightly coupled to the toolbarHighlight constant. */
       #tab-background-fill {
         background-color: -moz-dialog;
-        background-image: linear-gradient(transparent 2px, hsla(0,0%,100%,.05) 2px, hsla(0,0%,100%,.05));
+        background-image: linear-gradient(transparent 2px, hsla(0,0%,100%,.15) 2px, hsla(0,0%,100%,.15));
         background-repeat: no-repeat;
         height: 100%;
         width: 100%;

@@ -5,6 +5,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* navbarInsetHighlight is tightly coupled to the toolbarHighlight constant. */
 :root {
   --toolbarbutton-hover-background: #fbfbfc;
   --toolbarbutton-hover-boxshadow: none;
@@ -427,9 +428,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   -moz-image-region: rect(0px 48px 16px 32px); }
 
 #subscribeToPageMenuitem:not([disabled]),
-#subscribeToPageMenupopup,
-#BMB_subscribeToPageMenuitem:not([disabled]),
-#BMB_subscribeToPageMenupopup {
+#subscribeToPageMenupopup {
   list-style-image: url("chrome://browser/skin/page-livemarks.png"); }
 
 #bookmarksToolbarFolderMenu,
@@ -640,7 +639,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
     list-style-image: url("chrome://browser/skin/custom_images/light/tabbar-icons.svg"); }
 
-#nav-bar #back-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #back-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #back-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #back-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #forward-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #forward-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #home-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #home-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #print-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #print-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #downloads-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #downloads-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #new-tab-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #new-tab-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #new-window-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #new-window-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #fullscreen-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #fullscreen-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #sync-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #sync-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #feed-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #feed-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #social-share-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #social-share-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #open-file-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #open-file-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #find-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #find-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #developer-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #developer-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #preferences-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #preferences-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #privatebrowsing-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #privatebrowsing-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #save-page-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #save-page-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #add-ons-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #add-ons-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #history-panelmenu:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #history-panelmenu:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #nav-bar-overflow-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #nav-bar-overflow-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #PanelUI-menu-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #PanelUI-menu-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #characterencoding-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #characterencoding-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #email-link-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #email-link-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #sidebar-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #sidebar-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #zoom-out-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #zoom-out-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #zoom-reset-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #zoom-reset-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #zoom-in-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #zoom-in-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #cut-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #cut-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #copy-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #copy-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #paste-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #paste-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #e10s-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #e10s-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #panic-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #panic-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #webide-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #webide-button:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
+#nav-bar #back-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #back-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #forward-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #forward-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #home-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #home-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #print-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #print-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #downloads-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #downloads-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #new-tab-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #new-tab-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #new-window-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #new-window-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #fullscreen-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #fullscreen-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #sync-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #sync-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #feed-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #feed-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #social-share-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #social-share-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #open-file-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #open-file-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #find-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #find-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #developer-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #developer-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #preferences-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #preferences-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #privatebrowsing-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #privatebrowsing-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #save-page-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #save-page-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #add-ons-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #add-ons-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #history-panelmenu:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #history-panelmenu:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #nav-bar-overflow-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #nav-bar-overflow-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #PanelUI-menu-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #PanelUI-menu-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #characterencoding-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #characterencoding-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #email-link-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #email-link-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #sidebar-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #sidebar-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #zoom-out-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #zoom-out-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #zoom-reset-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #zoom-reset-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #zoom-in-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #zoom-in-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #cut-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #cut-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #copy-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #copy-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #paste-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #paste-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #e10s-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #e10s-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #panic-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #panic-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #nav-bar #webide-button:not([disabled=true]):-moz-any([open], [checked], :hover:active), #TabsToolbar #webide-button:not([disabled=true]):-moz-any([open], [checked], :hover:active) {
   list-style-image: url("chrome://browser/skin/custom_images/toolbar-icons-active.svg"); }
 
 #nav-bar #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker:not([disabled=true]):-moz-any([open], [checked], :hover:active) > .dropmarker-icon,
@@ -817,6 +816,9 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   toolbarpaletteitem[place="palette"] > #sync-button {
     -moz-image-region: rect(0px, 1024px, 32px, 992px); }
 
+  #sync-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
+    -moz-image-region: rect(32px, 1024px, 64px, 992px); }
+
   #feed-button[cui-areatype="menu-panel"],
   toolbarpaletteitem[place="palette"] > #feed-button {
     -moz-image-region: rect(0px, 416px, 32px, 384px); }
@@ -973,6 +975,9 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   #sync-button[cui-areatype="menu-panel"],
   toolbarpaletteitem[place="palette"] > #sync-button {
     -moz-image-region: rect(0px, 2048px, 64px, 1984px); }
+
+  #sync-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
+    -moz-image-region: rect(64px, 2048px, 128px, 1984px); }
 
   #feed-button[cui-areatype="menu-panel"],
   toolbarpaletteitem[place="palette"] > #feed-button {
@@ -1166,7 +1171,10 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   -moz-appearance: toolbarbutton-dropdown;
   transition: opacity 0.15s ease; }
 
-#navigator-toolbox:not(:hover) .urlbar-history-dropmarker {
+#urlbar-wrapper[switchingtabs] > #urlbar > .urlbar-textbox-container > .urlbar-history-dropmarker {
+  transition: none; }
+
+#navigator-toolbox:not(:hover) #urlbar:not([focused]) > .urlbar-textbox-container > .urlbar-history-dropmarker {
   opacity: 0; }
 
 #urlbar-container {
@@ -1383,6 +1391,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   list-style-image: url(chrome://browser/skin/identity-mixed-active-blocked.svg);
   visibility: visible; }
 
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
+  visibility: visible; }
+
 .popup-notification-icon {
   width: 64px;
   height: 64px;
@@ -1473,11 +1485,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   width: 16px;
   height: 16px;
   margin: 0 2px; }
-
-.identity-notification-icon,
-#identity-notification-icon {
-  list-style-image: url(chrome://mozapps/skin/profile/profileicon.png);
-  /* XXX: need HiDPI version */ }
 
 .geo-notification-icon,
 #geo-notification-icon {
@@ -2800,6 +2807,20 @@ html|*#fullscreen-exit-button {
   box-shadow: none;
   border-bottom-width: 0; }
 
+.devtools-responsiveui-textinput {
+  -moz-appearance: none;
+  background: #333;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 2px;
+  padding: 5px;
+  width: 200px;
+  margin: 0; }
+
+.devtools-responsiveui-textinput[attention] {
+  border-color: #38ace6;
+  background: rgba(56, 172, 230, 0.4); }
+
 .devtools-responsiveui-menulist,
 .devtools-responsiveui-toolbarbutton {
   -moz-appearance: none;
@@ -3047,15 +3068,15 @@ html|*#fullscreen-exit-button {
    We are copy/pasting variables from light-theme and dark-theme,
    since they aren't loaded in this context (within browser.css). */
 :root[devtoolstheme="light"] #developer-toolbar {
-  --gcli-background-color: #ebeced;
+  --gcli-background-color: #fcfcfc;
   /* --theme-tab-toolbar-background */
-  --gcli-input-background: #f0f1f2;
+  --gcli-input-background: #fcfcfc;
   /* --theme-toolbar-background */
-  --gcli-input-focused-background: #f7f7f7;
+  --gcli-input-focused-background: #ffffff;
   /* --theme-sidebar-background */
-  --gcli-input-color: #18191a;
+  --gcli-input-color: #393f4c;
   /* --theme-body-color */
-  --gcli-border-color: #aaaaaa;
+  --gcli-border-color: #dde1e4;
   /* --theme-splitter-color */
   --selection-background: #4c9ed9;
   /* --theme-selection-background */
@@ -3088,7 +3109,7 @@ html|*#fullscreen-exit-button {
 #developer-toolbar > toolbarbutton {
   -moz-appearance: none;
   border: none;
-  background: transparent;
+  background-color: transparent;
   margin: 0;
   padding: 0 10px;
   width: 32px; }
@@ -3096,14 +3117,17 @@ html|*#fullscreen-exit-button {
 .developer-toolbar-button > image {
   margin: auto 10px; }
 
-:root[devtoolstheme="light"] #developer-toolbar > toolbarbutton:not([checked=true]) > image,
+:root[devtoolstheme="light"] #developer-toolbar > .developer-toolbar-button:not([checked=true]) > image,
 :root[devtoolstheme="light"] .gclitoolbar-input-node:not([focused=true])::before {
   filter: invert(1); }
 
-.developer-toolbar-button > .toolbarbutton-icon,
-#developer-toolbar-closebutton > .toolbarbutton-icon {
+.developer-toolbar-button > .toolbarbutton-icon {
   width: 16px;
   height: 16px; }
+
+/* The toolkit close button is low contrast in the dark theme so invert it. */
+:root[devtoolstheme="dark"] #developer-toolbar > .close-icon:not(:hover) > image {
+  filter: invert(1); }
 
 #developer-toolbar-toolbox-button {
   list-style-image: url("chrome://devtools/skin/images/toggle-tools.png");
@@ -3134,32 +3158,6 @@ html|*#fullscreen-exit-button {
 
   #developer-toolbar-toolbox-button[checked=true] {
     -moz-image-region: rect(0px, 128px, 32px, 96px); } }
-#developer-toolbar-closebutton {
-  list-style-image: url("chrome://devtools/skin/images/close.png");
-  -moz-appearance: none;
-  border: none;
-  margin: 0 4px;
-  min-width: 16px;
-  width: 16px;
-  opacity: 0.6; }
-
-@media (min-resolution: 1.1dppx) {
-  #developer-toolbar-closebutton {
-    list-style-image: url("chrome://devtools/skin/images/close@2x.png"); } }
-#developer-toolbar-closebutton > .toolbarbutton-icon {
-  /* XXX Buttons have padding in widget/ that we don't want here but can't override with good CSS, so we must
-     use evil CSS to give the impression of smaller content */
-  margin: -4px; }
-
-#developer-toolbar-closebutton > .toolbarbutton-text {
-  display: none; }
-
-#developer-toolbar-closebutton:hover {
-  opacity: 0.8; }
-
-#developer-toolbar-closebutton:hover:active {
-  opacity: 1; }
-
 /* GCLI */
 html|*#gcli-tooltip-frame,
 html|*#gcli-output-frame {
@@ -3307,6 +3305,9 @@ notification.pluginVulnerable {
 
 notification.pluginVulnerable .messageImage {
   list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png"); }
+
+notification.pluginVulnerable > .notification-inner > .messageCloseButton:not(:hover) {
+  background-image: -moz-image-rect(url("chrome://global/skin/icons/close.svg"), 0, 80, 16, 64); }
 
 #notification-popup[popupid="login-fill"] > .panel-arrowcontainer > .panel-arrowcontent {
   /* Since we display a sliding subview that extends to the border, we cannot
