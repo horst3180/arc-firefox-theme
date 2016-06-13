@@ -28,7 +28,7 @@ if ENABLE_LIGHT
 	rm $(lighttempdir)/chrome/overrides.sh
 
 	cd $(lighttempdir) && \
-		zip -FS -r ../arc-firefox-theme-$(VERSION).xpi *
+		/usr/bin/zip -FS -r ../arc-firefox-theme-$(VERSION).xpi *
 
 	rm -rf $(lighttempdir)
 endif # ENABLE_LIGHT
@@ -47,7 +47,7 @@ if ENABLE_DARKER
 	sed -i "s/$(light_guid)/$(darker_guid)/" $(darkertempdir)/install.rdf
 
 	cd $(darkertempdir) && \
-		zip -FS -r ../arc-darker-firefox-theme-$(VERSION).xpi *
+		/usr/bin/zip -FS -r ../arc-darker-firefox-theme-$(VERSION).xpi *
 
 	rm -rf $(darkertempdir)
 endif # ENABLE_LIGHT
@@ -66,7 +66,7 @@ if ENABLE_DARK
 	sed -i "s/$(light_guid)/$(dark_guid)/" $(darktempdir)/install.rdf
 
 	cd $(darktempdir) && \
-		zip -FS -r ../arc-dark-firefox-theme-$(VERSION).xpi *
+		/usr/bin/zip -FS -r ../arc-dark-firefox-theme-$(VERSION).xpi *
 
 	rm -rf $(darktempdir)
 endif # ENABLE_DARK
@@ -76,15 +76,15 @@ install-data-local: mkxpi
 	$(MKDIR_P) $(extensiondir)
 
 if ENABLE_LIGHT
-	unzip -d $(extensiondir)/\{$(light_guid)\} $(top_builddir)/arc-firefox-theme-$(VERSION).xpi
+	/usr/bin/unzip -d $(extensiondir)/\{$(light_guid)\} $(top_builddir)/arc-firefox-theme-$(VERSION).xpi
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
-	unzip -d $(extensiondir)/\{$(darker_guid)\} $(top_builddir)/arc-darker-firefox-theme-$(VERSION).xpi
+	/usr/bin/unzip -d $(extensiondir)/\{$(darker_guid)\} $(top_builddir)/arc-darker-firefox-theme-$(VERSION).xpi
 endif # ENABLE_LIGHT
 
 if ENABLE_DARK
-	unzip -d $(extensiondir)/\{$(dark_guid)\} $(top_builddir)/arc-dark-firefox-theme-$(VERSION).xpi
+	/usr/bin/unzip -d $(extensiondir)/\{$(dark_guid)\} $(top_builddir)/arc-dark-firefox-theme-$(VERSION).xpi
 endif # ENABLE_LIGHT
 
 
