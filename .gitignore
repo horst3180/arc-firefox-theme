@@ -10,3 +10,4 @@ install-sh
 aclocal.m4
 missing
 autom4te.cache/
+.idea/
