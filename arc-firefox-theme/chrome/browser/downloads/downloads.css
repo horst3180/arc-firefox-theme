@@ -177,7 +177,15 @@ richlistitem[type="download"]:last-child {
 }
 
 .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=32");
+}
+
+richlistitem[type="download"][verdict="PotentiallyUnwanted"] .blockedIcon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=32");
+}
+
+richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=32");
 }
 
 .downloadButton:focus > .button-box {
@@ -203,45 +211,50 @@ richlistitem[type="download"]:last-child {
 
 /*** Button icons ***/
 
-.downloadButton.downloadConfirmBlock,
-.downloadButton.downloadCancel {
+.downloadButton.downloadIconCancel {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
-richlistitem[type="download"]:hover .downloadButton.downloadConfirmBlock,
-richlistitem[type="download"]:hover .downloadButton.downloadCancel {
+richlistitem[type="download"]:hover .downloadButton.downloadIconCancel {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
-richlistitem[type="download"]:hover .downloadButton.downloadConfirmBlock:hover,
-richlistitem[type="download"]:hover .downloadButton.downloadCancel:hover {
+richlistitem[type="download"]:hover .downloadButton.downloadIconCancel:hover {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
-richlistitem[type="download"]:hover .downloadButton.downloadConfirmBlock:active,
-richlistitem[type="download"]:hover .downloadButton.downloadCancel:active {
+richlistitem[type="download"]:hover .downloadButton.downloadIconCancel:active {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-.downloadButton.downloadShow {
+.downloadButton.downloadIconShow {
   -moz-image-region: rect(16px, 16px, 32px, 0px);
 }
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadShow {
+richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow:hover {
+  -moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow:active {
+  -moz-image-region: rect(16px, 64px, 32px, 48px);
+}
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow {
   -moz-image-region: rect(16px, 96px, 32px, 80px);
 }
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadShow:hover {
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow:hover {
   -moz-image-region: rect(16px, 112px, 32px, 96px);
 }
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadShow:active {
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow:active {
   -moz-image-region: rect(16px, 128px, 32px, 112px);
 }
 
-.downloadButton.downloadRetry {
+.downloadButton.downloadIconRetry {
   -moz-image-region: rect(32px, 16px, 48px, 0px);
 }
-richlistitem[type="download"]:hover .downloadButton.downloadRetry {
+richlistitem[type="download"]:hover .downloadButton.downloadIconRetry {
   -moz-image-region: rect(32px, 32px, 48px, 16px);
 }
-richlistitem[type="download"]:hover .downloadButton.downloadRetry:hover {
+richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:hover {
   -moz-image-region: rect(32px, 48px, 48px, 32px);
 }
-richlistitem[type="download"]:hover .downloadButton.downloadRetry:active {
+richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:active {
   -moz-image-region: rect(32px, 64px, 48px, 48px);
 }
