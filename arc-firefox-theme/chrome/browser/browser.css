@@ -519,8 +519,10 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 
 #nav-bar #PanelUI-button,
 #nav-bar[brighttext] #PanelUI-button {
+  margin-top: -3px;
+  margin-bottom: -3px;
   background: none;
-  border-image: url("chrome://browser/skin/custom_images/navbar-separator.png") 0 0 0 2/0 0 0 2px; }
+  border-image: url("chrome://browser/skin/custom_images/light/navbar-separator.png") 0 0 0 2/0 0 0 2px; }
 
 .findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover > .toolbarbutton-text,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[open]:not([disabled=true]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
@@ -591,15 +593,17 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   width: 1px;
   height: 18px;
   -moz-margin-end: -1px;
-  background-image: linear-gradient(currentColor 0, currentColor 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 1px 18px;
-  opacity: .2; }
+  background-size: 1px 18px; }
 
-:-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbaritem-combined-buttons > separator,
-:-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
-  opacity: .3; }
+#nav-bar .toolbaritem-combined-buttons:not(:hover) > separator,
+#nav-bar .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
+  background: #dcdfe3; }
+
+#TabsToolbar .toolbaritem-combined-buttons:not(:hover) > separator,
+#TabsToolbar .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
+  background: rgba(82, 93, 118, 0.15); }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   -moz-margin-start: -4px; }
