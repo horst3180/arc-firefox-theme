@@ -55,10 +55,11 @@ Uninstall the theme with
 
     sudo make uninstall
 
-#### Firefox 38 ESR (Debian Stable users see here)
-There is a separate Firefox 38 ESR compatible branch. The installation process is mostly identical to the manual installation above
+#### Firefox ESR (Debian Stable users see here)
+This repo includes separate Firefox ESR compatible branches. The installation process is mostly identical to the manual installation above
 
     git clone https://github.com/horst3180/arc-firefox-theme && cd arc-firefox-theme
-    git checkout firefox-38-esr
+    git checkout firefox-38-esr   # Execute this for Firefox 38 ESR
+    git checkout firefox-45-esr   # Execute this for Firefox 45 ESR
     ./autogen.sh --prefix=/usr
     make mkxpi
