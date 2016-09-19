@@ -19,7 +19,7 @@
 .expander-down {
   min-width: 0;
   padding: 2px 0;
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
 }
 
 .expander-up > .button-box {

@@ -27,7 +27,7 @@
 }
 
 .downloadTypeIcon {
-  -moz-margin-end: 8px;
+  margin-inline-end: 8px;
   width: 32px;
   height: 32px;
 }

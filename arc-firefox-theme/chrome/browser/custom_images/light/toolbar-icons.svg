@@ -12,9 +12,9 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   width="792"
+   width="810"
    height="36"
-   viewBox="0 0 792 36"
+   viewBox="0 0 810 36"
    sodipodi:docname="toolbar-icons.svg">
   <metadata
      id="metadata8">
@@ -54,9 +54,9 @@
      inkscape:snap-bbox-edge-midpoints="true"
      showguides="false"
      inkscape:guide-bbox="true"
-     inkscape:zoom="11.313708"
-     inkscape:cx="770.98611"
-     inkscape:cy="24.666931"
+     inkscape:zoom="22.627416"
+     inkscape:cx="797.98405"
+     inkscape:cy="24.564899"
      inkscape:current-layer="layer2"
      inkscape:object-paths="true"
      inkscape:snap-intersection-paths="true"
@@ -1433,5 +1433,21 @@
        style="display:inline;opacity:1;fill:#5c616c;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.26666667"
        d="m 779,3 c -0.554,0 -1,0.446 -1,1 l 0,7 -1,0 c -0.554,0 -1,0.446 -1,1 l 0,2 c 0,0.554 0.446,1 1,1 l 12,0 c 0.554,0 1,-0.446 1,-1 l 0,-2 c 0,-0.554 -0.446,-1 -1,-1 l -1,0 0,-7 c 0,-0.554 -0.446,-1 -1,-1 l -8,0 z"
        id="rect4403" />
+    <path
+       style="display:inline;opacity:1;fill:#5c616c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 795,2 0,13 12,0 0,-13 z m 1,1 10,0 0,11 -10,0 z"
+       id="rect4404"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;opacity:1;fill:#5c616c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 797,4 0,4 8,0 0,-4 -8,0 z m 3,2 2,0 0,1 -2,0 0,-1 z"
+       id="rect4409" />
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;opacity:1;fill:#5c616c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 797,9 0,4 8,0 0,-4 -8,0 z m 3,2 2,0 0,1 -2,0 0,-1 z"
+       id="rect4411" />
   </g>
 </svg>
