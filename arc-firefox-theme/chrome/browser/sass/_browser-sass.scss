@@ -1556,7 +1556,7 @@ list-style-image: url("chrome://browser/skin/custom_images/toolbar-icons-active.
   @include entry(focus);
 }
 
-.searchbar-textbox { border-radius: 20px; }
+.searchbar-textbox { border-radius: 20px;  padding-left: 6px; padding-right: 6px; }
 
 //#urlbar {
 //  background-color: -moz-field;
@@ -1815,7 +1815,7 @@ list-style-image: url("chrome://browser/skin/custom_images/toolbar-icons-active.
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
-  padding-inline-start: 5px;
+  padding-inline-start: 9px;
   border-radius: 0;
 }
 
@@ -2024,11 +2024,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   position: relative;
   background-color: transparent;
   background-clip: padding-box;
-  padding-left: 1px;
-  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 8px;
   border-width: 0 1px 0 0;
   border-style: solid;
-  border-color: $borders_color;
+  border-color: transparentize($entry_border, 0.5);
   //border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 fill;
   //-moz-margin-end: -8px;
 }

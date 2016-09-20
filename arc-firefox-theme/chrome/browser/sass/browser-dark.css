@@ -1179,7 +1179,9 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   box-shadow: inset 0 1px #5294E2, inset 0 -1px #5294E2, inset 1px 0 #5294E2, inset -1px 0 #5294E2; }
 
 .searchbar-textbox {
-  border-radius: 20px; }
+  border-radius: 20px;
+  padding-left: 6px;
+  padding-right: 6px; }
 
 #urlbar:-moz-lwtheme,
 .searchbar-textbox:-moz-lwtheme {
@@ -1341,7 +1343,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   padding-right: 2px; }
 
 #notification-popup-box:not([hidden]) + #identity-box {
-  padding-inline-start: 5px;
+  padding-inline-start: 9px;
   border-radius: 0; }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box {
@@ -1494,11 +1496,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   position: relative;
   background-color: transparent;
   background-clip: padding-box;
-  padding-left: 1px;
-  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 8px;
   border-width: 0 1px 0 0;
   border-style: solid;
-  border-color: #2b2e39; }
+  border-color: rgba(43, 46, 57, 0.5); }
 
 /* This changes the direction of the main notification box on the url bar. */
 #notification-popup-box:-moz-locale-dir(rtl),
