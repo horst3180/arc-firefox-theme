@@ -11,6 +11,12 @@
 /*** Panel and outer controls ***/
 
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
+  overflow: hidden;
+  display: block;
+}
+
+#downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent,
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack > .panel-subviews {
   padding: 0;
 }
 
@@ -20,21 +26,61 @@
   color: inherit;
 }
 
-#downloadsPanel:not([hasdownloads]) > #downloadsListBox {
-  display: none;
-}
-
-#downloadsPanel[hasdownloads] > #emptyDownloads {
-  display: none;
-}
-
 #emptyDownloads {
   padding: 10px 20px;
-  max-width: 40ch;
+  /* The panel can be wider than this description after the blocked subview is
+     shown, so center the text. */
+  text-align: center;
+}
+
+.downloadsPanelFooter {
+  background-color: hsla(210,4%,10%,.07);
+  border-top: 1px solid hsla(210,4%,10%,.14);
+}
+
+.downloadsPanelFooter > toolbarseparator {
+  margin: 0;
+  border: 0;
+  min-width: 0;
+  border-left: 1px solid hsla(210,4%,10%,.14);
+  -moz-appearance: none !important;
+}
+
+.downloadsPanelFooterButton {
+  -moz-appearance: none;
+  background-color: transparent;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  min-height: 40px;
+}
+
+.downloadsPanelFooterButton:hover {
+  outline: 1px solid hsla(210,4%,10%,.07);
+  background-color: hsla(210,4%,10%,.07);
+}
+
+.downloadsPanelFooterButton:hover:active {
+  outline: 1px solid hsla(210,4%,10%,.12);
+  background-color: hsla(210,4%,10%,.12);
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
+}
+
+.downloadsPanelFooterButton[default] {
+  background-color: #0996f8;
+  color: white;
+}
+
+.downloadsPanelFooterButton[default]:hover {
+  background-color: #0675d3;
+}
+
+.downloadsPanelFooterButton[default]:hover:active {
+  background-color: #0568ba;
 }
 
 #downloadsSummary {
-  padding: 8px 38px 8px 12px;
+  padding: 0 12px;
   cursor: pointer;
   -moz-user-focus: normal;
 }
@@ -46,15 +92,6 @@
 
 #downloadsSummaryDescription {
   color: -moz-nativehyperlinktext;
-}
-
-#downloadsHistory {
-  background: transparent;
-  cursor: pointer;
-}
-
-#downloadsHistory > .button-box {
-  margin: 1em;
 }
 
 /*** List items and similar elements in the summary ***/
@@ -83,14 +120,29 @@ richlistitem[type="download"]:last-child {
 }
 
 .downloadTypeIcon {
-  margin-inline-end: 8px;
-  /* Prevent flickering when changing states. */
-  height: 32px;
+  margin-top: 8px;
+  margin-inline-end: 12px;
+  margin-bottom: 8px;
+  margin-inline-start: 0;
   width: 32px;
+  height: 32px;
 }
 
-.blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/Error.png");
+.downloadBlockedBadge {
+  margin: 0 4px;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
+}
+
+.downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+richlistitem[type="download"][verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/warning.svg");
+}
+
+richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/info.svg");
 }
 
 /* We hold .downloadTarget, .downloadProgress and .downloadDetails inside of
@@ -144,23 +196,65 @@ richlistitem[type="download"]:last-child {
   padding: 0;
 }
 
+
+/*** Blocked subview ***/
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype=main] > .panel-subviews {
+  /* When the main view is showing, the shadow on the left edge of the subview is
+     barely visible on the right edge of the main view, so set it to none. */
+  box-shadow: none;
+}
+
+/* When the subview is showing, turn the download button into an arrow pointing
+   back to the main view. */
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton {
+  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
+}
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png");
+}
+
+#downloadsPanel-blockedSubview {
+  background-image: url("chrome://browser/skin/warning.svg");
+  background-size: 32px 32px;
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+#downloadsPanel-blockedSubview:-moz-locale-dir(rtl) {
+  background-position: calc(100% - 16px) 16px;
+}
+
+#downloadsPanel-blockedSubview[verdict=Malware] {
+  background-image: url("chrome://browser/skin/downloads/download-blocked.svg");
+}
+
+#downloadsPanel-blockedSubview-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
+}
+
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
+  margin-bottom: 16px;
+  opacity: var(--downloads-item-details-opacity);
+}
+
+#downloadsPanel-blockedSubview-title,
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  -moz-margin-start: 64px;
+  -moz-margin-end: 16px;
+}
+
 /*** Panel and outer controls ***/
 
-#downloadsFooter {
-  border-top: 1px solid ThreeDShadow;
-  background-image: linear-gradient(hsla(0,0%,0%,.15), hsla(0,0%,0%,.08) 6px);
-}
-
-#downloadsHistory {
-  color: -moz-nativehyperlinktext;
-}
-
 #downloadsPanel[keyfocus] #downloadsSummary:focus,
-#downloadsPanel[keyfocus] #downloadsHistory:focus > .button-box {
+#downloadsPanel[keyfocus] .downloadsPanelFooterButton:focus {
   outline: 1px -moz-dialogtext dotted;
-}
-
-#downloadsPanel[keyfocus] #downloadsSummary:focus {
   outline-offset: -5px;
 }
 
@@ -176,18 +270,6 @@ richlistitem[type="download"]:last-child {
   --downloads-item-details-opacity: 0.6;
 }
 
-.blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=32");
-}
-
-richlistitem[type="download"][verdict="PotentiallyUnwanted"] .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=32");
-}
-
-richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=32");
-}
-
 .downloadButton:focus > .button-box {
   outline: 1px -moz-dialogtext dotted;
 }
@@ -199,7 +281,8 @@ richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
   outline-offset: -1px;
 }
 
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists]:hover {
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists]:hover,
+richlistitem[type="download"][showingsubview] {
   border-radius: 3px;
   border-top: 1px solid hsla(0,0%,100%,.3);
   border-bottom: 1px solid hsla(0,0%,0%,.2);
@@ -207,6 +290,12 @@ richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
   background-image: linear-gradient(hsla(0,0%,100%,.1), transparent);
   color: HighlightText;
   cursor: pointer;
+}
+
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists][verdict="Malware"]:hover,
+richlistitem[type="download"][showingsubview][verdict="Malware"] {
+  background-color: hsl(4, 82%, 47%);
+  color: white;
 }
 
 /*** Button icons ***/
@@ -257,4 +346,30 @@ richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:hover {
 }
 richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:active {
   -moz-image-region: rect(32px, 64px, 48px, 48px);
+}
+
+.downloadButton.downloadShowBlockedInfo {
+  -moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo {
+  -moz-image-region: rect(48px, 32px, 64px, 16px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover {
+  -moz-image-region: rect(48px, 48px, 64px, 32px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active {
+  -moz-image-region: rect(48px, 64px, 64px, 48px);
+}
+
+.downloadButton.downloadShowBlockedInfo:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(64px, 16px, 80px, 0px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(64px, 32px, 80px, 16px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(64px, 48px, 80px, 32px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(64px, 64px, 80px, 48px);
 }

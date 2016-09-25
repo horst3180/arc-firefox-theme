@@ -774,6 +774,171 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 #webide-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 738px, 18px, 720px); }
 
+/*
+@media (min-resolution: 1.1dppx) {
+  :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu),
+  #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+    list-style-image: url("chrome://browser/skin/Toolbar@2x.png");
+  }
+
+  toolbar[brighttext] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu),
+  toolbar[brighttext] #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+    list-style-image: url("chrome://browser/skin/Toolbar-inverted@2x.png");
+  }
+
+  #back-button {
+    -moz-image-region: rect(0, 72px, 36px, 36px);
+  }
+
+  #forward-button {
+    -moz-image-region: rect(0, 144px, 36px, 108px);
+  }
+
+  #home-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 252px, 36px, 216px);
+  }
+
+  #bookmarks-menu-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 288px, 36px, 252px);
+  }
+
+  #bookmarks-menu-button[cui-areatype="toolbar"][starred] {
+    -moz-image-region: rect(0, 324px, 36px, 288px);
+  }
+
+  #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+    -moz-image-region: rect(0px, 1260px, 36px, 1224px);
+  }
+
+  #history-panelmenu[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 360px, 36px, 324px);
+  }
+
+  #downloads-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 396px, 36px, 360px);
+  }
+
+  #add-ons-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 432px, 36px, 396px);
+  }
+
+  #open-file-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 468px, 36px, 432px);
+  }
+
+  #save-page-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 504px, 36px, 468px);
+  }
+
+  #sync-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 1584px, 36px, 1548px);
+  }
+
+  #containers-panelmenu[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 1620px, 36px, 1584px);
+  }
+
+  #feed-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 576px, 36px, 540px);
+  }
+
+  #social-share-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 612px, 36px, 576px);
+  }
+
+  #characterencoding-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 648px, 36px, 612px);
+  }
+
+  #new-window-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 684px, 36px, 648px);
+  }
+
+  #e10s-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 684px, 36px, 648px);
+  }
+
+  #e10s-button > .toolbarbutton-icon {
+    transform: scaleY(-1);
+  }
+
+  #new-tab-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 720px, 36px, 684px);
+  }
+
+  #privatebrowsing-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 756px, 36px, 720px);
+  }
+
+  #find-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 792px, 36px, 756px);
+  }
+
+  #print-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 828px, 36px, 792px);
+  }
+
+  #fullscreen-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 864px, 36px, 828px);
+  }
+
+  #developer-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 900px, 36px, 864px);
+  }
+
+  #preferences-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 936px, 36px, 900px);
+  }
+
+  #PanelUI-menu-button {
+    -moz-image-region: rect(0, 972px, 36px, 936px);
+  }
+
+  #edit-controls[cui-areatype="toolbar"] > #cut-button {
+    -moz-image-region: rect(0, 1008px, 36px, 972px);
+  }
+
+  #edit-controls[cui-areatype="toolbar"] > #copy-button {
+    -moz-image-region: rect(0, 1044px, 36px, 1008px);
+  }
+
+  #edit-controls[cui-areatype="toolbar"] > #paste-button {
+    -moz-image-region: rect(0, 1080px, 36px, 1044px);
+  }
+
+  #zoom-controls[cui-areatype="toolbar"] > #zoom-out-button {
+    -moz-image-region: rect(0, 1116px, 36px, 1080px);
+  }
+
+  #zoom-controls[cui-areatype="toolbar"] > #zoom-in-button {
+    -moz-image-region: rect(0, 1152px, 36px, 1116px);
+  }
+
+  #nav-bar-overflow-button {
+    -moz-image-region: rect(0, 1224px, 36px, 1188px);
+  }
+
+  #email-link-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 1332px, 36px, 1296px);
+  }
+
+  #sidebar-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 1368px, 36px, 1332px);
+  }
+
+  #panic-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 1404px, 36px, 1368px);
+  }
+
+  #panic-button[cui-areatype="toolbar"][open] {
+    -moz-image-region: rect(36px, 1404px, 72px, 1368px);
+  }
+
+  #webide-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0, 1476px, 36px, 1440px);
+  }
+}
+*/
 /* Menu panel and palette styles */
 :root {
   --menupanel-list-style-image: url(chrome://browser/skin/menuPanel.png);
@@ -1132,7 +1297,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 /* Fullscreen window controls */
 #window-controls {
   -moz-box-align: start;
-  -moz-margin-start: 10px; }
+  margin-inline-start: 10px; }
 
 #close-button, #restore-button, #minimize-button {
   padding: 2px 4px;
@@ -1205,7 +1370,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 #urlbar-wrapper[switchingtabs] > #urlbar > .urlbar-textbox-container > .urlbar-history-dropmarker {
   transition: none; }
 
-#navigator-toolbox:not(:hover) #urlbar:not([focused]) > .urlbar-textbox-container > .urlbar-history-dropmarker {
+#navigator-toolbox:not(:hover) #nav-bar:not([customizing="true"]) #urlbar:not([focused]) > .urlbar-textbox-container > .urlbar-history-dropmarker {
   opacity: 0; }
 
 #urlbar-container {
@@ -1245,9 +1410,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 
 #urlbar-display-box {
   margin-top: -1px;
-  margin-bottom: -1px;
-  border-inline-end: 1px solid #AAA;
-  margin-inline-end: 3px; }
+  margin-bottom: -1px; }
 
 .urlbar-display {
   margin-top: 0;
@@ -1345,18 +1508,22 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   padding-inline-start: 9px;
   border-radius: 0; }
 
-window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box {
-  border-radius: 0; }
-
 /* MAIN IDENTITY ICON */
 #identity-icon {
   width: 16px;
   height: 16px;
   list-style-image: url(chrome://browser/skin/identity-icon.svg#normal); }
 
-#identity-box:hover > #identity-icon,
+#identity-box:hover > #identity-icon:not(.no-hover),
 #identity-box[open=true] > #identity-icon {
   list-style-image: url(chrome://browser/skin/identity-icon.svg#hover); }
+
+#identity-box.grantedPermissions > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice); }
+
+#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
+#identity-box.grantedPermissions[open=true] > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover); }
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
   list-style-image: url(chrome://branding/content/identity-icons-brand.svg); }
@@ -1404,8 +1571,13 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   visibility: collapse; }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
   list-style-image: url(chrome://browser/skin/identity-secure.svg);
+  visibility: visible; }
+
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
   visibility: visible; }
 
 #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
@@ -1419,21 +1591,166 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
   visibility: visible; }
 
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/identity-mixed-active-blocked.svg);
-  visibility: visible; }
+#notification-popup-box {
+  padding: 5px 0px;
+  margin: -5px 0px;
+  margin-inline-end: -5px;
+  padding-inline-end: 5px; }
 
-#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
-  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
-  visibility: visible; }
+/* This class can be used alone or in combination with the class defining the
+   type of icon displayed. This rule must be defined before the others in order
+   for its list-style-image to be overridden. */
+.notification-anchor-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 2px;
+  list-style-image: url(moz-icon://stock/gtk-dialog-info?size=16); }
 
+@media (min-resolution: 1.1dppx) {
+  .notification-anchor-icon {
+    list-style-image: url(moz-icon://stock/gtk-dialog-info?size=dialog); } }
 .popup-notification-icon {
   width: 64px;
   height: 64px;
   margin-inline-end: 10px; }
 
+#notification-popup-box > .notification-anchor-icon:not(.in-use):hover {
+  fill: #606060; }
+
+/* INDIVIDUAL NOTIFICATIONS */
+/* For the moment we apply the color filter only on the icons listed here.
+   The first two selectors are used by socialchat.xml (bug 1275558). */
+.webRTC-sharingDevices-notification-icon,
+.webRTC-sharingMicrophone-notification-icon,
+.camera-icon,
+.geo-icon,
+.indexedDB-icon,
+.install-icon,
+.login-icon,
+.microphone-icon,
+.plugin-icon,
+.pointerLock-icon,
+.popup-icon,
+.screen-icon,
+.desktop-notification-icon,
+.popup-notification-icon[popupid="geolocation"],
+.popup-notification-icon[popupid="indexedDB-permissions-prompt"],
+.popup-notification-icon[popupid="password"],
+.popup-notification-icon[popupid="pointerLock"],
+.popup-notification-icon[popupid="webRTC-shareDevices"],
+.popup-notification-icon[popupid="webRTC-shareMicrophone"],
+.popup-notification-icon[popupid="webRTC-shareScreen"],
+.popup-notification-icon[popupid="webRTC-sharingDevices"],
+.popup-notification-icon[popupid="webRTC-sharingMicrophone"],
+.popup-notification-icon[popupid="webRTC-sharingScreen"],
+.popup-notification-icon[popupid="web-notifications"] {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: #999; }
+
+/* The first two selectors are used by socialchat.xml (bug 1275558). The
+   notifications in the chat window are only shown when they are in use. */
+.webRTC-sharingDevices-notification-icon,
+.webRTC-sharingMicrophone-notification-icon,
+.in-use {
+  fill: #fea01b; }
+
+.popup-notification-icon[popupid="web-notifications"],
+.desktop-notification-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#desktop-notification); }
+
+.desktop-notification-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#desktop-notification-blocked); }
+
+.geo-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#geo-linux); }
+
+.geo-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#geo-linux-blocked); }
+
 .popup-notification-icon[popupid="geolocation"] {
-  list-style-image: url(chrome://browser/skin/Geolocation-64.png); }
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#geo-linux-detailed); }
+
+.popup-notification-icon[popupid="indexedDB-permissions-prompt"],
+.indexedDB-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#indexedDB); }
+
+.indexedDB-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#indexedDB-blocked); }
+
+.login-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#login); }
+
+.popup-notification-icon[popupid="password"] {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#login-detailed); }
+
+#login-fill-notification-icon {
+  /* Temporary solution until the capture and fill doorhangers are unified. */
+  transform: scaleX(-1); }
+
+/* The first selector is used by socialchat.xml (bug 1275558). */
+.webRTC-sharingDevices-notification-icon,
+.camera-icon,
+.popup-notification-icon[popupid="webRTC-shareDevices"],
+.popup-notification-icon[popupid="webRTC-sharingDevices"] {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#camera); }
+
+.camera-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#camera-blocked); }
+
+/* The first selector is used by socialchat.xml (bug 1275558). */
+.webRTC-sharingMicrophone-notification-icon,
+.microphone-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone); }
+
+.microphone-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-blocked); }
+
+.popup-notification-icon[popupid="webRTC-shareMicrophone"],
+.popup-notification-icon[popupid="webRTC-sharingMicrophone"] {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-detailed); }
+
+.popup-notification-icon[popupid="webRTC-shareScreen"],
+.popup-notification-icon[popupid="webRTC-sharingScreen"],
+.screen-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#screen); }
+
+.screen-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#screen-blocked); }
+
+.popup-notification-icon[popupid="pointerLock"],
+.pointerLock-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#pointerLock); }
+
+.pointerLock-icon.blocked {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#pointerLock-blocked); }
+
+/* This icon has a block sign in it, so we don't need a blocked version. */
+.popup-icon {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#popup"); }
+
+/* EME */
+.popup-notification-icon[popupid="drmContentPlaying"],
+.drm-icon {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains"); }
+
+.drm-icon:hover:active {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains-pressed"); }
+
+#eme-notification-icon[firstplay=true] {
+  animation: emeTeachingMoment 0.2s linear 0s 5 normal; }
+
+@keyframes emeTeachingMoment {
+  0% {
+    transform: translateX(0); }
+  25% {
+    transform: translateX(3px); }
+  75% {
+    transform: translateX(-3px); }
+  100% {
+    transform: translateX(0); } }
+/* INSTALL ADDONS */
+.install-icon {
+  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#default); }
 
 .popup-notification-icon[popupid="xpinstall-disabled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
@@ -1461,107 +1778,19 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 .popup-notification-icon[popupid="click-to-play-plugins"] {
   list-style-image: url(chrome://mozapps/skin/plugins/pluginBlocked-64.png); }
 
-.popup-notification-icon[popupid="web-notifications"] {
-  list-style-image: url(chrome://browser/skin/web-notifications-icon.svg); }
-
-.popup-notification-icon[popupid="indexedDB-permissions-prompt"],
+/* OFFLINE APPS */
 .popup-notification-icon[popupid*="offline-app-requested"],
 .popup-notification-icon[popupid="offline-app-usage"] {
   list-style-image: url(chrome://global/skin/icons/question-64.png); }
 
-.popup-notification-icon[popupid="password"] {
-  list-style-image: url(chrome://mozapps/skin/passwordmgr/key-64.png); }
-
-.popup-notification-icon[popupid="webRTC-sharingDevices"],
-.popup-notification-icon[popupid="webRTC-shareDevices"] {
-  list-style-image: url(chrome://browser/skin/webRTC-shareDevice-64.png); }
-
-.popup-notification-icon[popupid="webRTC-sharingMicrophone"],
-.popup-notification-icon[popupid="webRTC-shareMicrophone"] {
-  list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-64.png); }
-
-.popup-notification-icon[popupid="webRTC-sharingScreen"],
-.popup-notification-icon[popupid="webRTC-shareScreen"] {
-  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-64.png); }
-
-.popup-notification-icon[popupid="pointerLock"] {
-  list-style-image: url(chrome://browser/skin/pointerLock-64.png); }
-
-.popup-notification-icon[popupid="servicesInstall"] {
-  list-style-image: url(chrome://browser/skin/social/services-64.png); }
-
-/* Notification icon box */
-#notification-popup-box {
-  position: relative;
-  background-color: transparent;
-  background-clip: padding-box;
-  padding-left: 5px;
-  padding-right: 8px;
-  border-width: 0 1px 0 0;
-  border-style: solid;
-  border-color: rgba(207, 214, 230, 0.5); }
-
-/* This changes the direction of the main notification box on the url bar. */
-#notification-popup-box:-moz-locale-dir(rtl),
-.notification-anchor-icon:-moz-locale-dir(rtl) {
-  transform: scaleX(-1); }
-
-/* For the anchor icons in the chat window, we don't have the notification popup box,
-   so we need to cancel the RTL transform. */
-.notification-anchor-icon.chat-toolbarbutton:-moz-locale-dir(rtl) {
-  transform: none; }
-
-/* This class can be used alone or in combination with the class defining the
-   type of icon displayed. This rule must be defined before the others in order
-   for its list-style-image to be overridden. */
-.notification-anchor-icon {
-  list-style-image: url(moz-icon://stock/gtk-dialog-info?size=16);
-  width: 16px;
-  height: 16px;
-  margin: 0 2px; }
-
-@media (min-resolution: 1.1dppx) {
-  .notification-anchor-icon {
-    list-style-image: url(moz-icon://stock/gtk-dialog-info?size=dialog); } }
-.geo-icon {
-  list-style-image: url(chrome://browser/skin/Geolocation-16.png); }
-
-.install-icon {
-  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#default); }
-
-.install-icon:hover {
-  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#hover); }
-
-.install-icon:hover:active {
-  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#active); }
-
-.indexedDB-icon {
-  list-style-image: url(chrome://global/skin/icons/question-16.png); }
-
-.login-icon {
-  list-style-image: url(chrome://mozapps/skin/passwordmgr/key-16.png); }
-
-#login-fill-notification-icon {
-  /* Temporary solution until the capture and fill doorhangers are unified. */
-  transform: scaleX(-1); }
-
+/* PLUGINS */
 .plugin-icon {
-  list-style-image: url(chrome://browser/skin/notification-pluginNormal.png); }
-
-.plugin-icon.plugin-hidden {
-  list-style-image: url(chrome://browser/skin/notification-pluginAlert.png); }
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin); }
 
 .plugin-icon.plugin-blocked {
-  list-style-image: url(chrome://browser/skin/notification-pluginBlocked.png); }
-
-.plugin-icon {
-  -moz-image-region: rect(0, 16px, 16px, 0); }
-
-.plugin-icon:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px); }
-
-.plugin-icon:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px); }
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin-blocked);
+  fill: #d92215 !important;
+  /* important! to override the default hover color */ }
 
 #notification-popup-box[hidden] {
   /* Override display:none to make the pluginBlockedNotification animation work
@@ -1577,44 +1806,14 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
     opacity: 0; }
   to {
     opacity: 1; } }
-.camera-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-shareDevice-16.png); }
-
-/* The first selector is used by socialchat.xml (bug 1275558). */
-.webRTC-sharingDevices-notification-icon,
-.camera-icon.in-use {
-  list-style-image: url(chrome://browser/skin/webRTC-sharingDevice-16.png); }
-
-.microphone-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-16.png); }
-
-/* The first selector is used by socialchat.xml (bug 1275558). */
-.webRTC-sharingMicrophone-notification-icon,
-.microphone-icon.in-use {
-  list-style-image: url(chrome://browser/skin/webRTC-sharingMicrophone-16.png); }
-
-.screen-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16.png); }
-
-.screen-icon.in-use {
-  list-style-image: url(chrome://browser/skin/webRTC-sharingScreen-16.png); }
-
-.web-notifications-icon {
-  list-style-image: url(chrome://browser/skin/web-notifications-tray.svg);
-  -moz-image-region: rect(0, 16px, 16px, 0); }
-
-.web-notifications-icon:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px); }
-
-.web-notifications-icon:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px); }
-
-.pointer-icon {
-  list-style-image: url(chrome://browser/skin/pointerLock-16.png); }
+/* SOCIAL API */
+.popup-notification-icon[popupid="servicesInstall"] {
+  list-style-image: url(chrome://browser/skin/social/services-64.png); }
 
 .service-icon {
   list-style-image: url(chrome://browser/skin/social/services-16.png); }
 
+/* TRANSLATION */
 .translation-icon {
   list-style-image: url(chrome://browser/skin/translation-16.png);
   -moz-image-region: rect(0px, 16px, 16px, 0px); }
@@ -1622,57 +1821,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 .translation-icon.in-use {
   -moz-image-region: rect(0px, 32px, 16px, 16px); }
 
-/* EME notifications */
-.popup-notification-icon[popupid="drmContentPlaying"],
-.drm-icon {
-  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains"); }
-
-.drm-icon:hover:active {
-  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains-pressed"); }
-
-#eme-notification-icon[firstplay=true] {
-  animation: emeTeachingMoment 0.2s linear 0s 5 normal; }
-
-@keyframes emeTeachingMoment {
-  0% {
-    transform: translateX(0); }
-  25% {
-    transform: translateX(3px); }
-  75% {
-    transform: translateX(-3px); }
-  100% {
-    transform: translateX(0); } }
-/* HiDPI notification icons */
-@media (min-resolution: 1.1dppx) {
-  .camera-icon {
-    list-style-image: url(chrome://browser/skin/webRTC-shareDevice-16@2x.png); }
-
-  .camera-icon.in-use {
-    list-style-image: url(chrome://browser/skin/webRTC-sharingDevice-16@2x.png); }
-
-  .microphone-icon {
-    list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-16@2x.png); }
-
-  .microphone-icon.in-use {
-    list-style-image: url(chrome://browser/skin/webRTC-sharingMicrophone-16@2x.png); }
-
-  .screen-icon {
-    list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16@2x.png); }
-
-  .screen-icon.in-use {
-    list-style-image: url(chrome://browser/skin/webRTC-sharingScreen-16@2x.png); }
-
-  .popup-notification-icon[popupid="webRTC-sharingDevices"],
-  .popup-notification-icon[popupid="webRTC-shareDevices"] {
-    list-style-image: url(chrome://browser/skin/webRTC-shareDevice-64@2x.png); }
-
-  .popup-notification-icon[popupid="webRTC-sharingMicrophone"],
-  .popup-notification-icon[popupid="webRTC-shareMicrophone"] {
-    list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-64@2x.png); }
-
-  .popup-notification-icon[popupid="webRTC-sharingScreen"],
-  .popup-notification-icon[popupid="webRTC-shareScreen"] {
-    list-style-image: url(chrome://browser/skin/webRTC-shareScreen-64@2x.png); } }
 .popup-notification-body[popupid="addon-progress"],
 .popup-notification-body[popupid="addon-install-confirmation"] {
   width: 28em;
@@ -1682,14 +1830,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   font-weight: bold; }
 
 /* Notification icon box */
-#notification-popup-box {
-  border-radius: 2.5px 0 0 2.5px; }
-
 .notification-anchor-icon:-moz-focusring {
   outline: 1px dotted -moz-DialogText; }
-
-.indexedDB-icon {
-  list-style-image: url(moz-icon://stock/gtk-dialog-question?size=16); }
 
 /* Translation infobar */
 notification[value="translation"] .messageImage {
@@ -2231,11 +2373,13 @@ html|span.ac-emphasize-text-url {
 
 .tab-throbber,
 .tab-icon-image,
+.tab-sharing-icon-overlay,
 .tab-icon-sound,
 .tab-close-button {
   margin-top: 1px; }
 
 .tab-throbber,
+.tab-sharing-icon-overlay,
 .tab-icon-image {
   height: 16px;
   width: 16px;
@@ -2243,6 +2387,36 @@ html|span.ac-emphasize-text-url {
 
 .tab-icon-image {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png"); }
+
+.tab-icon-image[sharing]:not([selected]),
+.tab-sharing-icon-overlay {
+  animation: 3s linear pulse infinite; }
+
+@keyframes pulse {
+  0%, 16.66%, 83.33%, 100% {
+    opacity: 0; }
+  33.33%, 66.66% {
+    opacity: 1; } }
+.tab-icon-image[sharing]:not([selected]) {
+  animation-delay: -1.5s; }
+
+.tab-sharing-icon-overlay {
+  /* 16px of the icon + 6px of margin-inline-end of .tab-icon-image */
+  margin-inline-start: -22px;
+  position: relative; }
+
+.tab-sharing-icon-overlay[sharing="camera"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera"); }
+
+.tab-sharing-icon-overlay[sharing="microphone"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone"); }
+
+.tab-sharing-icon-overlay[sharing="screen"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen"); }
+
+.tab-sharing-icon-overlay[sharing] {
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: #e0291d; }
 
 .tab-icon-overlay {
   width: 16px;
@@ -2570,7 +2744,7 @@ lwtHeader;*/
 /* Tabstrip new tab button */
 .tabs-newtab-button,
 #TabsToolbar > #new-tab-button,
-#TabsToolbar > #wrapper-new-tab-button > #new-tab-button {
+#TabsToolbar > toolbarpaletteitem > #new-tab-button {
   list-style-image: url("moz-icon://stock/gtk-add?size=menu");
   -moz-image-region: auto; }
 
@@ -2652,7 +2826,7 @@ menuitem:hover > hbox > .alltabs-endimage[soundplaying] {
 toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important; }
 
-toolbar[brighttext] toolbarbutton.chevron:not(:hover):not([open="true"]) {
+toolbar[brighttext] toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron-inverted.png") !important; }
 
 toolbarbutton.chevron:-moz-locale-dir(rtl) > .toolbarbutton-icon {
@@ -2666,15 +2840,14 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   margin: 0; }
 
 /* Ctrl-Tab */
-.ctrlTab-preview {
-  -moz-appearance: toolbarbutton; }
-
-.tabPreview-canvas {
-  box-shadow: 0 0 5px ThreeDShadow; }
-
-.ctrlTab-preview:focus .tabPreview-canvas,
-.ctrlTab-preview:hover .tabPreview-canvas {
-  box-shadow: none; }
+#ctrlTab-panel {
+  -moz-appearance: none;
+  background: rgba(68, 68, 68, 0.7);
+  color: white;
+  border-style: none;
+  padding: 20px 10px 10px;
+  font-weight: bold;
+  text-shadow: 0 0 1px #444444, 0 0 2px #444444; }
 
 .ctrlTab-favicon[src] {
   background-color: white;
@@ -2682,17 +2855,33 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   height: 20px;
   padding: 2px; }
 
-#ctrlTab-panel {
-  padding: 10px; }
+.ctrlTab-preview-inner > .tabPreview-canvas {
+  box-shadow: 1px 1px 2px #1f1f1f; }
 
-.ctrlTab-preview:not(#ctrlTab-showAll) .tabPreview-canvas {
+.ctrlTab-preview:not(#ctrlTab-showAll) > * > .ctrlTab-preview-inner > .tabPreview-canvas {
   margin-bottom: 2px; }
 
+.ctrlTab-preview-inner {
+  padding-bottom: 10px; }
+
+#ctrlTab-showAll:not(:focus) > * > .ctrlTab-preview-inner {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: .5em; }
+
+.ctrlTab-preview:focus > * > .ctrlTab-preview-inner {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-shadow: none;
+  padding: 8px;
+  border: 2px solid white;
+  border-radius: .5em; }
+
+.ctrlTab-preview:not(#ctrlTab-showAll):focus > * > .ctrlTab-preview-inner {
+  margin: -10px -10px 0; }
+
 #ctrlTab-showAll {
-  -moz-appearance: button;
-  color: ButtonText;
-  padding: 0 3px;
-  margin-top: 10px; }
+  margin-top: .5em; }
 
 /* Status panel */
 .statuspanel-label {
@@ -2716,7 +2905,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   border-top-left-radius: .3em;
   margin-left: 1em; }
 
-html|*#fullscreen-warning {
+html|*.pointerlockfswarning {
   align-items: center;
   color: #BAC3CF;
   background: rgba(53, 57, 69, 0.95);
@@ -2726,30 +2915,30 @@ html|*#fullscreen-warning {
   padding: 24px 16px;
   font: message-box; }
 
-html|*#fullscreen-warning::before {
+html|*.pointerlockfswarning::before {
   margin: 0;
   width: 24px;
   height: 24px; }
 
-html|*#fullscreen-warning.verifiedIdentity::before,
-html|*#fullscreen-warning.verifiedDomain::before {
+html|*.pointerlockfswarning[data-identity="verifiedIdentity"]::before,
+html|*.pointerlockfswarning[data-identity="verifiedDomain"]::before {
   content: url("chrome://browser/skin/fullscreen/secure.svg"); }
 
-html|*#fullscreen-warning.unknownIdentity::before {
+html|*.pointerlockfswarning[data-identity="unknownIdentity"]::before {
   content: url("chrome://browser/skin/fullscreen/insecure.svg"); }
 
-html|*#fullscreen-domain-text,
-html|*#fullscreen-generic-text {
+html|*.pointerlockfswarning-domain-text,
+html|*.pointerlockfswarning-generic-text {
   font-size: 21px;
   font-weight: lighter;
   color: #fafafa;
   margin: 0 16px; }
 
-html|*#fullscreen-domain {
+html|*.pointerlockfswarning-domain {
   font-weight: bold;
   margin: 0; }
 
-html|*#fullscreen-exit-button {
+html|*.pointerlockfswarning-exit-button {
   padding: 5px 30px;
   font: message-box;
   font-size: 14px;
@@ -2762,11 +2951,11 @@ html|*#fullscreen-exit-button {
   color: #BAC3CF;
   border-color: rgba(26, 28, 34, 0.35);
   background-color: rgba(102, 109, 132, 0.35); }
-  html|*#fullscreen-exit-button:hover {
+  html|*.pointerlockfswarning-exit-button:hover {
     color: #BAC3CF;
     border-color: rgba(26, 28, 34, 0.35);
     background-color: rgba(119, 127, 151, 0.45); }
-  html|*#fullscreen-exit-button:active, html|*#fullscreen-exit-button:checked {
+  html|*.pointerlockfswarning-exit-button:active, html|*.pointerlockfswarning-exit-button:checked {
     color: #ffffff;
     border-color: rgba(26, 28, 34, 0.35);
     background-color: #5294E2; }
@@ -2906,6 +3095,9 @@ html|*#fullscreen-exit-button {
 
 .devtools-responsiveui-close {
   list-style-image: url("chrome://devtools/skin/images/close.svg"); }
+
+.devtools-responsiveui-close > image {
+  filter: invert(1); }
 
 .devtools-responsiveui-rotate {
   list-style-image: url("chrome://devtools/skin/images/responsivemode/responsiveui-rotate.png"); }
@@ -3278,8 +3470,9 @@ html|*#gcli-output-frame {
   margin: 0; }
 
 .messageImage[value="plugin-hidden"] {
-  list-style-image: url("chrome://browser/skin/notification-pluginNormal.png");
-  -moz-image-region: rect(0, 16px, 16px, 0); }
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: #808080; }
 
 /* Keep any changes to this style in sync with pluginProblem.css */
 notification.pluginVulnerable {
@@ -3288,7 +3481,9 @@ notification.pluginVulnerable {
   color: white; }
 
 notification.pluginVulnerable .messageImage {
-  list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png"); }
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin-blocked);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: #d92215; }
 
 notification.pluginVulnerable > .notification-inner > .messageCloseButton:not(:hover) {
   background-image: -moz-image-rect(url("chrome://global/skin/icons/close.svg"), 0, 80, 16, 64); }
@@ -3545,19 +3740,6 @@ toolbar[brighttext] #downloads-indicator-counter {
   border-radius: 1px;
   margin-inline-end: 2px; }
 
-/* Social toolbar item */
-.social-activation-icon {
-  width: auto;
-  height: auto;
-  max-height: 64px;
-  max-width: 64px; }
-
-#social-activation-message {
-  max-width: 250px; }
-
-#social-activation-message > label {
-  margin: 0; }
-
 /* social toolbar provider menu */
 #social-statusarea-popup {
   margin-top: 0;
@@ -3771,6 +3953,9 @@ window > chatbox {
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 /* Customization mode */
+:root {
+  --drag-drop-transition-duration: .3s; }
+
 #main-window:-moz-any([customize-entering], [customize-entered]) #browser-bottombox {
   margin-bottom: 2em; }
 
@@ -3843,7 +4028,7 @@ window > chatbox {
 
 #customization-palette,
 #customization-empty {
-  padding: 0 25px 25px; }
+  padding: 5px 25px 25px; }
 
 #customization-header {
   font-size: 1.75em;
@@ -3938,7 +4123,7 @@ toolbarpaletteitem[mousedown] {
 .panel-customization-placeholder,
 toolbarpaletteitem[place="palette"],
 toolbarpaletteitem[place="panel"] {
-  transition: transform .3s ease-in-out; }
+  transition: transform var(--drag-drop-transition-duration) ease-in-out; }
 
 #customization-palette {
   transition: opacity .3s ease-in-out;
@@ -3946,6 +4131,9 @@ toolbarpaletteitem[place="panel"] {
 
 #customization-palette[showing="true"] {
   opacity: 1; }
+
+toolbarpaletteitem toolbarbutton[disabled] {
+  color: inherit !important; }
 
 toolbarpaletteitem[notransition].panel-customization-placeholder,
 toolbarpaletteitem[notransition][place="toolbar"],
@@ -3957,7 +4145,7 @@ toolbarpaletteitem > toolbarbutton > .toolbarbutton-icon,
 toolbarpaletteitem > toolbarbutton > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 toolbarpaletteitem > toolbaritem.panel-wide-item,
 toolbarpaletteitem > toolbarbutton[type="menu-button"] {
-  transition: transform 0.3s cubic-bezier(0.6, 2, 0.75, 1.5) !important; }
+  transition: transform var(--drag-drop-transition-duration) cubic-bezier(0.6, 2, 0.75, 1.5) !important; }
 
 toolbarpaletteitem[mousedown] > toolbarbutton > .toolbarbutton-icon,
 toolbarpaletteitem[mousedown] > toolbarbutton > .toolbarbutton-badge-stack > .toolbarbutton-icon {
@@ -3980,9 +4168,18 @@ toolbarpaletteitem[place="toolbar"] {
 toolbarpaletteitem[place="palette"]:-moz-focusring,
 toolbarpaletteitem[place="panel"]:-moz-focusring,
 toolbarpaletteitem[place="toolbar"]:-moz-focusring {
+  outline-width: 0; }
+
+toolbarpaletteitem[place="palette"]:not([mousedown="true"]):-moz-focusring,
+toolbarpaletteitem[place="panel"]:not([mousedown="true"]):-moz-focusring,
+toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
+  /* Delay adding the focusring back until after the transform transition completes. */
+  transition: outline-width 0.01s linear var(--drag-drop-transition-duration);
   outline: 1px dotted rgba(0, 0, 0, 0.5);
-  outline-offset: -5px;
   -moz-outline-radius: 2.5px; }
+
+toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
+  outline-offset: -5px; }
 
 #wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton,
 #wrapper-edit-controls[place="palette"] > #edit-controls > separator,
@@ -4553,7 +4750,7 @@ notification.heartbeat {
 .webextension-popup-browser {
   border-radius: inherit; }
 
-.menuitem-iconic[command="Browser:NewUserContextTab"] > .menu-iconic-left > .menu-iconic-icon {
+.menuitem-iconic[usercontextid] > .menu-iconic-left > .menu-iconic-icon {
   visibility: visible; }
 
 #nav-bar #loop-button, #nav-bar

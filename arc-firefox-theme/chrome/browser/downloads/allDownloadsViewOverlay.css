@@ -27,14 +27,30 @@
 }
 
 .downloadTypeIcon {
-  margin-inline-end: 8px;
+  margin-top: 8px;
+  margin-inline-end: 12px;
+  margin-bottom: 8px;
+  margin-inline-start: 0;
   width: 32px;
   height: 32px;
 }
 
 
-.blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/Error.png");
+.downloadBlockedBadge {
+  margin: 0 4px;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
+}
+
+.downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+richlistitem.download[verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/warning.svg");
+}
+
+richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/info.svg");
 }
 
 .downloadTarget {
@@ -63,18 +79,6 @@
 
 :root {
   --downloads-item-height: 5em;
-}
-
-.blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=32");
-}
-
-richlistitem.download[verdict="PotentiallyUnwanted"] .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=32");
-}
-
-richlistitem.download[verdict="Uncommon"] .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=32");
 }
 
 /*** Button icons ***/
