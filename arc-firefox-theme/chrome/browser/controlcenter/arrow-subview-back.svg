@@ -3,5 +3,32 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <polygon fill="#fff" points="12,3.5 10.5,2 4.625,8 10.5,14 12,12.5 7.625,8" />
+<style>
+
+.fieldtext {
+  fill: -moz-fieldtext;
+  /* The fill-opacity needs to be sufficient for high-contrast settings, and
+     pathological Gtk themes where -moz-fieldtext provides low contrast by
+     default. */
+  fill-opacity: .7;
+}
+
+
+.highlighttext {
+  fill: highlighttext;
+  fill-opacity: 1;
+}
+
+.black {
+  fill: black;
+  fill-opacity: .6;
+}
+
+.white {
+  fill: white;
+  fill-opacity: .7;
+}
+
+</style>
+  <polygon class="highlighttext" points="12,3.5 10.5,2 4.625,8 10.5,14 12,12.5 7.625,8"/>
 </svg>
