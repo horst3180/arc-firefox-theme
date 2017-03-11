@@ -368,7 +368,6 @@ description > html|a {
 #dialogFrame {
   -moz-box-flex: 1;
   /* Default dialog dimensions */
-  height: 20em;
   width: 66ch;
 }
 
@@ -496,6 +495,8 @@ description > html|a {
 .fxaAccountBoxButtons {
   margin-bottom: 0 !important;
   margin-top: 11px;
+  display: flex;
+  align-items: center;
 }
 
 .fxaAccountBoxButtons > * {

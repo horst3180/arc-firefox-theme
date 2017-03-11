@@ -182,7 +182,6 @@ toolbar[brighttext] #downloads-indicator-counter {
 
 #TabsToolbar {
   text-shadow: none !important;
-  color: var(--chrome-color) !important; /* Make sure that the brighttext attribute is added */
 }
 
 /* URL bar and search bar*/

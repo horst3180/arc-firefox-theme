@@ -1111,11 +1111,6 @@ button.button-link:not([disabled="true"]):active:hover {
   padding: 0 1px;
 }
 
-.meta-rating[showrating="user"] > .star {
-  list-style-image: url("chrome://mozapps/skin/extensions/rating-unrated.png");
-  padding: 2px 3px;
-}
-
 .meta-rating > .star[on="true"],
 .meta-rating[showrating="user"] > .star[hover] {
   list-style-image: url("chrome://mozapps/skin/extensions/rating-won.png");

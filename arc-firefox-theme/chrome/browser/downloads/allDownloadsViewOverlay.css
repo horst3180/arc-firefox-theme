@@ -22,22 +22,14 @@
   height: var(--downloads-item-height);
 }
 
-#downloadsRichListBox > richlistitem.download {
-  padding: 5px 8px;
-}
-
 .downloadTypeIcon {
-  margin-top: 8px;
-  margin-inline-end: 12px;
-  margin-bottom: 8px;
-  margin-inline-start: 0;
+  margin: 8px 13px;
   width: 32px;
   height: 32px;
 }
 
-
 .downloadBlockedBadge {
-  margin: 0 4px;
+  margin: 0 5px;
   background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
 }
 
@@ -53,107 +45,159 @@ richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
   background-image: url("chrome://browser/skin/info.svg");
 }
 
+richlistitem.download > toolbarseparator {
+  display: none;
+}
+
 .downloadTarget {
-  margin-bottom: 3px;
-  cursor: inherit;
+  margin: 0;
 }
 
 .downloadDetails {
   opacity: 0.7;
   font-size: 95%;
-  cursor: inherit;
+  /* Use calc() to keep the height consistent with .downloadTarget, so that the
+     progress bar can be vertically centered. */
+  margin: 4px 0 calc(1em / 0.95 - 1em);
 }
 
 .downloadButton {
   -moz-appearance: none;
+  -moz-box-align: center;
   background: transparent;
   min-width: 0;
   min-height: 0;
-  margin: 3px;
+  margin: 0;
   border: none;
-  padding: 5px;
-  list-style-image: url("chrome://browser/skin/downloads/buttons.png");
+  color: inherit;
+  padding: 0 18px;
+}
+
+.downloadButton > .button-box {
+  -moz-appearance: none;
+  padding: 2px !important;
+  border-radius: 50%;
+}
+
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  display: none;
+}
+
+.downloadButton:hover > .button-box {
+  background-color: graytext;
+  color: -moz-field;
+}
+
+.downloadButton:hover:active > .button-box {
+  background-color: -moz-fieldtext;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover > .button-box {
+  background-color: HighlightText;
+  color: Highlight;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:active > .button-box {
+  background-color: -moz-field;
+  color: -moz-fieldtext;
+}
+
+/*** Button icons ***/
+
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#cancel");
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#folder");
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#retry");
+}
+
+/*** Progressmeter ***/
+/*** Common-styled progressmeter ***/
+.downloadProgress {
+  height: 8px;
+  border-radius: 1px;
+  margin: 4px 0 0;
+  margin-inline-end: 12px;
+
+  /* for overriding rules in progressmeter.css */
+  -moz-appearance: none;
+  border-style: none;
+  background-color: transparent;
+  min-width: initial;
+  min-height: initial;
+}
+
+.downloadProgress[mode="undetermined"] {
+  /* for overriding rules on global.css in Linux. */
+  -moz-binding: url("chrome://global/content/bindings/progressmeter.xml#progressmeter");
+}
+
+.downloadProgress > .progress-bar {
+  background-color: Highlight;
+
+  /* for overriding rules in progressmeter.css */
+  -moz-appearance: none;
+}
+
+.downloadProgress[paused="true"] > .progress-bar {
+  background-color: GrayText;
+}
+
+.downloadProgress[mode="undetermined"] > .progress-bar {
+  /* Make a white reflecting animation.
+     Create a gradient with 2 identical pattern, and enlarge the size to 200%.
+     This allows us to animate background-position with percentage. */
+  background-image: linear-gradient(90deg, transparent 0%,
+                                           rgba(255,255,255,0.5) 25%,
+                                           transparent 50%,
+                                           rgba(255,255,255,0.5) 75%,
+                                           transparent 100%);
+  background-blend-mode: lighten;
+  background-size: 200% 100%;
+  animation: downloadProgressSlideX 1.5s linear infinite;
+}
+
+.downloadProgress > .progress-remainder {
+  border: solid ButtonShadow;
+  border-block-start-width: 1px;
+  border-block-end-width: 1px;
+  border-inline-start-width: 0;
+  border-inline-end-width: 1px;
+  background-color: ButtonFace;
+}
+
+.downloadProgress[value="0"] > .progress-remainder {
+  border-width: 1px;
+}
+
+.downloadProgress > .progress-remainder[mode="undetermined"] {
+  border: none;
+}
+
+@keyframes downloadProgressSlideX {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 /*** List items ***/
 
 :root {
   --downloads-item-height: 5em;
-}
-
-/*** Button icons ***/
-
-.downloadButton.downloadIconCancel {
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-richlistitem.download:hover .downloadButton.downloadIconCancel {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-richlistitem.download:hover .downloadButton.downloadIconCancel:hover {
-  -moz-image-region: rect(0px, 48px, 16px, 32px);
-}
-richlistitem.download:hover .downloadButton.downloadIconCancel:active {
-  -moz-image-region: rect(0px, 64px, 16px, 48px);
-}
-richlistitem.download[selected] .downloadButton.downloadIconCancel {
-  -moz-image-region: rect(0px, 80px, 16px, 64px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconCancel {
-  -moz-image-region: rect(0px, 96px, 16px, 80px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconCancel:hover {
-  -moz-image-region: rect(0px, 112px, 16px, 96px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconCancel:active {
-  -moz-image-region: rect(0px, 128px, 16px, 112px);
-}
-
-.downloadButton.downloadIconShow {
-  -moz-image-region: rect(16px, 16px, 32px, 0px);
-}
-richlistitem.download:hover .downloadButton.downloadIconShow {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-richlistitem.download:hover .downloadButton.downloadIconShow:hover {
-  -moz-image-region: rect(16px, 48px, 32px, 32px);
-}
-richlistitem.download:hover .downloadButton.downloadIconShow:active {
-  -moz-image-region: rect(16px, 64px, 32px, 48px);
-}
-richlistitem.download[selected] .downloadButton.downloadIconShow {
-  -moz-image-region: rect(16px, 80px, 32px, 64px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconShow {
-  -moz-image-region: rect(16px, 96px, 32px, 80px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconShow:hover {
-  -moz-image-region: rect(16px, 112px, 32px, 96px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconShow:active {
-  -moz-image-region: rect(16px, 128px, 32px, 112px);
-}
-
-.downloadButton.downloadIconRetry {
-  -moz-image-region: rect(32px, 16px, 48px, 0px);
-}
-richlistitem.download:hover .downloadButton.downloadIconRetry {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-richlistitem.download:hover .downloadButton.downloadIconRetry:hover {
-  -moz-image-region: rect(32px, 48px, 48px, 32px);
-}
-richlistitem.download:hover .downloadButton.downloadIconRetry:active {
-  -moz-image-region: rect(32px, 64px, 48px, 48px);
-}
-richlistitem.download[selected] .downloadButton.downloadIconRetry {
-  -moz-image-region: rect(32px, 80px, 48px, 64px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconRetry {
-  -moz-image-region: rect(32px, 96px, 48px, 80px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconRetry:hover {
-  -moz-image-region: rect(32px, 112px, 48px, 96px);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconRetry:active {
-  -moz-image-region: rect(32px, 128px, 48px, 112px);
 }

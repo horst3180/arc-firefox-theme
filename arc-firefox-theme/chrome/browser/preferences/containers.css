@@ -1,0 +1,143 @@
+/* Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+[data-identity-color="blue"] {
+  --identity-tab-color: #0996f8;
+  --identity-icon-color: #00a7e0;
+}
+
+[data-identity-color="turquoise"] {
+  --identity-tab-color: #01bdad;
+  --identity-icon-color: #01bdad;
+}
+
+[data-identity-color="green"] {
+  --identity-tab-color: #57bd35;
+  --identity-icon-color:  #7dc14c;
+}
+
+[data-identity-color="yellow"] {
+  --identity-tab-color: #ffcb00;
+  --identity-icon-color: #ffcb00;
+}
+
+[data-identity-color="orange"] {
+  --identity-tab-color: #ff9216;
+  --identity-icon-color: #ff9216;
+}
+
+[data-identity-color="red"] {
+  --identity-tab-color: #d92215;
+  --identity-icon-color: #d92215;
+}
+
+[data-identity-color="pink"] {
+  --identity-tab-color: #ea385e;
+  --identity-icon-color: #ee5195;
+}
+
+[data-identity-color="purple"] {
+  --identity-tab-color: #7a2f7a;
+  --identity-icon-color: #7a2f7a;
+}
+
+[data-identity-icon="fingerprint"] {
+  --identity-icon: url("chrome://browser/content/usercontext.svg#fingerprint");
+}
+
+[data-identity-icon="briefcase"] {
+  --identity-icon: url("chrome://browser/content/usercontext.svg#briefcase");
+}
+
+[data-identity-icon="dollar"] {
+  --identity-icon: url("chrome://browser/content/usercontext.svg#dollar");
+}
+
+[data-identity-icon="cart"] {
+  --identity-icon: url("chrome://browser/content/usercontext.svg#cart");
+}
+
+[data-identity-icon="circle"] {
+  --identity-icon: url("chrome://browser/content/usercontext.svg#circle");
+}
+
+#userContext-indicator {
+  height: 16px;
+  width: 16px;
+}
+
+#userContext-label {
+  margin-inline-end: 3px;
+  color: var(--identity-tab-color);
+}
+
+#userContext-icons {
+  -moz-box-align: center;
+}
+
+.tabbrowser-tab[usercontextid] {
+  background-image: linear-gradient(to right, transparent 20%, var(--identity-tab-color) 30%, var(--identity-tab-color) 70%, transparent 80%);
+  background-size: auto 2px;
+  background-repeat: no-repeat;
+}
+
+.userContext-icon,
+.menuitem-iconic[data-usercontextid] > .menu-iconic-left > .menu-iconic-icon,
+.subviewbutton[usercontextid] > .toolbarbutton-icon,
+#userContext-indicator {
+  background-image: var(--identity-icon);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: var(--identity-icon-color);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+:root {
+  --preference-selected-color: #0996f8;
+  --preference-unselected-color: #333;
+  --preference-active-color: #858585;
+}
+
+radiogroup {
+  display: flex;
+  margin-inline-start: 0.35rem;
+}
+
+radio {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-user-select: none;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  -moz-outline-radius: 100%;
+  min-block-size: 24px;
+  min-inline-size: 24px;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 10px;
+}
+
+.icon-buttons > radio > [data-identity-icon] {
+  fill: #4d4d4d;
+}
+
+radio > [data-identity-icon] {
+  inline-size: 22px;
+  block-size: 22px;
+}
+
+radio[selected=true] {
+  outline-color: var(--preference-unselected-color);
+}
+
+radio[focused=true] {
+  outline-color: var(--preference-selected-color);
+}
+
+radio:hover:active {
+  outline-color: var(--preference-active-color);
+}
