@@ -1,32 +1,24 @@
 # Arc Firefox Theme
+Offical [Arc](https://github.com/horst3180/arc-theme) Firefox theme.
 
-Offical [Arc](https://github.com/horst3180/Arc-theme) Firefox theme.
-
-#####Arc Firefox
-
+**Arc Firefox**
 ![alt tag](http://i.imgur.com/UjJabE3.png)
 
-#####Arc Darker Firefox
-
+**Arc Darker Firefox**
 ![alt tag](http://i.imgur.com/5fMURDp.png)
 
-#####Arc Dark Firefox
-
+**Arc Dark Firefox**
 ![alt tag](http://i.imgur.com/5HuYVUl.png)
 
-
-### Requirements
+## Requirements
 This theme is compatible with Firefox 40+ and Firefox 38 ESR
 
 **Note**: This theme is meant to be used in conjunction with the [Arc GTK theme](https://github.com/horst3180/Arc-theme), don't use it with other GTK themes or it will look broken.
 
-### Installation
-The theme is available on addons.mozilla.org.
+## Installation
+The theme is available as a collection on [addons.mozilla.org](https://addons.mozilla.org/en/firefox/collections/horst3180/a/).
 
-[Arc Firefox collection on AMO](https://addons.mozilla.org/en/firefox/collections/horst3180/a/)
-
-#### Manual building and installation
-
+### Manual building and installation
 These instructions are for testers and package maintainers. They also allow to install the theme globally for all users.
 
 You will need `autoconf` and `automake` for the following.
@@ -55,7 +47,7 @@ Uninstall the theme with
 
     sudo make uninstall
 
-#### Firefox ESR (Debian Stable users see here)
+### Firefox ESR (Debian Stable users see here)
 This repo includes separate Firefox ESR compatible branches. The installation process is mostly identical to the manual installation above
 
     git clone https://github.com/horst3180/arc-firefox-theme && cd arc-firefox-theme
