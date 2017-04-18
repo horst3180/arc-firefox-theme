@@ -2,15 +2,15 @@
 
 Offical [Arc](https://github.com/horst3180/Arc-theme) Firefox theme.
 
-#####Arc Firefox
+##### Arc Firefox
 
 ![alt tag](http://i.imgur.com/UjJabE3.png)
 
-#####Arc Darker Firefox
+##### Arc Darker Firefox
 
 ![alt tag](http://i.imgur.com/5fMURDp.png)
 
-#####Arc Dark Firefox
+##### Arc Dark Firefox
 
 ![alt tag](http://i.imgur.com/5HuYVUl.png)
 
