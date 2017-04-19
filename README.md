@@ -53,5 +53,6 @@ This repo includes separate Firefox ESR compatible branches. The installation pr
     git clone https://github.com/horst3180/arc-firefox-theme && cd arc-firefox-theme
     git checkout firefox-38-esr   # Execute this for Firefox 38 ESR
     git checkout firefox-45-esr   # Execute this for Firefox 45 ESR
+    git checkout firefox-52-esr   # Execute this for Firefox 52 ESR
     ./autogen.sh --prefix=/usr
     make mkxpi
