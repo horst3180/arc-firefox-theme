@@ -1,8 +1,8 @@
 
 
-/* devedition.css is loaded in browser.xul after browser.css when it is
+/* compacttheme.css is loaded in browser.xul after browser.css when it is
    preffed on.  The bulk of the styling is here in the shared file, but
-   there are overrides for each platform in their devedition.css files. */
+   there are overrides for each platform in their compacttheme.css files. */
 
 :root {
   --tab-toolbar-navbar-overlap: 0px;
@@ -12,7 +12,7 @@
   --backbutton-urlbar-overlap: 0px;
 }
 
-:root[devtoolstheme="dark"] {
+:root:-moz-lwtheme-brighttext {
   /* Chrome */
   --chrome-background-color: #272b35;
   --chrome-color: #F5F7FA;
@@ -48,8 +48,8 @@
 }
 
 /* Override the lwtheme-specific styling for toolbar buttons */
-:root[devtoolstheme="dark"],
-:root[devtoolstheme="dark"] toolbar:-moz-lwtheme {
+:root:-moz-lwtheme-brighttext,
+toolbar:-moz-lwtheme-brighttext  {
   --toolbarbutton-hover-background: rgba(25,33, 38,.6) linear-gradient(rgba(25,33,38,.6), rgba(25,33,38,.6)) padding-box;
   --toolbarbutton-hover-boxshadow: none;
   --toolbarbutton-hover-bordercolor: rgba(25,33,38,.6);
@@ -60,7 +60,7 @@
 
 }
 
-:root[devtoolstheme="light"] {
+:root:-moz-lwtheme-darktext {
   --url-and-searchbar-background-color: #fff;
 
   --chrome-background-color: #E3E4E6;
@@ -83,8 +83,8 @@
 }
 
 /* Override the lwtheme-specific styling for toolbar buttons */
-:root[devtoolstheme="light"],
-:root[devtoolstheme="light"] toolbar:-moz-lwtheme {
+:root:-moz-lwtheme-darktext,
+toolbar:-moz-lwtheme-darktext {
   --toolbarbutton-hover-background: #eaeaea;
   --toolbarbutton-hover-boxshadow: none;
   --toolbarbutton-hover-bordercolor: rgba(0,0,0,0.1);
@@ -195,60 +195,56 @@ toolbar[brighttext] #downloads-indicator-counter {
 }
 
 
-:root[devtoolstheme="dark"] #identity-icon:-moz-lwtheme {
+#identity-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/identity-icon.svg#normal-white);
 }
 
-:root[devtoolstheme="dark"] #identity-box:hover > #identity-icon:not(.no-hover):-moz-lwtheme,
-:root[devtoolstheme="dark"] #identity-box[open=true] > #identity-icon:-moz-lwtheme {
+#identity-box:hover > #identity-icon:not(.no-hover):-moz-lwtheme-brighttext,
+#identity-box[open=true] > #identity-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/identity-icon.svg#hover-white);
 }
 
-:root[devtoolstheme="dark"] #identity-box.grantedPermissions > #identity-icon:-moz-lwtheme {
+#identity-box.grantedPermissions > #identity-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-white);
 }
 
-:root[devtoolstheme="dark"] #identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover):-moz-lwtheme,
-:root[devtoolstheme="dark"] #identity-box.grantedPermissions[open=true] > #identity-icon:-moz-lwtheme {
+#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover):-moz-lwtheme-brighttext,
+#identity-box.grantedPermissions[open=true] > #identity-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover-white);
 }
 
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon:-moz-lwtheme {
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
 }
 
 
-:root[devtoolstheme="dark"] #tracking-protection-icon:-moz-lwtheme {
+#tracking-protection-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled-white);
 }
 
-:root[devtoolstheme="dark"] #tracking-protection-icon[state="loaded-tracking-content"]:-moz-lwtheme {
+#tracking-protection-icon[state="loaded-tracking-content"]:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled-white);
 }
 
 
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon:-moz-lwtheme,
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon:-moz-lwtheme,
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon:-moz-lwtheme {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon:-moz-lwtheme-brighttext,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon:-moz-lwtheme-brighttext,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/connection-secure.svg);
   visibility: visible;
 }
 
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon:-moz-lwtheme {
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon:-moz-lwtheme-brighttext,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon:-moz-lwtheme-brighttext,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon:-moz-lwtheme-brighttext,
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
   visibility: visible;
 }
 
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon:-moz-lwtheme,
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon:-moz-lwtheme {
+#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon:-moz-lwtheme-brighttext,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon:-moz-lwtheme-brighttext {
   list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-white);
-  visibility: visible;
-}
-
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon:-moz-lwtheme,
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon:-moz-lwtheme,
-:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon:-moz-lwtheme {
-  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
   visibility: visible;
 }
 
@@ -263,11 +259,20 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   margin-inline-start: 0;
 }
 
-:root[devtoolstheme="dark"] #urlbar-zoom-button:hover {
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl) {
+  /* Resolves text blurring issue when hovering, see bug 1340206 */
+  transform: none;
+  /* For some reason, this property must be specified here, even though the same
+     value is set in the previous rule set. o_O */
+  margin-inline-start: 0;
+}
+
+#urlbar-zoom-button:-moz-lwtheme-brighttext:hover {
   background-color: rgba(255,255,255,.2);
 }
 
-:root[devtoolstheme="dark"] #urlbar-zoom-button:hover:active {
+#urlbar-zoom-button:-moz-lwtheme-brighttext:hover:active {
   background-color: rgba(255,255,255,.3);
 }
 
@@ -281,7 +286,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
 }
 
 /* No extra vertical padding for nav bar */
-#nav-bar-customization-target,
 #nav-bar {
   padding-top: 0;
   padding-bottom: 0;
@@ -344,9 +348,19 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   background-color: var(--tab-selection-background-color);
 }
 
+.tab-throbber[selected][progress] {
+  list-style-image: url("chrome://browser/skin/compacttheme/loading-inverted.png");
+}
+
+@media (min-resolution: 1.1dppx) {
+  .tab-throbber[selected][progress] {
+    list-style-image: url("chrome://browser/skin/compacttheme/loading-inverted@2x.png");
+  }
+}
+
 .tab-icon-sound[soundplaying],
 .tab-icon-sound[muted] {
-  filter: url(chrome://browser/skin/filters.svg#fill) !important; /* removes drop-shadow filter */
+  filter: url(chrome://global/skin/filters.svg#fill) !important; /* removes drop-shadow filter */
 }
 
 /* Don't need space for the tab curves (66px - 30px) */
@@ -364,7 +378,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   --forwardbutton-width: 29px;
 }
 
-:root[devtoolstheme="light"] {
+:root:-moz-lwtheme-darktext {
   --urlbar-dropmarker-url: url("chrome://browser/skin/devedition/urlbar-history-dropmarker.svg");
   --urlbar-dropmarker-region: rect(0px, 11px, 14px, 0px);
   --urlbar-dropmarker-hover-region: rect(0, 22px, 14px, 11px);
@@ -375,8 +389,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   --urlbar-dropmarker-active-2x-region: rect(0px, 33px, 14px, 22px);
 }
 
-:root[devtoolstheme="dark"] .findbar-closebutton:not(:hover),
-:root[devtoolstheme="dark"] #sidebar-header > .close-icon:not(:hover),
+.findbar-closebutton:-moz-lwtheme-brighttext:not(:hover),
+#sidebar-header > .close-icon:-moz-lwtheme-brighttext:not(:hover),
 .tab-close-button[selected]:not(:hover) {
   background-image: -moz-image-rect(url("chrome://global/skin/icons/close.svg"), 0, 80, 16, 64);
 }
