@@ -1,4 +1,4 @@
-AC_INIT([arc-firefox-theme], [52.20170311], [https://github.com/horst3180/arc-firefox-theme/issues], [arc-firefox-theme], [https://github.com/horst3180/arc-firefox-theme])
+AC_INIT([arc-firefox-theme], [53.20170420], [https://github.com/horst3180/arc-firefox-theme/issues], [arc-firefox-theme], [https://github.com/horst3180/arc-firefox-theme])
 AM_INIT_AUTOMAKE([-Wno-portability no-dist-gzip dist-xz foreign subdir-objects tar-ustar])
 AC_PREFIX_DEFAULT(/usr/local)
 AM_SILENT_RULES([yes])
